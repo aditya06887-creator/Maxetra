@@ -9,7 +9,7 @@ import CaseStudy from "./Components/CaseStudy";
 import SEO from "./Components/Services/SEO";
 import Digital from "./Components/Services/Digital"
 import DigitalLanding from "./Components/Services/DigitalLanding"
-import ScrollToTop from "./Components/ScrolltoTop";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
