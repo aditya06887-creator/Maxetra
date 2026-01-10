@@ -63,19 +63,21 @@ export default function Header() {
     },
   ];
 
+   // --- CONTENT MAPPING FOR MOBILE ---
 
-  // --- CONTENT MAPPING FOR MOBILE ---
   const servicesData = [
-    { title: "Digital Marketing", icon: digim },
-    { title: "SEO", icon: seo },
-    { title: "Local SEO", icon: lo_seo },
-    { title: "Performance Marketing", icon: performance },
-    { title: "CRO Services", icon: cro },
-    { title: "Content Creation", icon: content },
-    { title: "Web Development", icon: wdev },
-    { title: "E-commerce", icon: ecom },
-    { title: "E-mail & SMS Marketing", icon: email }
+    { title: "Digital Marketing", icon: digim, to: "/services/digi-marketing" },
+    { title: "SEO", icon: seo, to: "/services/seo" },
+    { title: "Local SEO", icon: lo_seo, to: "/services/local-seo" },
+    { title: "Performance Marketing", icon: performance, to: "/services/performance" },
+    { title: "CRO Services", icon: cro, to: "/services/cro" },
+    { title: "Content Creation", icon: content, to: "/services/content" },
+    { title: "Web Development", icon: wdev, to: "/services/webd" },
+    { title: "E-commerce", icon: ecom, to: "/services/e-commerce" },
+    { title: "E-mail & SMS Marketing", icon: email, to: "/services/email-sms" },
   ];
+  
+
 
   const creativeServicesData = [
     { title: "Video Production", icon: v_prod },
@@ -309,14 +311,20 @@ export default function Header() {
               {activeSection === 'services' && (
                 <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
                   {servicesData.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                    <Link
+                    to={item.to}
+                    onClick={() => setMobileOpen(false)}
+                    key={idx}
+                    className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
+                  >
+                  
                       <img
                         src={item.icon}
                         alt={item.title}
                         className="w-5 h-5 object-contain rounded-[5px]"
                       />
                       {item.title}
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
