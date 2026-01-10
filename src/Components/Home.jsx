@@ -36,6 +36,7 @@ import {
     FaAmazon
 } from 'react-icons/fa';
 import Rating from './Rating';
+import Location from './Location';
 
 const data = [
     {
@@ -592,7 +593,7 @@ export default function Home() {
                 </div>
             </section >
             {/* Location */}
-
+            <Location/>
         </div >
     )
 }
