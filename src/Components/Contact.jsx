@@ -4,6 +4,8 @@ import {
     FiArrowRight, FiGlobe,
     FiUsers,
     FiCpu,
+    FiArrowLeft,
+    FiCheckCircle,
     FiAward
 } from "react-icons/fi";
 import Proposal from "./Proposal";
@@ -98,7 +100,36 @@ export default function Contact() {
 
     return (
         <div className="">
-            <Proposal/>
+            <section className="bg-[#6f8437] py-12 px-4">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <Proposal />
+                    {/* RIGHT CONTENT */}
+                    <div className=" text-white sm:flex sm:flex-col justify-center hidden sm:visible">
+                        <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                            <FiArrowLeft />
+                            Ready to Dominate Your Market?
+                        </h2>
+
+                        <p className="mb-8 text-white/90">
+                            Jumpstart your digital marketing success in 3 easy steps:
+                        </p>
+
+                        {[
+                            { title: "Contact Us", desc: "Fill out our brief contact form." },
+                            { title: "Launch Campaigns", desc: "Implement data-driven strategies." },
+                            { title: "Achieve Growth", desc: "Expand your brand reach." },
+                        ].map((step, i) => (
+                            <div key={i} className="flex gap-4 mb-6">
+                                <FiCheckCircle className="text-xl mt-1" />
+                                <div>
+                                    <h4 className="font-semibold">{step.title}</h4>
+                                    <p className="text-sm text-white/80">{step.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
             <section className="max-w-7xl mx-auto px-6 py-8">
 
                 {/* Section Title */}

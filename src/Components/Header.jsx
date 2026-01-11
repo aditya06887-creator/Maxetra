@@ -28,6 +28,12 @@ import callG from '../assets/SVG FOR Ad/Call_Girl.jpeg'
 import logo from '../assets/SVG FOR Ad/final logo.png'
 import blog from '../assets/SVG FOR Ad/Blog1.png'
 import WWA from '../assets/SVG FOR Ad/Who We Are1.png'
+import linkdin from '../assets/SVG FOR Ad/linkedin.png'
+import tiktok from '../assets/SVG FOR Ad/tiktok.png'
+import twitter from '../assets/SVG FOR Ad/twitter.png'
+import whatsapp from '../assets/SVG FOR Ad/whatsapp.png'
+import call from '../assets/SVG FOR Ad/phone.png'
+
 
 export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -63,7 +69,7 @@ export default function Header() {
     },
   ];
 
-   // --- CONTENT MAPPING FOR MOBILE ---
+  // --- CONTENT MAPPING FOR MOBILE ---
 
   const servicesData = [
     { title: "Digital Marketing", icon: digim, to: "/services/digi-marketing" },
@@ -73,22 +79,22 @@ export default function Header() {
     { title: "CRO Services", icon: cro, to: "/services/cro" },
     { title: "Content Creation", icon: content, to: "/services/content" },
     { title: "Web Development", icon: wdev, to: "/services/webd" },
-    { title: "E-commerce", icon: ecom, to: "/services/e-commerce" },
+    { title: "E-commerce", icon: ecom, to: "/services/e-com" },
     { title: "E-mail & SMS Marketing", icon: email, to: "/services/email-sms" },
+    { title: "Social Media", icon: social, to: "/services/social-media" }
   ];
-  
+
 
 
   const creativeServicesData = [
-    { title: "Video Production", icon: v_prod },
-    { title: "Socail Media", icon: social },
-    { title: "Graphic Design", icon: graphic },
+    { title: "Video Production", icon: v_prod, to: "services/video-prod" },
+    { title: "Graphic Design", icon: graphic, to: "services/graphic" }
   ];
 
   const aboutData = [
-    { title: "Who We Are", icon: WWA },
-    { title: "Our Blog", icon: blog },
-    { title: "Careers", icon: <MdWorkOutline /> },
+    { title: "Who We Are", icon: WWA, to: "/services/we-are" },
+    { title: "Our Blog", icon: blog, to: "/services/blog" },
+    { title: "Careers", icon: <MdWorkOutline />, to: "/services/career" },
   ];
 
   return (
@@ -96,11 +102,11 @@ export default function Header() {
       {/* Top Bar (Desktop) - Unchanged */}
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/" className="font-black cursor-pointer">
-          <img src={logo} alt="Maxetra" className="w-[90px] sm:w-[15vw] h-auto " />
+          <img src={logo} alt="Maxetra" className="w-[30vw] sm:w-[15vw] h-auto " />
         </Link>
 
         <nav className="hidden md:flex items-center justify-around space-x-8 font-medium text-gray-700">
-          <Link to="/about" className="hover:text-blue-600 transition">About</Link>
+          <Link to="/about" className="hover:text-blue-600 transition text-[20px] font-bold">About</Link>
           <div
             className="relative h-full py-2"
             onMouseEnter={() => setServicesOpen(true)}
@@ -109,7 +115,7 @@ export default function Header() {
               setActiveSection(null);
             }}
           >
-            <Link to="/services" className="flex items-center gap-1 hover:text-blue-600 focus:outline-none cursor-pointer h-full">
+            <Link to="/services" className="text-[20px] font-bold flex items-center gap-1 hover:text-blue-600 focus:outline-none cursor-pointer h-full">
               Services
               <svg
                 className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
@@ -203,10 +209,10 @@ export default function Header() {
                         to="services/email&sms" />
                     </div>
                     <div className="bg-[#001e37] rounded-xl p-4 mx-5 lg:mx-3 text-center text-white flex flex-col items-center self-start lg:sticky lg:top-0 w-50">
-                      <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-blue-500 mb-3" />
+                      <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-3" />
                       <h4 className="font-bold text-base">Merve Candan</h4>
                       <p className="text-xs text-gray-400 mb-4">Marketing Head</p>
-                      <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="w-full bg-white text-blue-600 font-bold py-2.5 rounded-lg hover:bg-gray-100 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
+                      <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="w-full bg-orange-500 text-white font-bold py-2.5 rounded-lg hover:bg-orange-700 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
                       <p className="text-[10px] text-gray-400 my-2 italic">Get a Free Consultation</p>
                       <div className="flex items-center text-green-400 text-sm font-semibold gap-2 cursor-pointer hover:opacity-80">
                         <WhatsAppIcon /> WhatsApp
@@ -214,11 +220,17 @@ export default function Header() {
                       <div className="w-full border-t border-gray-700 my-2" />
                       {/* Social */}
                       <div className="flex justify-center items-center gap-2 ">
-                        <div className="bg-[#cd201f] w-5 h-5 rounded-sm flex items-center justify-center text-white cursor-pointer"><FaYoutube /></div>
-                        <div className="bg-[#111211] w-5 h-5 rounded-sm flex items-center justify-center text-white cursor-pointer"><FaTiktok /></div>
-                        <div className="bg-gradient-to-tr from-[rgb(249,206,52)] via-[#ee2a7b] to-[#6228d7] w-5 h-5 rounded-sm flex items-center justify-center text-white cursor-pointer"><FaInstagram /></div>
-                        <div className="bg-black w-5 h-5 rounded-sm flex items-center justify-center text-white cursor-pointer"><FaXTwitter /></div>
-                        <div className="bg-[#0077b5] w-5 h-5 rounded-sm flex items-center justify-center text-white cursor-pointer"><FaLinkedinIn /></div>
+                        <Link to={linkdin} className="w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer text-blue-700">
+                          <img src={whatsapp} alt="" />
+                        </Link>
+                        <div className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"><FaTiktok /></div>
+                        <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer"><FaInstagram /></div>
+                        <Link to="" className="bg-black w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
+                          <img src={twitter} alt="" />
+                        </Link>
+                        <Link to="" className=" w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
+                          <img src={linkdin} alt="" />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -231,7 +243,7 @@ export default function Header() {
             onMouseEnter={() => setActiveSection("success")}
             onMouseLeave={() => setActiveSection(null)}
           >
-            <button className="flex items-center gap-1 hover:text-blue-600 transition">
+            <button className="flex items-center gap-1 hover:text-blue-600 transition text-[20px] font-bold">
               Success
               <FaChevronDown
                 className={`text-xs transition-transform ${activeSection === "success" ? "rotate-180" : ""
@@ -272,19 +284,27 @@ export default function Header() {
 
           </div>
 
-          <Link to="/case-study" className="hover:text-blue-600 transition">Case Study</Link>
-          <Link to="/contact" className="bg-[#fd4f4e] text-white px-5 py-2 rounded-lg font-bold hover:bg-blue-700 transition cursor-pointer">
-            Contact Us
+          <Link to="/contact" className="hover:text-blue-600 transition text-[20px] font-bold">Contact Us</Link>
+          <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center">
+            <img src={call} alt="phone" className="w-5 h-5"/>
+            <p>
+            +918978522677
+            </p>
           </Link>
         </nav>
 
         {/* Mobile Toggle Button */}
-        <button onClick={() => setMobileOpen(true)} className="md:hidden text-2xl p-2">☰</button>
+        <div className="md:hidden flex">
+        <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center mx-8">
+            <img src={call} alt="phone" className="w-5 h-5"/>
+          </Link>
+        <button onClick={() => setMobileOpen(true)} className="text-2xl p-2">☰</button>
+        </div>
       </div>
 
       {/* --- MOBILE MENU (Updated content based on prompt) --- */}
       {mobileOpen && (
-        <div className="fixed inset-y-0 left-0 right-10 sm:right-90 bg-white z-[200] flex flex-col overflow-y-auto animate-in slide-in-from-right duration-300">
+        <div className="fixed inset-y-0 left-0 right-10 sm:right-90 bg-white z-[200] flex flex-col overflow-y-auto overflow-x-auto animate-in slide-in-from-right duration-300">
 
 
           <div className="bg-[#004a80] p-6 pt-12 text-white relative text-center">
@@ -312,12 +332,12 @@ export default function Header() {
                 <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
                   {servicesData.map((item, idx) => (
                     <Link
-                    to={item.to}
-                    onClick={() => setMobileOpen(false)}
-                    key={idx}
-                    className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
-                  >
-                  
+                      to={item.to}
+                      onClick={() => setMobileOpen(false)}
+                      key={idx}
+                      className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
+                    >
+
                       <img
                         src={item.icon}
                         alt={item.title}
@@ -344,7 +364,7 @@ export default function Header() {
               {activeSection === 'creative' && (
                 <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
                   {creativeServicesData.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                    <Link to={item.to} key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                       <img
                         src={item.icon}
                         alt={item.title}
@@ -352,7 +372,7 @@ export default function Header() {
                       />
 
                       {item.title}
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -372,7 +392,7 @@ export default function Header() {
               {activeSection === 'about' && (
                 <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
                   {aboutData.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                    <Link to={item.to} key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                       <img
                         src={item.icon}
                         alt={item.title}
@@ -380,14 +400,14 @@ export default function Header() {
                       />
 
                       {item.title}
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
 
             {/* 4. Case Study (Standalone) */}
-            <Link to="/case-study" className="w-full flex items-center justify-between  text-gray-700 font-semibold border-b border-gray-100">
+            <button to="" className="w-full flex items-center justify-between  text-gray-700 font-semibold border-b border-gray-100">
               <div className="w-full">
                 <button
                   onClick={() => toggleSection("success")}
@@ -405,12 +425,13 @@ export default function Header() {
                 {activeSection === "success" && (
                   <div className="bg-gray-50 px-10 py-4 flex flex-col gap-3">
                     {successLinks.map((item, i) => (
-                      <Link
-                        key={i}
-                        to={item.to}
-                        onClick={() => setMobileOpen(false)}
-                        className="text-sm text-gray-700 font-medium hover:text-blue-600"
-                      >
+                      <Link to={item.to} key={i} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <img
+                          src={item.icon}
+                          alt={item.label}
+                          className="w-5 h-5 object-contain rounded-[5px]"
+                        />
+
                         {item.label}
                       </Link>
                     ))}
@@ -418,18 +439,31 @@ export default function Header() {
                 )}
               </div>
 
-            </Link>
+            </button>
+            <button to="" className="w-full  text-gray-700 font-semibold border-b border-gray-100">
+              <div className="w-full">
+                <Link to="/contact"
+                  className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold"
+                >
+                  <div className="uppercase tracking-wide text-sm">
+                    Contact Us
+                  </div>
+                </Link>
+
+              </div>
+
+            </button>
           </div>
 
+
           {/* 5. Contact Us Button */}
-          <Link
-            to="/contact"
-            className="flex items-center justify-center w-full bg-[#fd4f4e] py-4
-             rounded-lg font-bold shadow-md text-white
-             active:scale-95 transition"
+          <button
+            onClick={() => openNewTab('https://calendly.com/growixa/30min')}
+            className="w-11/12 flex items-center justify-center bg-[#fd4f4e] py-6 rounded-lg mx-auto font-bold text-white shadow-md transition active:scale-95"
           >
-            Contact us
-          </Link>
+            Schedule a Meeting
+          </button>
+
 
 
           {/* Social Icons */}
@@ -454,7 +488,7 @@ export default function Header() {
 const ServiceItem = ({ icon, title, desc, to }) => (
   <Link
     to={to}
-    className="w-full text-left group m-5 transition-all duration-200 block"
+    className="w-full text-left group m-5 transition-all duration-200 block p-2 hover:rounded-lg hover:bg-gray-100 my-5"
   >
     <div className="flex items-center gap-2 mb-1 cursor-pointer">
       <img

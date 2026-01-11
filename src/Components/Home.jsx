@@ -37,6 +37,7 @@ import {
 } from 'react-icons/fa';
 import Rating from './Rating';
 import Location from './Location';
+import AIStackCards from './AIStackCards';
 
 const data = [
     {
@@ -111,6 +112,16 @@ const stats = [
 export default function Home() {
 
     const [active, setActive] = useState(0);
+    const cardRefs = useRef([]);
+    const [cardHeight, setCardHeight] = useState(0);
+
+    React.useEffect(() => {
+        if (cardRefs.current[active]) {
+            setCardHeight(cardRefs.current[active].offsetHeight);
+        }
+    }, [active]);
+
+
     const next = () => setActive((prev) => (prev + 1) % data.length);
     const prev = () => setActive((prev) => (prev - 1 + data.length) % data.length);
 
@@ -354,112 +365,7 @@ export default function Home() {
                     </div>
 
                     {/* Content */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                        {/* Left text */}
-                        <div className="text-gray-700 leading-relaxed">
-                            <p className="mb-6">
-                                Rapid advances in generative artificial intelligence (AI) models
-                                have reshaped how content is discovered and consumed. Traditional
-                                search engine optimization (SEO) is no longer enough to reach those
-                                looking for your products or services.
-                            </p>
-
-                            <p>
-                                Thrive is one of the{" "}
-                                <span className="text-orange-500 font-semibold">
-                                    top generative engine optimization companies
-                                </span>{" "}
-                                for AI visibility. Using our internal research and development
-                                (R&D) department, we’ve been testing and perfecting AI SEO
-                                strategies for large language models (LLMs).
-                            </p>
-                        </div>
-
-                        {/* Right card */}
-                        <div className="flex flex-col items-center">
-                            {/* 1. Top Navigation Icons */}
-                            <div className="mb-10 flex gap-4">
-                                {data.map((iconItem, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => setActive(i)}
-                                        className={`flex h-12 w-12 items-center justify-center rounded-full text-xl transition-all duration-300
-          ${active === i
-                                                ? `${iconItem.color} scale-110 text-white shadow-lg ring-4 ring-white`
-                                                : "bg-gray-100 text-gray-400 hover:bg-gray-200"
-                                            }`}
-                                    >
-                                        {iconItem.icon}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* 2. Main Row: Cards + Arrows */}
-                            <div className="flex w-full max-w-2xl items-start justify-center gap-8">
-
-                                {/* Card Stack Wrapper - Fixed height prevents layout collapse */}
-                                <div className="relative h-[220px] w-full flex-1">
-                                    {data.map((item, index) => {
-                                        const offset = index - active;
-                                        // Only show the active card and the next 2 in the stack
-                                        if (offset < 0 || offset > 2) return null;
-
-                                        return (
-                                            <div
-                                                key={index}
-                                                style={{
-                                                    transform: `translateY(${offset * 12}px) scale(${1 - offset * 0.04})`,
-                                                    zIndex: 10 - offset,
-                                                }}
-                                                className={`absolute top-0 left-0 w-full transition-all duration-500 ease-out
-              ${offset === 0 ? "opacity-100" : "opacity-40"}
-            `}
-                                            >
-                                                {/* Gradient Border Card */}
-                                                <div className="rounded-3xl bg-gradient-to-br from-orange-400 via-pink-500 to-blue-500 p-[2px] shadow-xl">
-                                                    <div className="rounded-[22px] bg-white p-8">
-                                                        <div className="mb-4 flex items-center gap-4">
-                                                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 shadow-sm">
-                                                                {item.icon}
-                                                            </div>
-                                                            <h3 className="text-xl font-bold text-gray-800">
-                                                                {item.title}
-                                                            </h3>
-                                                        </div>
-
-                                                        <p className="line-clamp-3 text-base leading-relaxed text-gray-600">
-                                                            {item.desc}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-
-                                {/* 3. Vertical Controls */}
-                                <div className="flex flex-col gap-3 pt-2">
-                                    <button
-                                        onClick={prev}
-                                        disabled={active === 0}
-                                        className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md transition-all hover:bg-gray-50 disabled:opacity-30"
-                                    >
-                                        <FaChevronUp className="text-gray-600" />
-                                    </button>
-                                    <button
-                                        onClick={next}
-                                        disabled={active === data.length - 1}
-                                        className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md transition-all hover:bg-gray-50 disabled:opacity-30"
-                                    >
-                                        <FaChevronDown className="text-gray-600" />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    <AIStackCards/>
                 </div>
             </section >
             {/* Services */}
@@ -593,7 +499,7 @@ export default function Home() {
                 </div>
             </section >
             {/* Location */}
-            <Location/>
+            <Location />
         </div >
     )
 }
