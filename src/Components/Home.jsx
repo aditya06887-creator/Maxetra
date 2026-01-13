@@ -138,8 +138,6 @@ export default function Home() {
         "https://i.pravatar.cc/100?img=5",
         "https://i.pravatar.cc/100?img=6",
         "https://i.pravatar.cc/100?img=7",
-        "https://i.pravatar.cc/100?img=8",
-        "https://i.pravatar.cc/100?img=9",
     ];
 
     const testimonials = [
@@ -394,7 +392,7 @@ export default function Home() {
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="text-lg font-bold text-[#7aa93c]  border-[#7aa93c] cursor-pointer hover:text-[#658e30]">
+                                    <h3 className="text-lg font-bold text-[#001e37]  border-[#7aa93c] cursor-pointer ">
                                         {service.title}
                                     </h3>
                                 </div>

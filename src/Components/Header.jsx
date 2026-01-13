@@ -29,9 +29,6 @@ import logo from '../assets/SVG FOR Ad/final logo.png'
 import blog from '../assets/SVG FOR Ad/Blog1.png'
 import WWA from '../assets/SVG FOR Ad/Who We Are1.png'
 import linkdin from '../assets/SVG FOR Ad/linkedin.png'
-import tiktok from '../assets/SVG FOR Ad/tiktok.png'
-import twitter from '../assets/SVG FOR Ad/twitter.png'
-import whatsapp from '../assets/SVG FOR Ad/whatsapp.png'
 import call from '../assets/SVG FOR Ad/phone.png'
 
 
@@ -106,7 +103,51 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center justify-around space-x-8 font-medium text-gray-700">
-          <Link to="/about" className="hover:text-blue-600 transition text-[20px] font-bold">About</Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveSection("about")}
+            onMouseLeave={() => setActiveSection(null)}
+          >
+            <button className="flex items-center gap-1 hover:text-blue-600 transition text-[20px] font-bold">
+              About
+              <FaChevronDown
+                className={`text-xs transition-transform ${activeSection === "about" ? "rotate-180" : ""
+                  }`}
+              />
+            </button>
+
+            {activeSection === "about" && (
+              <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 z-[200]">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-4 w-[340px] h-4  hidden lg:block" />
+                <div className="w-[320px] bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                  {aboutData.map((item, i) => (
+                    <Link
+                      key={i}
+                      to={item.to}
+                      className="flex gap-3 px-5 py-4 hover:bg-gray-50 transition group"
+                    >
+                      {typeof item.icon === "string" ? (
+                        <img
+                          src={item.icon}
+                          alt={item.title}
+                          className="w-7 h-7 object-contain rounded-md"
+                        />
+                      ) : (
+                        <div className="text-xl text-gray-600">{item.icon}</div>
+                      )}
+
+                      <div>
+                        <p className="text-sm font-semibold text-gray-800 group-hover:text-blue-600">
+                          {item.title}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           <div
             className="relative h-full py-2"
             onMouseEnter={() => setServicesOpen(true)}
@@ -143,12 +184,12 @@ export default function Header() {
                         icon={social}
                         title="Social Media Management"
                         desc="Build brand presence, engagement, and trust across platforms."
-                        to="/services/seo/Social-Media" />
+                        to="/services/Social-Media" />
                       <ServiceItem
                         icon={ecom}
                         title="E-commerce"
                         desc="End-to-end solutions to scale online sales effectively."
-                        to="e-commerce"
+                        to="/services/e-commerce"
                       />
                     </div>
                     <div className="space-y-6">
@@ -163,44 +204,44 @@ export default function Header() {
                         title="Conversion Rate Optimization"
                         desc="Turn more visitors into customers with data-backed optimization.
                         "
-                        to="cro" />
+                        to="/services/cro" />
                       <ServiceItem
                         icon={graphic}
                         title="Graphic Design"
                         desc="Creative visuals that strengthen brand identity."
-                        to="graphic" />
+                        to="/service/graphic" />
                     </div>
                     <div className="space-y-6">
                       <ServiceItem
                         icon={lo_seo}
                         title="Local SEO"
                         desc="Get found by nearby customers and dominate local search results."
-                        to="local-seo"
+                        to="/services/local-seo"
                       />
                       <ServiceItem
                         icon={content}
                         title="Content Creation"
                         desc="High-quality content that attracts, engages, and converts."
-                        to="content"
+                        to="/services/content"
                       />
                       <ServiceItem
                         icon={v_prod}
                         title="Video Production"
                         desc="Professional videos designed to boost brand trust and engagement."
-                        to="video-prod" />
+                        to="/services/video-prod" />
                     </div>
                     <div className="lg:ml-auto space-y-6 ">
                       <ServiceItem
                         icon={performance}
                         title="Performance Marketing"
                         desc="ROI-focused campaigns designed for leads, sales, and growth."
-                        to="ui-ux"
+                        to="/services/performance"
                       />
                       <ServiceItem
                         icon={wdev}
                         title="Web Development"
                         desc="Fast, secure, and conversion-focused websites."
-                        to="webd"
+                        to="/services/webd"
                       />
                       <ServiceItem
                         icon={email}
@@ -220,17 +261,14 @@ export default function Header() {
                       <div className="w-full border-t border-gray-700 my-2" />
                       {/* Social */}
                       <div className="flex justify-center items-center gap-2 ">
-                        <Link to={linkdin} className="w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer text-blue-700">
-                          <img src={whatsapp} alt="" />
-                        </Link>
                         <div className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"><FaTiktok /></div>
                         <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer"><FaInstagram /></div>
-                        <Link to="" className="bg-black w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
-                          <img src={twitter} alt="" />
-                        </Link>
-                        <Link to="" className=" w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
-                          <img src={linkdin} alt="" />
-                        </Link>
+                        <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
+                          <FaXTwitter />
+                        </div>
+                        <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
+                          <FaLinkedinIn />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -286,19 +324,19 @@ export default function Header() {
 
           <Link to="/contact" className="hover:text-blue-600 transition text-[20px] font-bold">Contact Us</Link>
           <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center">
-            <img src={call} alt="phone" className="w-5 h-5"/>
+            <img src={call} alt="phone" className="w-5 h-5" />
             <p>
-            +918978522677
+              +918978522677
             </p>
           </Link>
         </nav>
 
         {/* Mobile Toggle Button */}
         <div className="md:hidden flex">
-        <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center mx-8">
-            <img src={call} alt="phone" className="w-5 h-5"/>
+          <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center mx-8">
+            <img src={call} alt="phone" className="w-5 h-5" />
           </Link>
-        <button onClick={() => setMobileOpen(true)} className="text-2xl p-2">☰</button>
+          <button onClick={() => setMobileOpen(true)} className="text-2xl p-2">☰</button>
         </div>
       </div>
 

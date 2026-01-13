@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaEnvelope,
   FaArrowRight,
@@ -9,26 +10,27 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { IoIosCall } from "react-icons/io";
 
 export default function Footer() {
   const links = [
-    { label: "Terms of Service", href: "#" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Security", href: "#" },
-    { label: "Website Terms of Use", href: "#" },
-    { label: "Cookie Settings", href: "#" },
-    { label: "Accessibility", href: "#" },
+    { label: "Terms of Service", link:"/term" },
+    { label: "Privacy Policy", link:"/privacy" },
+    { label: "Cookie Settings", link:"/cookie" },
   ];
 
   return (
     <footer className="bg-[#001e37] text-white">
       <div className="max-w-7xl mx-auto px-6 py-14">
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+        {/* CHANGED: 
+            - grid-cols-2 (Mobile: 2 columns to keep services/resources side-by-side)
+            - lg:grid-cols-5 (Desktop: 5 columns)
+        */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-12">
 
-          {/* Brand & Contact */}
-          <div className="space-y-6">
+          {/* Brand & Contact - col-span-2 makes it full width on mobile */}
+          <div className="space-y-6 col-span-2 lg:col-span-1">
             <h2 className="text-3xl font-bold">
               Maxetra<span className="text-red-500">.</span>
             </h2>
@@ -44,14 +46,15 @@ export default function Footer() {
                 Seattle@maxetra.com
               </p>
 
-              <p className="text-lg text-white font-semibold">
+              <p className="flex gap-3">
+                <IoIosCall className="mt-1 text-lg shrink-0 text-gray-500" />
                 +1 664 679 4564
               </p>
             </div>
           </div>
 
-          {/* Services */}
-          <div className="mx-auto">
+          {/* Services - Takes 1 column on mobile */}
+          <div className="col-span-1">
             <h4 className="font-semibold mb-5 uppercase tracking-wider text-sm">
               Services
             </h4>
@@ -64,22 +67,22 @@ export default function Footer() {
                 "Video Production",
                 "UI / UX",
               ].map((item, i) => (
-                <li key={i} className="hover:text-white cursor-pointer">
+                <li key={i} className="hover:text-white cursor-pointer transition-colors">
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Resources */}
-          <div className="mx-auto">
+          {/* Resources - Takes 1 column on mobile, staying aligned with Services */}
+          <div className="col-span-1">
             <h4 className="font-semibold mb-5 uppercase tracking-wider text-sm">
               Resources
             </h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               {["Case Study", "Our Blogs", "Careers", "Gift Cards"].map(
                 (item, i) => (
-                  <li key={i} className="hover:text-white cursor-pointer">
+                  <li key={i} className="hover:text-white cursor-pointer transition-colors">
                     {item}
                   </li>
                 )
@@ -87,8 +90,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div className="lg:col-span-2">
+          {/* Newsletter - col-span-2 makes it full width on mobile */}
+          <div className="col-span-2 lg:col-span-2">
             <h4 className="font-semibold mb-5 text-lg">
               Let’s keep in touch
             </h4>
@@ -97,7 +100,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full bg-transparent border border-gray-600 rounded-md py-3 px-4 pr-12 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-white"
+                className="w-full bg-transparent border border-gray-600 rounded-md py-3 px-4 pr-12 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-white transition-all"
               />
               <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white">
                 <FaArrowRight />
@@ -122,16 +125,19 @@ export default function Footer() {
       {/* Bottom Links */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6">
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-gray-400">
-            {links.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="hover:text-white transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="flex flex-wrap justify-center sm:justify-between items-center gap-x-6 gap-y-3 text-sm text-gray-400">
+            <div className="flex gap-6">
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.link}
+                  className="hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <p>© 2024 Maxetra. All rights reserved.</p>
           </nav>
         </div>
       </div>
@@ -139,10 +145,9 @@ export default function Footer() {
   );
 }
 
-/* Social Icon Wrapper */
 const Social = ({ children, bg }) => (
   <div
-    className={`${bg} w-9 h-9 rounded-md flex items-center justify-center cursor-pointer hover:opacity-80`}
+    className={`${bg} w-9 h-9 rounded-md flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity`}
   >
     {children}
   </div>
