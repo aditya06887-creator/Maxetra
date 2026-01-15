@@ -9,6 +9,7 @@ import {
     FiAward
 } from "react-icons/fi";
 import Proposal from "./Proposal";
+import Location from "./Location"
 
 
 const trustData = [
@@ -101,7 +102,7 @@ export default function Contact() {
     return (
         <div className="">
             <section className="bg-[#6f8437] py-12 px-4">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div className="max-auto mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <Proposal />
                     {/* RIGHT CONTENT */}
                     <div className=" text-white sm:flex sm:flex-col justify-center hidden sm:visible">
@@ -130,51 +131,6 @@ export default function Contact() {
                     </div>
                 </div>
             </section>
-            <section className="max-w-7xl mx-auto px-6 py-8">
-
-                {/* Section Title */}
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-10">
-                    Office Headquarters
-                </h2>
-
-                {/* Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {offices.map((office, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 transition-shadow hover:shadow-md"
-                        >
-
-                            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                                {office.city}
-                            </h3>
-
-                            <div className="text-gray-700 space-y-1 mb-6">
-                                {office.address.map((line, i) => (
-                                    <p key={i}>{line}</p>
-                                ))}
-                            </div>
-
-                            <div className="space-y-3">
-                                <a
-                                    href="#"
-                                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition"
-                                >
-                                    Get Directions <FiArrowRight />
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition"
-                                >
-                                    View Services <FiArrowRight />
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-            </section>
             <section className="bg-white py-16">
                 <div className="max-w-7xl mx-auto px-4 text-center">
 
@@ -193,7 +149,7 @@ export default function Contact() {
                         {trustData.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-emerald-300 transition duration-300"
+                                className="bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-gray-300 transition duration-300"
                             >
                                 <div className="text-blue-500 text-3xl mb-4">
                                     {item.icon}
@@ -229,7 +185,7 @@ export default function Contact() {
                         {testimonials.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-[#f2f8fa] p-8 md:p-10 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:shadow-green-300 transition-shadow duration-300"
+                                className="bg-[#f2f8fa] p-8 md:p-10 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:shadow-gray-300 transition-shadow duration-300"
                             >
                                 {/* Blue Quote Icon */}
                                 <div className="text-[#0d47a1] text-4xl mb-6">
@@ -257,6 +213,7 @@ export default function Contact() {
                     </div>
                 </div>
             </section>
+            <Location/>
         </div>
     );
 }

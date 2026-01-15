@@ -12,7 +12,7 @@ import DigitalLanding from "./Components/Services/DigitalLanding"
 import ScrollToTop from "./Components/ScrollToTop";
 import Privacy from "./Components/Footer/Privacy";
 import Term from "./Components/Footer/Term";
-import Cookie from "./Components/Footer/Cookie";
+import About from "./Components/About";
 
 function App() {
   return (
@@ -24,18 +24,16 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Parent Route */}
-        <Route path="services" element={<Digital />}>
+        <Route path="digital-marketing" element={<Digital />}>
           <Route index element={<DigitalLanding />} />
           <Route path="seo" element={<SEO />} />
-          <Route path="digi-marketing" element={<DigitalLanding />} />
         </Route>
-
+        <Route path="/who-we-are" element={<About/>} />
         <Route path="/case-study" element={<CaseStudy />} />
         <Route path="/success" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/term" element={<Term/>} />
-        <Route path="/cookie" element={<Cookie/>} />
       </Routes>
 
       <Footer />

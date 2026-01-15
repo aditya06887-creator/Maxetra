@@ -8,12 +8,12 @@ export default function Proposal() {
   const [errorCode, setErrorCode] = useState(null);
 
   return (
-    <section className="bg-[#6f8437] py-12 px-4">
+    <section className="">
 
 
         {/* LEFT FORM */}
-        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-lg">
-          <h2 className="text-3xl font-bold text-[#6f8437]">
+        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border-2">
+          <h2 className="text-3xl font-bold text-orange-500">
             Experience Real Results
           </h2>
           <p className="text-gray-600 mb-6">
@@ -103,8 +103,8 @@ export default function Proposal() {
               disabled={!isValid}
               className={`w-full font-semibold py-3 rounded-full transition ${
                 isValid
-                  ? "bg-orange-500 hover:bg-orange-600 text-white"
-                  : "bg-gray-300 cursor-not-allowed"
+                ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-orange-500 hover:bg-orange-600 text-white"
               }`}
             >
               SEND MY FREE PROPOSAL

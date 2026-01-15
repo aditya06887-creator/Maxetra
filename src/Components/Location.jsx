@@ -26,7 +26,7 @@ const locations = [
     {
         id: 3,
         name: "SIN",
-        sub: "Changi.",
+        sub: "Singapore",
         email: "Sin@maxetra.com",
         phone: "+6585256752",
         // Replace this URL with your actual image link
@@ -65,7 +65,7 @@ export default function Location() {
                             { loc.name }
                             </p>
                     {/* Bottom sliding up */}
-                    <p className="text-5xl md:text-6xl font-normal absolute top-0 left-0 transition-all duration-500 ease-in-out transform -translate-y-[120%] group-hover:translate-y-0 opacity-0 group-hover:opacity-100 text-neutral-200">
+                    <p className="text-4xl lg:text-5xl md:text-6xl font-normal absolute top-0 left-0 transition-all duration-500 ease-in-out transform -translate-y-[120%] group-hover:translate-y-0 opacity-0 group-hover:opacity-100 text-neutral-200">
                         {loc.sub}
                     </p>
                 </div>

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // React Icons for the mobile section
 import {
-  FaYoutube, FaInstagram, FaTiktok, FaLinkedinIn,
+  FaInstagram, FaTiktok, FaLinkedinIn,
   FaChevronDown, FaXmark, FaXTwitter, FaWhatsapp
 } from "react-icons/fa6";
 import {
   MdWorkOutline
 } from "react-icons/md";
+import { FaFacebookSquare } from "react-icons/fa";
 
 import casestudy from '../assets/SVG FOR Ad/Case Study1.png'
 import testi from '../assets/SVG FOR Ad/Client Testimonial1.png'
@@ -26,14 +27,15 @@ import performance from '../assets/SVG FOR Ad/Performance Marketing1.png'
 import wdev from '../assets/SVG FOR Ad/WebD.png'
 import callG from '../assets/SVG FOR Ad/Call_Girl.jpeg'
 import logo from '../assets/SVG FOR Ad/final logo.png'
+import logo_w from '../assets/SVG FOR Ad/logo_white.webp'
 import blog from '../assets/SVG FOR Ad/Blog1.png'
 import WWA from '../assets/SVG FOR Ad/Who We Are1.png'
-import linkdin from '../assets/SVG FOR Ad/linkedin.png'
 import call from '../assets/SVG FOR Ad/phone.png'
+import Team from '../assets/SVG FOR Ad/Team1.png'
+import { FaFacebook } from "react-icons/fa";
 
 
 export default function Header() {
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
 
@@ -69,16 +71,16 @@ export default function Header() {
   // --- CONTENT MAPPING FOR MOBILE ---
 
   const servicesData = [
-    { title: "Digital Marketing", icon: digim, to: "/services/digi-marketing" },
-    { title: "SEO", icon: seo, to: "/services/seo" },
-    { title: "Local SEO", icon: lo_seo, to: "/services/local-seo" },
-    { title: "Performance Marketing", icon: performance, to: "/services/performance" },
-    { title: "CRO Services", icon: cro, to: "/services/cro" },
-    { title: "Content Creation", icon: content, to: "/services/content" },
-    { title: "Web Development", icon: wdev, to: "/services/webd" },
-    { title: "E-commerce", icon: ecom, to: "/services/e-com" },
-    { title: "E-mail & SMS Marketing", icon: email, to: "/services/email-sms" },
-    { title: "Social Media", icon: social, to: "/services/social-media" }
+    { title: "Digital Marketing", icon: digim, to: "/digital-marketing" },
+    { title: "SEO", icon: seo, to: "/digital-marketing/seo" },
+    { title: "Local SEO", icon: lo_seo, to: "/digital-marketing/local-seo" },
+    { title: "Performance Marketing", icon: performance, to: "/digital-marketing/performance" },
+    { title: "CRO Services", icon: cro, to: "/digital-marketing/cro" },
+    { title: "Content Creation", icon: content, to: "/digital-marketing/content" },
+    { title: "Web Development", icon: wdev, to: "/digital-marketing/webd" },
+    { title: "E-commerce", icon: ecom, to: "/digital-marketing/e-com" },
+    { title: "E-mail & SMS Marketing", icon: email, to: "/digital-marketing/email-sms" },
+    { title: "Social Media", icon: social, to: "/digital-marketing/social-media" }
   ];
 
 
@@ -89,9 +91,9 @@ export default function Header() {
   ];
 
   const aboutData = [
-    { title: "Who We Are", icon: WWA, to: "/services/we-are" },
-    { title: "Our Blog", icon: blog, to: "/services/blog" },
-    { title: "Careers", icon: <MdWorkOutline />, to: "/services/career" },
+    { title: "Who We Are", icon: WWA, to: "/who-we-are", desc: "A results-focused team delivering high-impact digital solutions." },
+    { title: "Our Blog", icon: blog, to: "/blog", desc: "Insights, trends, and strategies that drive smarter marketing." },
+    { title: "Our Team", icon: Team, to: "/Team", desc: "Experienced professionals powering your brand’s success." },
   ];
 
   return (
@@ -99,76 +101,25 @@ export default function Header() {
       {/* Top Bar (Desktop) - Unchanged */}
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/" className="font-black cursor-pointer">
-          <img src={logo} alt="Maxetra" className="w-[30vw] sm:w-[15vw] h-auto " />
+          <img src={logo} alt="Maxetra" className="w-[42vw] sm:w-[13vw] h-auto " />
         </Link>
 
         <nav className="hidden md:flex items-center justify-around space-x-8 font-medium text-gray-700">
-          <div
-            className="relative"
-            onMouseEnter={() => setActiveSection("about")}
-            onMouseLeave={() => setActiveSection(null)}
-          >
-            <button className="flex items-center gap-1 hover:text-blue-600 transition text-[20px] font-bold">
-              About
-              <FaChevronDown
-                className={`text-xs transition-transform ${activeSection === "about" ? "rotate-180" : ""
-                  }`}
-              />
-            </button>
-
-            {activeSection === "about" && (
-              <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 z-[200]">
-                <div className="absolute left-1/2 -translate-x-1/2 -top-4 w-[340px] h-4  hidden lg:block" />
-                <div className="w-[320px] bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
-                  {aboutData.map((item, i) => (
-                    <Link
-                      key={i}
-                      to={item.to}
-                      className="flex gap-3 px-5 py-4 hover:bg-gray-50 transition group"
-                    >
-                      {typeof item.icon === "string" ? (
-                        <img
-                          src={item.icon}
-                          alt={item.title}
-                          className="w-7 h-7 object-contain rounded-md"
-                        />
-                      ) : (
-                        <div className="text-xl text-gray-600">{item.icon}</div>
-                      )}
-
-                      <div>
-                        <p className="text-sm font-semibold text-gray-800 group-hover:text-blue-600">
-                          {item.title}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
 
           <div
             className="relative h-full py-2"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => {
-              setServicesOpen(false);
-              setActiveSection(null);
-            }}
+            onMouseEnter={() => setActiveSection("service")}
+            onMouseLeave={() => setActiveSection(null)}
           >
-            <Link to="/services" className="text-[20px] font-bold flex items-center gap-1 hover:text-blue-600 focus:outline-none cursor-pointer h-full">
+            <Link to="/digital-marketing" className="text-[20px] font-bold flex items-center gap-1 text-[#001e37] hover:text-blue-600 focus:outline-none cursor-pointer h-full">
               Services
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <FaChevronDown
+                className={`text-lg transition-transform ${activeSection === "service" ? "rotate-180" : ""
+                  }`}
+              />
             </Link>
 
-            {servicesOpen && (
+            {activeSection === "service" && (
               <div className="fixed left-0 top-[60px] w-screen z-[100] animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 bg-white rotate-45 border-t border-l border-gray-100 hidden lg:block" />
                 <div className="bg-white shadow-2xl border-t border border-gray-100 overflow-hidden">
@@ -178,18 +129,18 @@ export default function Header() {
                         icon={digim}
                         title="Digital Marketing"
                         desc="Data-driven strategies to grow traffic, leads, and revenue."
-                        to="services/digi-marketing"
+                        to="/digital-marketing"
                       />
                       <ServiceItem
                         icon={social}
                         title="Social Media Management"
                         desc="Build brand presence, engagement, and trust across platforms."
-                        to="/services/Social-Media" />
+                        to="/digital-marketing/Social-Media" />
                       <ServiceItem
                         icon={ecom}
                         title="E-commerce"
                         desc="End-to-end solutions to scale online sales effectively."
-                        to="/services/e-commerce"
+                        to="/digital-marketing/e-commerce"
                       />
                     </div>
                     <div className="space-y-6">
@@ -197,63 +148,63 @@ export default function Header() {
                         icon={seo}
                         title="SEO"
                         desc="Improve rankings, visibility, and long-term organic growth."
-                        to="/services/seo"
+                        to="/digital-marketing/seo"
                       />
                       <ServiceItem
                         icon={cro}
                         title="Conversion Rate Optimization"
                         desc="Turn more visitors into customers with data-backed optimization.
                         "
-                        to="/services/cro" />
+                        to="/digital-marketing/cro" />
                       <ServiceItem
                         icon={graphic}
                         title="Graphic Design"
                         desc="Creative visuals that strengthen brand identity."
-                        to="/service/graphic" />
+                        to="/digital-marketing/graphic" />
                     </div>
                     <div className="space-y-6">
                       <ServiceItem
                         icon={lo_seo}
                         title="Local SEO"
                         desc="Get found by nearby customers and dominate local search results."
-                        to="/services/local-seo"
+                        to="/digital-marketing/local-seo"
                       />
                       <ServiceItem
                         icon={content}
                         title="Content Creation"
                         desc="High-quality content that attracts, engages, and converts."
-                        to="/services/content"
+                        to="/digital-marketing/content"
                       />
                       <ServiceItem
                         icon={v_prod}
                         title="Video Production"
                         desc="Professional videos designed to boost brand trust and engagement."
-                        to="/services/video-prod" />
+                        to="/digital-marketing/video-prod" />
                     </div>
                     <div className="lg:ml-auto space-y-6 ">
                       <ServiceItem
                         icon={performance}
                         title="Performance Marketing"
                         desc="ROI-focused campaigns designed for leads, sales, and growth."
-                        to="/services/performance"
+                        to="/digital-marketing/performance"
                       />
                       <ServiceItem
                         icon={wdev}
                         title="Web Development"
                         desc="Fast, secure, and conversion-focused websites."
-                        to="/services/webd"
+                        to="/digital-marketing/webd"
                       />
                       <ServiceItem
                         icon={email}
                         title="Email & SMS Marketing"
                         desc="Automated campaigns that nurture leads and drive repeat sales."
-                        to="services/email&sms" />
+                        to="services/email-sms" />
                     </div>
                     <div className="bg-[#001e37] rounded-xl p-4 mx-5 lg:mx-3 text-center text-white flex flex-col items-center self-start lg:sticky lg:top-0 w-50">
                       <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-3" />
                       <h4 className="font-bold text-base">Merve Candan</h4>
                       <p className="text-xs text-gray-400 mb-4">Marketing Head</p>
-                      <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="w-full bg-orange-500 text-white font-bold py-2.5 rounded-lg hover:bg-orange-700 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
+                      <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="w-full bg-orange-500 text-white py-2.5 rounded-lg hover:bg-orange-700 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
                       <p className="text-[10px] text-gray-400 my-2 italic">Get a Free Consultation</p>
                       <div className="flex items-center text-green-400 text-sm font-semibold gap-2 cursor-pointer hover:opacity-80">
                         <WhatsAppIcon /> WhatsApp
@@ -261,14 +212,51 @@ export default function Header() {
                       <div className="w-full border-t border-gray-700 my-2" />
                       {/* Social */}
                       <div className="flex justify-center items-center gap-2 ">
-                        <div className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"><FaTiktok /></div>
-                        <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer"><FaInstagram /></div>
-                        <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
+                        <Link
+                          to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                        >
+                          <FaFacebookSquare />
+                        </Link>
+
+                        <Link
+                          to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                        >
+                          <FaTiktok />
+                        </Link>
+
+                        <Link
+                          to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                        >
+                          <FaInstagram />
+                        </Link>
+
+                        <Link
+                          to={{ pathname: "https://www.x.com/Maxetraofficial/" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                        >
                           <FaXTwitter />
-                        </div>
-                        <div className="bg-white text-[#001e37] w-5 h-5 rounded-sm flex items-center justify-center cursor-pointer">
+                        </Link>
+
+                        <Link
+                          to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                        >
                           <FaLinkedinIn />
-                        </div>
+                        </Link>
+
                       </div>
                     </div>
                   </div>
@@ -281,10 +269,10 @@ export default function Header() {
             onMouseEnter={() => setActiveSection("success")}
             onMouseLeave={() => setActiveSection(null)}
           >
-            <button className="flex items-center gap-1 hover:text-blue-600 transition text-[20px] font-bold">
+            <button className="flex items-center text-[#001e37] gap-1 hover:text-blue-600 transition text-[20px] font-bold">
               Success
               <FaChevronDown
-                className={`text-xs transition-transform ${activeSection === "success" ? "rotate-180" : ""
+                className={`text-lg transition-transform ${activeSection === "success" ? "rotate-180" : ""
                   }`}
               />
             </button>
@@ -306,7 +294,7 @@ export default function Header() {
                       />
 
                       <div>
-                        <p className="text-sm font-semibold text-gray-800 group-hover:text-blue-600">
+                        <p className="font-bold text-[15px] text-gray-800 group-hover:text-blue-600">
                           {item.label}
                         </p>
                         <p className="text-xs text-gray-500 leading-snug">
@@ -321,8 +309,55 @@ export default function Header() {
 
 
           </div>
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveSection("about")}
+            onMouseLeave={() => setActiveSection(null)}
+          >
+            <Link to="/who-we-are" className="flex items-center text-[#001e37] gap-1 hover:text-blue-600 transition text-[20px] font-bold cursor-pointer">
+              About
+              <FaChevronDown
+                className={`text-lg transition-transform ${activeSection === "about" ? "rotate-180" : ""
+                  }`}
+              />
+            </Link>
 
-          <Link to="/contact" className="hover:text-blue-600 transition text-[20px] font-bold">Contact Us</Link>
+            {activeSection === "about" && (
+              <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 z-[200]">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-4 w-[440px] h-4  hidden lg:block" />
+                <div className="w-[440px] bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                  {aboutData.map((item, i) => (
+                    <Link
+                      key={i}
+                      to={item.to}
+                      className="flex gap-3 px-5 py-4 hover:bg-gray-50 transition group"
+                    >
+                      {typeof item.icon === "string" ? (
+                        <img
+                          src={item.icon}
+                          alt={item.title}
+                          className="w-7 h-7 object-contain rounded-md"
+                        />
+                      ) : (
+                        <div className="text-xl text-gray-600">{item.icon}</div>
+                      )}
+
+                      <div>
+                        <p className="font-bold text-[15px] text-gray-800 group-hover:text-blue-600">
+                          {item.title}
+                        </p>
+                        <p className="text-xs text-gray-500 leading-snug">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link to="/contact" className="text-[#001e37] hover:text-blue-600 transition text-[20px] font-bold">Contact Us</Link>
           <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center">
             <img src={call} alt="phone" className="w-5 h-5" />
             <p>
@@ -333,10 +368,10 @@ export default function Header() {
 
         {/* Mobile Toggle Button */}
         <div className="md:hidden flex">
-          <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center mx-8">
+          <Link to="/contact" className="bg-orange-500 text-white px-4 py-1 rounded-lg font-bold cursor-pointer flex items-center mx-6">
             <img src={call} alt="phone" className="w-5 h-5" />
           </Link>
-          <button onClick={() => setMobileOpen(true)} className="text-2xl p-2">☰</button>
+          <button onClick={() => setMobileOpen(true)} className="text-3xl p-2 font-bold">☰</button>
         </div>
       </div>
 
@@ -345,42 +380,46 @@ export default function Header() {
         <div className="fixed inset-y-0 left-0 right-10 sm:right-90 bg-white z-[200] flex flex-col overflow-y-auto overflow-x-auto animate-in slide-in-from-right duration-300">
 
 
-          <div className="bg-[#004a80] p-6 pt-12 text-white relative text-center">
+          <div className="bg-[#001e37] p-6 pt-12 text-white relative text-center">
             <button onClick={() => setMobileOpen(false)} className="absolute top-4 right-4 text-2xl">
               <FaXmark />
             </button>
+            <Link to="/" className="font-black cursor-pointer">
+              <img src={logo_w} alt="Maxetra" className="w-[30vw] h-auto " />
+            </Link>
             <p className="text-sm font-medium leading-snug px-2 mt-4">
-              Welcome to our official website, where we deliver unparalleled insights into the ever-evolving world of search engine optimization and other services.
+              Maxetra is a growth-focused digital marketing agency delivering real res
             </p>
           </div>
 
-          <div className="flex-grow divide-y divide-gray-100">
-            {/* 1. Services Accordion */}
-            <div className="w-full">
+          <div className="flex-grow divide-x-2 divide-y-4 divide-gray-300">
+
+            {/* ================= SERVICES ================= */}
+            <div>
               <button
-                onClick={() => toggleSection('services')}
-                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold"
+                onClick={() => toggleSection("services")}
+                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm"
               >
-                <div className="flex items-center gap-3 uppercase tracking-wide text-sm">
+                <span className="uppercase tracking-wide ">
                   Services
-                  <FaChevronDown className={`text-[10px] transition-transform ${activeSection === 'services' ? 'rotate-180' : ''}`} />
-                </div>
+                </span>
+
+                <FaChevronDown
+                  className={`transition-transform ${activeSection === "services" ? "rotate-180" : ""
+                    }`}
+                />
               </button>
-              {activeSection === 'services' && (
-                <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
+
+              {activeSection === "services" && (
+                <div className="bg-gray-50 px-10 py-4 flex flex-col gap-4">
                   {servicesData.map((item, idx) => (
                     <Link
+                      key={idx}
                       to={item.to}
                       onClick={() => setMobileOpen(false)}
-                      key={idx}
                       className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
                     >
-
-                      <img
-                        src={item.icon}
-                        alt={item.title}
-                        className="w-5 h-5 object-contain rounded-[5px]"
-                      />
+                      <img src={item.icon} alt={item.title} className="w-5 h-5 rounded" />
                       {item.title}
                     </Link>
                   ))}
@@ -388,27 +427,31 @@ export default function Header() {
               )}
             </div>
 
-            {/* 2. Creative Services Accordion */}
-            <div className="w-full">
+            {/* ================= CREATIVE SERVICES ================= */}
+            <div>
               <button
-                onClick={() => toggleSection('creative')}
-                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold"
+                onClick={() => toggleSection("creative")}
+                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm"
               >
-                <div className="flex items-center gap-3 uppercase tracking-wide text-sm">
+                <span className="uppercase tracking-wide text-sm">
                   Creative Services
-                  <FaChevronDown className={`text-[10px] transition-transform ${activeSection === 'creative' ? 'rotate-180' : ''}`} />
-                </div>
+                </span>
+
+                <FaChevronDown
+                  className={`transition-transform ${activeSection === "creative" ? "rotate-180" : ""
+                    }`}
+                />
               </button>
-              {activeSection === 'creative' && (
-                <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
+
+              {activeSection === "creative" && (
+                <div className="bg-gray-50 px-10 py-4 flex flex-col gap-4">
                   {creativeServicesData.map((item, idx) => (
-                    <Link to={item.to} key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                      <img
-                        src={item.icon}
-                        alt={item.title}
-                        className="w-5 h-5 object-contain rounded-[5px]"
-                      />
-
+                    <Link
+                      key={idx}
+                      to={item.to}
+                      className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
+                    >
+                      <img src={item.icon} alt={item.title} className="w-5 h-5 rounded" />
                       {item.title}
                     </Link>
                   ))}
@@ -416,27 +459,31 @@ export default function Header() {
               )}
             </div>
 
-            {/* 3. About Accordion */}
-            <div className="w-full">
+            {/* ================= ABOUT ================= */}
+            <div>
               <button
-                onClick={() => toggleSection('about')}
-                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold"
+                onClick={() => toggleSection("about")}
+                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm"
               >
-                <div className="flex items-center gap-3 uppercase tracking-wide text-sm">
+                <span className="uppercase tracking-wide ">
                   About
-                  <FaChevronDown className={`text-[10px] transition-transform ${activeSection === 'about' ? 'rotate-180' : ''}`} />
-                </div>
-              </button>
-              {activeSection === 'about' && (
-                <div className="bg-gray-50 px-10 py-4 grid grid-cols-1 gap-4">
-                  {aboutData.map((item, idx) => (
-                    <Link to={item.to} key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                      <img
-                        src={item.icon}
-                        alt={item.title}
-                        className="w-5 h-5 object-contain rounded-[5px]"
-                      />
+                </span>
 
+                <FaChevronDown
+                  className={`transition-transform ${activeSection === "about" ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+
+              {activeSection === "about" && (
+                <div className="bg-gray-50 px-10 py-4 flex flex-col gap-4">
+                  {aboutData.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.to}
+                      className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
+                    >
+                      <img src={item.icon} alt={item.title} className="w-5 h-5 rounded" />
                       {item.title}
                     </Link>
                   ))}
@@ -444,82 +491,133 @@ export default function Header() {
               )}
             </div>
 
-            {/* 4. Case Study (Standalone) */}
-            <button to="" className="w-full flex items-center justify-between  text-gray-700 font-semibold border-b border-gray-100">
-              <div className="w-full">
-                <button
-                  onClick={() => toggleSection("success")}
-                  className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold"
-                >
-                  <div className="flex items-center gap-3 uppercase tracking-wide text-sm">
-                    Success
-                    <FaChevronDown
-                      className={`text-[10px] transition-transform ${activeSection === "success" ? "rotate-180" : ""
-                        }`}
-                    />
-                  </div>
-                </button>
+            {/* ================= SUCCESS ================= */}
+            <div>
+              <button
+                onClick={() => toggleSection("success")}
+                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm"
+              >
+                <span className="uppercase tracking-wide ">
+                  Success
+                </span>
 
-                {activeSection === "success" && (
-                  <div className="bg-gray-50 px-10 py-4 flex flex-col gap-3">
-                    {successLinks.map((item, i) => (
-                      <Link to={item.to} key={i} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                        <img
-                          src={item.icon}
-                          alt={item.label}
-                          className="w-5 h-5 object-contain rounded-[5px]"
-                        />
+                <FaChevronDown
+                  className={`transition-transform ${activeSection === "success" ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
 
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {activeSection === "success" && (
+                <div className="bg-gray-50 px-10 py-4 flex flex-col gap-4">
+                  {successLinks.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.to}
+                      className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
+                    >
+                      <img src={item.icon} alt={item.label} className="w-5 h-5 rounded" />
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-            </button>
-            <button to="" className="w-full  text-gray-700 font-semibold border-b border-gray-100">
-              <div className="w-full">
-                <Link to="/contact"
-                  className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold"
-                >
-                  <div className="uppercase tracking-wide text-sm">
-                    Contact Us
-                  </div>
-                </Link>
+            {/* ================= CONTACT US ================= */}
+            <div>
+              <Link
+                to="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm border-b-4 border-r-2 border-gray-300"
+              >
+                <span className="uppercase tracking-wide">
+                  Contact Us
+                </span>
+              </Link>
+            </div>
 
-              </div>
-
-            </button>
           </div>
 
 
-          {/* 5. Contact Us Button */}
+
+          {/* 5.  Schedule a Meeting */}
           <button
             onClick={() => openNewTab('https://calendly.com/growixa/30min')}
-            className="w-11/12 flex items-center justify-center bg-[#fd4f4e] py-6 rounded-lg mx-auto font-bold text-white shadow-md transition active:scale-95"
+            className="w-6/12 flex items-center justify-center bg-[#fd4f4e] py-4 rounded-lg my-8 mx-auto  text-white shadow-md transition active:scale-95 "
           >
             Schedule a Meeting
           </button>
 
-
+          <div className="w-full border-t text-[11px] border-gray-400 my-2" />
 
           {/* Social Icons */}
           <div className="flex justify-center items-center gap-4 py-6">
-            <div className="bg-[#cd201f] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"><FaYoutube /></div>
-            <div className="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"><FaInstagram /></div>
-            <div className="bg-[#25d366] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"><FaWhatsapp /></div>
-            <div className="bg-black w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"><FaXTwitter /></div>
-            <div className="bg-[#0077b5] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"><FaLinkedinIn /></div>
+            <Link
+              to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
+            >
+              <FaInstagram />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://wa.me/XXXXXXXXXX" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
+            >
+              <FaWhatsapp />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://x.com/Maxetraofficial" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
+            >
+              <FaXTwitter />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
+            >
+              <FaLinkedinIn />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
+            >
+              <FaFacebook />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
+            >
+              <FaTiktok />
+            </Link>
           </div>
 
+
           <div className="text-center pb-8 text-[11px] text-gray-400 px-4 border-t pt-4">
-            <p>Copyright © 2024 All rights reserved.</p>
-            <p>A ClickLocal Digital Advertising LLP Product.</p>
+            <p>
+              <span>
+                &copy; {new Date().getFullYear()}
+              </span> Maxetra LLC. All Rights Reserved.</p>
           </div>
         </div>
-      )}
-    </header>
+      )
+      }
+    </header >
   );
 }
 

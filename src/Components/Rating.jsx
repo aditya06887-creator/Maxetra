@@ -22,23 +22,20 @@ const stats = [
         title: "Verified Client Reviews",
         desc: "",
     },
+];
+
+const stats2 = [
     {
         value: "100+",
-        logo: "",
         title: "Customers",
-        desc: "Fortune 100 to Startups",
     },
     {
         value: "3.2+",
-        logo: "",
         title: "Years and growing",
-        desc: "Typical customer life",
     },
     {
         value: "20+",
-        logo: "",
         title: "Countries",
-        desc: "Developers across Latin America",
     },
 ];
 
@@ -64,6 +61,22 @@ export default function (){
                                     <p className="text-sm text-gray-600 mt-1">
                                         {item.desc}
                                     </p>
+                                </div>
+                                <h2 className="text-5xl font-medium text-white flex justify-between">
+                                    {item.value}
+                                </h2>
+                            </div>
+                        ))}
+                        {stats2.map((item, index) => (
+                            <div
+                                key={index}
+                                className="bg-[#37e1c6] rounded-xl p-8 min-h-48 flex flex-col justify-between transition-all duration-300 hover:shadow-lg"
+                            >
+
+                                <div>
+                                    <h4 className="text-3xl font-semibold text-gray-900 text-bold">
+                                        {item.title}
+                                    </h4>   
                                 </div>
                                 <h2 className="text-5xl font-medium text-white flex justify-between">
                                     {item.value}

@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import {
   FaEnvelope,
   FaArrowRight,
-  FaYoutube,
+  FaWhatsapp,
   FaInstagram,
   FaTiktok,
   FaLinkedinIn,
   FaXTwitter,
+  FaFacebook,
 } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
@@ -16,11 +17,10 @@ export default function Footer() {
   const links = [
     { label: "Terms of Service", link:"/term" },
     { label: "Privacy Policy", link:"/privacy" },
-    { label: "Cookie Settings", link:"/cookie" },
   ];
 
   return (
-    <footer className="bg-[#001e37] text-white">
+    <footer className="bg-[#011730] text-white">
       <div className="max-w-7xl mx-auto px-6 py-14">
 
         {/* CHANGED: 
@@ -108,15 +108,61 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex flex-wrap gap-3">
-              <Social bg="bg-[#cd201f]"><FaYoutube /></Social>
-              <Social bg="bg-black"><FaTiktok /></Social>
-              <Social bg="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600">
-                <FaInstagram />
-              </Social>
-              <Social bg="bg-black"><FaXTwitter /></Social>
-              <Social bg="bg-[#0077b5]"><FaLinkedinIn /></Social>
-            </div>
+            <div className="flex justify-center items-center gap-4 py-6">
+            <Link
+              to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white w-10 h-10 rounded-lg flex items-center justify-center  text-xl"
+            >
+              <FaInstagram className="text-[#001e37]"/>
+            </Link>
+
+            <Link
+              to={{ pathname: "https://wa.me/XXXXXXXXXX" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white w-10 h-10 rounded-lg flex items-center justify-center  text-xl"
+            >
+              <FaWhatsapp className="text-[#001e37]"/>
+            </Link>
+
+            <Link
+              to={{ pathname: "https://x.com/Maxetraofficial" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white w-10 h-10 rounded-lg flex items-center justify-center  text-xl"
+            >
+              <FaXTwitter  className="text-[#001e37]"/>
+            </Link>
+
+            <Link
+              to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white w-10 h-10 rounded-lg flex items-center justify-center text-[#001e37] text-xl"
+            >
+              <FaLinkedinIn />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white w-10 h-10 rounded-lg flex items-center justify-center text-[#001e37] text-xl"
+            >
+              <FaFacebook />
+            </Link>
+
+            <Link
+              to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white w-10 h-10 rounded-lg flex items-center justify-center text-[#001e37] text-xl"
+            >
+              <FaTiktok />
+            </Link>
+          </div>
           </div>
 
         </div>
@@ -125,7 +171,8 @@ export default function Footer() {
       {/* Bottom Links */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6">
-          <nav className="flex flex-wrap justify-center sm:justify-between items-center gap-x-6 gap-y-3 text-sm text-gray-400">
+          <nav className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm text-gray-400">
+          <p>© 2024 Maxetra. All rights reserved.</p>
             <div className="flex gap-6">
               {links.map((link, index) => (
                 <Link
@@ -137,7 +184,6 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-            <p>© 2024 Maxetra. All rights reserved.</p>
           </nav>
         </div>
       </div>

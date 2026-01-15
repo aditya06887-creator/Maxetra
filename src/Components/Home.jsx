@@ -130,15 +130,7 @@ export default function Home() {
         window.open(url, '_blank', 'noopener,noreferrer')
     }
 
-    const team = [
-        "https://i.pravatar.cc/100?img=1",
-        "https://i.pravatar.cc/100?img=2",
-        "https://i.pravatar.cc/100?img=3",
-        "https://i.pravatar.cc/100?img=4",
-        "https://i.pravatar.cc/100?img=5",
-        "https://i.pravatar.cc/100?img=6",
-        "https://i.pravatar.cc/100?img=7",
-    ];
+    
 
     const testimonials = [
         {
@@ -340,21 +332,21 @@ export default function Home() {
 
                     {/* Stats */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
-                        <div className="rounded-xl bg-blue-700 text-white p-6 text-center">
+                        <div className="rounded-xl bg-[#001e37] text-white p-6 text-center">
                             <h3 className="text-3xl font-bold">+4,302%</h3>
                             <p className="mt-2 text-sm">
                                 AI Referral Traffic (Jan–Oct 2025)
                             </p>
                         </div>
 
-                        <div className="rounded-xl bg-teal-600 text-white p-6 text-center">
+                        <div className="rounded-xl bg-[#0d496e] text-white p-6 text-center">
                             <h3 className="text-3xl font-bold">+322%</h3>
                             <p className="mt-2 text-sm">
                                 Gemini Traffic (Jan–Oct 2025)
                             </p>
                         </div>
 
-                        <div className="rounded-xl bg-emerald-600 text-white p-6 text-center">
+                        <div className="rounded-xl bg-[#146c94] text-white p-6 text-center">
                             <h3 className="text-3xl font-bold">+862%</h3>
                             <p className="mt-2 text-sm  w-full">
                                 ChatGPT Search Traffic (Jan–Oct 2025)
@@ -367,7 +359,7 @@ export default function Home() {
                 </div>
             </section >
             {/* Services */}
-            <section section className="py-16 px-4 bg-white font-sans" >
+            <section section className="py-16 px-4 bg-gray-100 font-sans" >
                 <div className="max-w-[1200px] mx-auto">
                     {/* Header Section */}
                     <div className="text-center mb-12">
@@ -382,7 +374,7 @@ export default function Home() {
                     {/* Grid Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
-                            <div key={index} className="bg-[#f9f9f9] p-8 rounded shadow-sm hover:shadow-lg hover:shadow-amber-200 transition-shadow duration-300 flex flex-col items-start">
+                            <div key={index} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg hover:shadow-gray-200 transition-shadow duration-300 flex flex-col items-start">
 
                                 {/* Header with Icon and Title */}
                                 <div className="flex items-center mb-4 w-full">
@@ -407,14 +399,14 @@ export default function Home() {
                 </div>
             </section >
             {/* Testimonial */}
-            <section section className="bg-white py-20 px-4 font-sans" >
+            <section section className="bg-gray-100 py-20 px-4 font-sans" >
                 <div className="max-w-7xl mx-auto ">
                     {/* Section Heading */}
                     <div className="text-center mb-16 ">
                         <h2 className="text-4xl md:text-5xl font-bold text-[#1a2b3c] inline-block relative">
                             What our clients say
                             {/* Yellow accent underline */}
-                            <span className="block h-1.5 w-3/4 bg-[#ffc107] rounded-full mx-auto mt-2"></span>
+                            <span className="block h-1.5 w-3/4 bg-orange-500 rounded-full mx-auto mt-2"></span>
                         </h2>
                     </div>
 
@@ -423,10 +415,10 @@ export default function Home() {
                         {testimonials.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-[#f2f8fa] p-8 md:p-10 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:shadow-green-300 transition-shadow duration-300"
+                                className="bg-white p-8 md:p-10 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:shadow-gray-300 transition-shadow duration-300"
                             >
                                 {/* Blue Quote Icon */}
-                                <div className="text-[#0d47a1] text-4xl mb-6">
+                                <div className="text-[#001e37] text-4xl mb-6">
                                     <FaQuoteRight className="rotate-180" />
                                 </div>
 
@@ -452,7 +444,7 @@ export default function Home() {
                 </div>
             </section >
             {/* Expert */}
-            <section section className="w-full py-16 px-4" >
+            <section section className="w-full py-16 px-4 bg-white" >
                 <div className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 px-6 py-16 text-center text-white shadow-xl">
 
                     {/* Heading */}
@@ -464,34 +456,16 @@ export default function Home() {
                     <div className="flex flex-wrap justify-center items-center gap-4 mb-10">
 
                         {/* Clutch Rating */}
-                        <div className="flex items-center gap-3 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full">
-                            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center font-bold text-blue-600">
-                                C
-                            </div>
-                            <div className="text-left text-sm">
-                                <p className="font-semibold">
-                                    4.9+ <span className="text-red-400">★</span>
-                                </p>
-                                <p className="text-white/80 text-xs">rating on Clutch</p>
-                            </div>
-                        </div>
+                        
 
                         {/* Avatars */}
                         <div className="flex items-center">
-                            {team.map((img, index) => (
-                                <img
-                                    key={index}
-                                    src={img}
-                                    alt="team"
-                                    className={`w-12 h-12 rounded-full border-2 border-white object-cover ${index !== 0 ? "-ml-3" : ""
-                                        }`}
-                                />
-                            ))}
+                            
                         </div>
                     </div>
 
                     {/* Button */}
-                    <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer">
+                    <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer">
                         Schedule a Meeting
                     </button>
                 </div>

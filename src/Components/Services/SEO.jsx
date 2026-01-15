@@ -174,7 +174,7 @@ export default function SEO() {
                             return (
                                 <div
                                     key={index}
-                                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition"
+                                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="w-10 h-10 flex items-center justify-center">

@@ -19,81 +19,61 @@ import {
   FiArrowRight,
   FiChevronDown
 } from "react-icons/fi";
-import {
-  FiSearch,
-  FiMapPin,
-  FiCode,
-  FiLink,
-  FiSettings,
-  FiPenTool,
-  FiShare2,
-  FiDollarSign,
-  FiGrid,
-} from "react-icons/fi";
 
 const services = [
   {
     title: "Search Engine Optimization (SEO)",
     desc: "Our internet marketing company goes beyond surface-level SEO. We combine AI-powered automation with white-hat SEO practices to help you achieve higher organic rankings and ensure your brand remains visible in AI search results.",
     icon: seo,
-    bg: "bg-blue-50",
     iconBg: "bg-blue-100 text-blue-600",
   },
   {
     title: "Pay Per Click (PPC) Management",
     desc: "Reach high-intent audiences through data-driven PPC campaigns. We optimize ads, landing pages and A/B testing to drive qualified leads.",
     icon: ppc,
-    bg: "bg-cyan-50",
     iconBg: "bg-cyan-100 text-cyan-600",
   },
   {
     title: "Local SEO",
-    desc: "Generate more leads and sales with Thrive’s hyperlocal digital marketing services. Our automation-driven strategies boost local visibility while maintaining a human touch.",
+    desc: "Generate more leads and sales with Maxetra’s hyperlocal digital marketing services. Our automation-driven strategies boost local visibility while maintaining a human touch.",
     icon: local,
-    bg: "bg-emerald-50",
     iconBg: "bg-emerald-100 text-emerald-600",
   },
   {
     title: "Technical SEO",
     desc: "Establish a strong online foundation with technical SEO. We fix crawl errors, HTTPS issues and duplicate content to improve scalability and indexability.",
     icon: tech,
-    bg: "bg-lime-50",
     iconBg: "bg-lime-100 text-lime-600",
   },
   {
     title: "Conversion Rate Optimization (CRO)",
     desc: "Our experts utilize the latest conversion optimization techniques to increase the percentage active users. Through A/B testing and strategic redesigns, our digital marketing agency optimizes your sales funnel.",
-  icon: cro,
-  bg: "bg-sky-50",
-  iconBg: "bg-sky-100 text-sky-600",
+    icon: cro,
+    iconBg: "bg-sky-100 text-sky-600",
   },
-{
-  title: "Link Building",
+  {
+    title: "Link Building",
     desc: "Acquire steady traffic from high-authority websites. Our link-building strategies generate quality backlinks that drive trust and conversions.",
-      icon: link,
-        bg: "bg-green-50",
-          iconBg: "bg-green-100 text-green-600",
+    icon: link,
+    iconBg: "bg-green-100 text-green-600",
   },
-{
-  title: "Web Design & Development",
+  {
+    title: "Web Design & Development",
     desc: "We design mobile-ready, SEO-optimized websites with clear CTAs, simplified forms and engaging layouts that support digital campaigns.",
-      icon: webd,
-        bg: "bg-orange-50",
-          iconBg: "bg-orange-100 text-orange-600",
+    icon: webd,
+    iconBg: "bg-orange-100 text-orange-600",
   },
-{
-  title: "Graphic Design",
+  {
+    title: "Graphic Design",
     desc: "Capture your audience’s attention with professional custom designs. Our WordPress experts deliver ADA-compliant websites with ongoing maintenance.",
-      icon: graphic,
-        bg: "bg-yellow-50",
-          iconBg: "bg-yellow-100 text-yellow-600",
+    icon: graphic,
+    iconBg: "bg-yellow-100 text-yellow-600",
   },
-{
-  title: "Social Media Marketing",
+  {
+    title: "Social Media Marketing",
     desc: "Build strong brand awareness with data-driven social campaigns. We benchmark competitors and create strategies for measurable growth.",
-      icon: social,
-        bg: "bg-indigo-50",
-          iconBg: "bg-indigo-100 text-indigo-600",
+    icon: social,
+    iconBg: "bg-indigo-100 text-indigo-600",
   },
 ];
 
@@ -217,13 +197,13 @@ export default function DigitalLanding() {
 
         </div>
       </section>
-      <section className="bg-white py-10 px-4">
+      <section className="bg-gray-100 py-10 px-4">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Thrive’s Digital Marketing Services
+              Maxetra’s Digital Marketing Services
             </h2>
             <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
               Build Brand Recognition as an Industry Leader and Increase Profitability
@@ -237,13 +217,13 @@ export default function DigitalLanding() {
               return (
                 <div
                   key={index}
-                  className={`rounded-2xl p-6 ${service.bg} border border-white hover:shadow-lg transition`}
+                  className={`rounded-2xl p-6 bg-white  border- black hover:shadow-lg transition duration-300`}
                 >
                   <div
                     className={` h-10 gap-2 flex items-center mb-4`}
                   >
                     <div className="w-10 h-10 flex items-center justify-center">
-                    <img src={service.icon} className={`text-lg ${service.color}`} />
+                      <img src={service.icon} className={`text-lg ${service.color}`} />
                     </div>
                     <h3 className="font-semibold text-gray-900 ">
                       {service.title}
@@ -280,7 +260,7 @@ export default function DigitalLanding() {
               return (
                 <div
                   key={index}
-                  className="border-y-fuchsia-500 rounded-xl shadow-sm border overflow-hidden"
+                  className="border-y-[#001e37] rounded-xl shadow-sm border overflow-hidden"
                 >
                   {/* Question */}
                   <button
@@ -313,9 +293,9 @@ export default function DigitalLanding() {
 
         </div>
       </section>
+      <Consultation/>
       <Proposal />
       <Location />
-      <Consultation />
     </>
   )
 }
