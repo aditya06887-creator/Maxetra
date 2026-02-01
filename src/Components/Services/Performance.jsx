@@ -1,7 +1,6 @@
 import Consultation from "../Consultation";
 import Proposal2 from "../Proposal2";
 import Rating from "../Rating";
-import Shoot from "./Shoot";
 
 import ab from "../../assets/SVG FOR Ad/Performance/AB Testing.png";
 import display from "../../assets/SVG FOR Ad/Performance/Display_Ad.png";

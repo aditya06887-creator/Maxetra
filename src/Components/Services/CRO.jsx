@@ -11,7 +11,7 @@ import land from "../../assets/SVG FOR Ad/CRO/Landing_page.png";
 import load from "../../assets/SVG FOR Ad/CRO/Page_load.png";
 import ux from "../../assets/SVG FOR Ad/CRO/UX_Heuristic.png";
 import ppv from "../../assets/SVG FOR Ad/CRO/PPV.png";
-import lead from "../../assets/SVG FOR Ad/Content/lead.png";
+import lead from "../../assets/SVG FOR Ad/Content/Lead.png";
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
