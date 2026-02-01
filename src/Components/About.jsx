@@ -1,116 +1,105 @@
 import React from "react";
 import { FaRocket } from "react-icons/fa";
+import Location from "./Location";
+
+import about_1 from '../assets/SVG FOR Ad/General/About_1.jpeg'
 
 const openNewTab = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer')
-  }
+  window.open(url, '_blank', 'noopener,noreferrer')
+}
 
 const About = () => {
   return (
     <section className="w-full">
       {/* ===== HERO / WELCOME SECTION ===== */}
       <div className="bg-[#001e37] text-white py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          {/* Badge */}
-          <span className="inline-block mb-6 px-5 py-2 text-sm font-semibold rounded-full 
-            bg-gradient-to-r from-purple-500 to-pink-500">
-            WELCOME TO OUR BUBBLE
-          </span>
+        <div className="flex flex-col md:flex-row items-center gap-10 max-w-7xl mx-auto">
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-5xl">
-            We Are A Collective Of{" "}
-            <span className="text-purple-400">Creatives</span> Based Across The
-            Globe, Here To Help Your Brand Burst Onto The Digital Stage.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-center md:text-left max-w-5xl">
+            About Maxetra — A{"  "}
+            <span className="text-orange-500">Digital Marketing</span>{" "}
+            Agency Built for Growth.
           </h1>
 
-          {/* Description */}
-          <p className="mt-6 max-w-4xl text-gray-300 text-lg leading-relaxed">
-            Burst is home to a hive of talented creatives who put digital first.
-            We have cultivated deep experience across the digital landscape,
-            making us leaders in designing your complete online presence.
-            From building brand identity to web design, managing social media
-            platforms, digital marketing & everything in between – we thrive on
-            making your brand shine in the spotlight.
-          </p>
-
-          <p className="mt-4 max-w-4xl text-gray-400">
-            Since Burst was founded in 2018, we've already helped bring 100s of
-            high-profile clients into the new digital age, working tirelessly
-            to ensure that we leave brands looking brilliantly bright.
-          </p>
+          {/* Image */}
+          <img
+            src={about_1}
+            alt="Image"
+            className="rounded-lg w-full md:w-[40vw] max-w-md md:max-w-none transition-transform duration-300 ease-in-out hover:shadow-amber-500 hover:shadow-inner"
+          />
         </div>
       </div>
 
+
       {/* ===== VALUES SECTION ===== */}
-      <div className="bg-white py-24 px-6">
+      <div className="space-y-6 p-4 sm:p-10">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl mx-auto font-bold text-center py-6">Why Businesses Choose Maxetra</h1>
+        <p className="text-base text-gray-600 leading-relaxed text-left">
+          Maxetra is a performance-focused digital marketing agency helping businesses grow in an increasingly competitive and AI-driven digital landscape. We partner with startups, local businesses, and established brands to build strong online visibility, generate qualified leads, and deliver measurable growth.
+        </p>
+
+        <p className="text-base text-gray-600 leading-relaxed text-left">
+          Our approach is rooted in strategy, data, and execution. Instead of generic solutions, we design customized digital marketing strategies aligned with your business goals, industry, and target audience. From SEO and local SEO to performance marketing, content, and conversion optimization, every solution we deliver is built for long-term impact.
+        </p>
+
+        <p className="text-base text-gray-600 leading-relaxed text-left">
+          Search behavior is evolving rapidly with the rise of AI-powered platforms, and visibility today requires more than traditional tactics. Maxetra helps brands stay ahead by optimizing their digital presence for both search engines and modern AI-driven discovery. We focus on relevance, authority, and performance to ensure consistent results across channels.
+        </p>
+
+        <p className="text-base text-gray-600 leading-relaxed text-left">
+          Transparency and measurable outcomes guide everything we do. Through continuous optimization, clear reporting, and data-driven insights, Maxetra turns digital marketing into a reliable growth engine for your business.
+        </p>
+      </div>
+      <div className="bg-white py-15 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-purple-500 font-semibold tracking-widest text-sm mb-2">
+
+          <p className=" font-semibold tracking-widest text-sm mb-2">
             OUR AGENCY’S VALUES
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-16 flex items-center justify-center gap-2">
-            What We Stand For <FaRocket className="text-purple-500" />
+            What We Stand For <FaRocket className="text-orange-500" />
           </h2>
 
           {/* Cards */}
-          <div className="grid md:grid-cols-3 gap-8 text-left">
+          <div className="grid md:grid-cols-3 gap-4 text-left">
             {/* Card 1 */}
-            <div className="border-2 border-purple-400 rounded-2xl p-8 hover:shadow-lg transition">
-              <h3 className="text-xl font-bold mb-3">
-                Some Go The Extra Mile.
-                <span className="text-purple-500 block">
-                  We’ll Run A Marathon.
-                </span>
+            <div className="border-2 border-[#001e37] rounded-2xl py-8 px-4 hover:shadow-lg transition">
+              <h3 className="text-2xl font-bold mb-3">
+                We Go Beyond Expectations
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Good enough isn’t good enough for us. We pride ourselves with
-                creating exceptional digital work that stands out from the
-                crowd, no matter how far we need to go to do it, with
-                unparalleled attention-to-detail.
+                At Maxetra, we don’t stop at “good enough.” Every strategy, campaign, and execution is designed with precision, creativity, and attention to detail to deliver digital work that truly stands out and drives measurable growth.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="border-2 border-purple-400 rounded-2xl p-8 hover:shadow-lg transition">
-              <h3 className="text-xl font-bold mb-3">
-                Time Is Of The Essence.
-                <span className="text-purple-500 block">
-                  And We Won’t Waste Yours.
-                </span>
+            <div className="border-2 border-[#001e37] rounded-2xl p-8 hover:shadow-lg transition">
+              <h3 className="text-2xl font-bold mb-3">
+                Time Matters. Results Matter More.
+
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Our team are trained in agile project management, and we work
-                round-the-clock to deliver on time. No project has too tight a
-                turnaround for our agency, we’re ready for the challenge.
+                Our team follows agile workflows and data-driven execution to ensure timely delivery without cutting corners. From strategy to launch, we move efficiently while keeping performance, accuracy, and business impact at the core.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="border-2 border-purple-400 rounded-2xl p-8 hover:shadow-lg transition">
-              <h3 className="text-xl font-bold mb-3">
-                It Doesn’t Have To Be Boring.
-                <span className="text-purple-500 block">
-                  We Bring Back The Joy.
-                </span>
+            <div className="border-2 border-[#001e37] rounded-2xl p-8 hover:shadow-lg transition">
+              <h3 className="text-2xl font-bold mb-3">
+                Marketing Should Feel Human
+
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                You aren’t boring – and neither are we. Our goal is to make
-                working with us an enjoyable and painless journey – one that
-                you’ll want to make again (and again).
+                Digital marketing doesn’t have to be boring or overwhelming. We focus on clear communication, smooth collaboration, and enjoyable partnerships—so working with Maxetra feels simple, transparent, and worth repeating.
               </p>
             </div>
           </div>
 
-          {/* Buttons */}
-          <div className="mt-14 flex justify-center gap-4">
-            <button className="px-8 py-3 rounded-full border-2 border-purple-500 text-purple-600 font-semibold hover:bg-purple-500 hover:text-white transition cursor-pointer">
-              Explore Our Services
-            </button>
-            <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="px-8 py-3 rounded-full bg-purple-500 text-white font-semibold hover:bg-purple-600 transition cursor-pointer">Schedule a Meeting</button>
-          </div>
         </div>
       </div>
+      <Location />
     </section>
   );
 };

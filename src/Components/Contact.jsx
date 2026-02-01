@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { FaQuoteRight } from "react-icons/fa";
 import {
-    FiArrowRight, FiGlobe,
+    FiGlobe,
     FiUsers,
     FiCpu,
     FiArrowLeft,
     FiCheckCircle,
     FiAward
 } from "react-icons/fi";
+import { FaArrowRightLong } from "react-icons/fa6";
 import Proposal from "./Proposal";
-import Location from "./Location"
+import Clients from "./Clients";
 
 
 const trustData = [
     {
         icon: <FiGlobe />,
-        title: "Proven Expertise",
-        desc: "Our industry knowledge and track record make us a reliable partner for every project, big or small.",
+        title: "Strategic Expertise",
+        desc: "Our team brings deep experience across SEO, AI search, and performance marketing, helping brands make informed decisions that drive measurable growth.",
     },
     {
         icon: <FiUsers />,
-        title: "Strong Relationships",
-        desc: "We build lasting bonds with our clients, grounded in transparency, integrity, and mutual success.",
+        title: "Collaborative Partnerships",
+        desc: "We work as an extension of your team, building strong relationships through clear communication, accountability, and shared success.",
     },
     {
         icon: <FiCpu />,
-        title: "Modern Solutions",
-        desc: "We stay ahead of trends, delivering creative and effective strategies that help our clients grow faster.",
+        title: "Future-Ready Solutions",
+        desc: "By staying ahead of digital and AI-driven trends, we create scalable strategies that keep your brand visible and competitive.",
     },
     {
         icon: <FiAward />,
-        title: "Commitment To Quality",
-        desc: "Every project we take on is backed by our promise of delivering top-tier quality and results.",
+        title: "Quality Without Compromise",
+        desc: "Every campaign is executed with precision, testing, and continuous optimization to ensure high standards, reliable performance, and real business impact.",
     },
 ];
 
@@ -101,33 +101,55 @@ export default function Contact() {
 
     return (
         <div className="">
-            <section className="bg-[#6f8437] py-12 px-4">
+            <section className="bg-[#001e37] py-12 px-2 md:px-10">
                 <div className="max-auto mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <Proposal />
                     {/* RIGHT CONTENT */}
-                    <div className=" text-white sm:flex sm:flex-col justify-center hidden sm:visible">
-                        <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-                            <FiArrowLeft />
-                            Ready to Dominate Your Market?
+                    <div className=" text-white sm:flex sm:flex-col justify-center mx-4 md:mx-0">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-4 flex items-center gap-3 ">
+                            A Results-Driven Digital Marketing Agency
                         </h2>
 
-                        <p className="mb-8 text-white/90">
-                            Jumpstart your digital marketing success in 3 easy steps:
+                        <p className="my-8 text-white/90 mr-10">
+                            Maxetra helps ambitious businesses grow through performance-focused digital marketing and AI-ready strategies. We partner with brands that value quality, transparency, and measurable outcomes.
                         </p>
 
-                        {[
-                            { title: "Contact Us", desc: "Fill out our brief contact form." },
-                            { title: "Launch Campaigns", desc: "Implement data-driven strategies." },
-                            { title: "Achieve Growth", desc: "Expand your brand reach." },
-                        ].map((step, i) => (
-                            <div key={i} className="flex gap-4 mb-6">
-                                <FiCheckCircle className="text-xl mt-1" />
-                                <div>
-                                    <h4 className="font-semibold">{step.title}</h4>
-                                    <p className="text-sm text-white/80">{step.desc}</p>
+                        <div className="flex items-center">
+                            <button
+                                className='flex items-center justify-center gap-4 font-semibold cursor-pointer py-3 px-10 mx-auto rounded-full transition bg-orange-500  text-white"'
+                            >
+                                <FaArrowRightLong />
+                                Schedule a Meeting
+                            </button>
+                        </div>
+                        <div className="w-full border-t border-gray-200 my-8" />
+                        <section className="text-white py-3 md:py-10 px-6">
+                            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                                {/* Left Column */}
+                                <div className=" space-y-2">
+                                        <h3 className="text-3xl  font-semibold mb-4">Headquarters:</h3>
+                                        <p>7901 4th St N STE 300</p>
+                                        <p>St. Petersburg</p>
+                                        <p>FL, 33702, USA</p>
+                                    
+                                        <h3 className="text-xl font-semibold mt-4">Main Phone:</h3>
+                                        <p className="font-semibold">(866) 908-4748</p>
+                                    
                                 </div>
+
+                                {/* Right Column */}
+                                <div className="space-y-2">
+                                    <h3 className="text-3xl font-semibold mb-4">Office Hours:</h3>
+                                    <p>Mon–Fri, 8:30am – 5:30pm — Central Time Zone</p>
+
+                                    <p>Mon–Fri, 9:30am – 6:30pm — Eastern Time Zone</p>
+
+                                </div>
+
                             </div>
-                        ))}
+                        </section>
+
                     </div>
                 </div>
             </section>
@@ -136,12 +158,11 @@ export default function Contact() {
 
                     {/* Heading */}
                     <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-                        Clients Trust BMDU
+                        Clients Trust Maxetra
                     </h2>
 
                     <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-base md:text-lg">
-                        Clients trust BMDU because we combine expertise, integrity, and innovation
-                        to deliver solutions that consistently exceed expectations and build lasting relationships.
+                        Businesses choose Maxetra because we combine strategy, transparency, and performance-driven execution to deliver consistent results and long-term digital growth.
                     </p>
 
                     {/* Cards */}
@@ -151,7 +172,7 @@ export default function Contact() {
                                 key={index}
                                 className="bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-gray-300 transition duration-300"
                             >
-                                <div className="text-blue-500 text-3xl mb-4">
+                                <div className="text-[#001e37] text-3xl mb-4">
                                     {item.icon}
                                 </div>
 
@@ -169,51 +190,7 @@ export default function Contact() {
                 </div>
             </section>
 
-            <section className="bg-white py-20 px-4 font-sans">
-                <div className="max-w-7xl mx-auto ">
-                    {/* Section Heading */}
-                    <div className="text-center mb-16 ">
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#1a2b3c] inline-block relative">
-                            What our clients say
-                            {/* Yellow accent underline */}
-                            <span className="block h-1.5 w-3/4 bg-[#ffc107] rounded-full mx-auto mt-2"></span>
-                        </h2>
-                    </div>
-
-                    {/* Testimonial Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-                        {testimonials.map((item, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#f2f8fa] p-8 md:p-10 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:shadow-gray-300 transition-shadow duration-300"
-                            >
-                                {/* Blue Quote Icon */}
-                                <div className="text-[#0d47a1] text-4xl mb-6">
-                                    <FaQuoteRight className="rotate-180" />
-                                </div>
-
-                                {/* Testimonial Content */}
-                                <div className="flex-grow">
-                                    <p className="text-[#333] text-lg leading-relaxed mb-8">
-                                        {item.text}
-                                    </p>
-                                </div>
-
-                                {/* Author Details */}
-                                <div className="mt-auto">
-                                    <h4 className="font-extrabold text-[#1a2b3c] text-lg">
-                                        {item.author}
-                                    </h4>
-                                    <p className="text-[#444] text-sm mt-1 leading-snug">
-                                        {item.title}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            <Location/>
+            <Clients />
         </div>
     );
 }

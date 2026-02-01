@@ -10,28 +10,28 @@ import {
 } from "react-icons/md";
 import { FaFacebookSquare } from "react-icons/fa";
 
-import casestudy from '../assets/SVG FOR Ad/Case Study1.png'
-import testi from '../assets/SVG FOR Ad/Client Testimonial1.png'
-import portfolio from '../assets/SVG FOR Ad/Portofolio1.png'
-import digim from '../assets/SVG FOR Ad/DigiMark1.png'
-import content from '../assets/SVG FOR Ad/Content creation1.png'
-import cro from '../assets/SVG FOR Ad/CRO.png'
-import ecom from '../assets/SVG FOR Ad/Ecom1.png'
-import graphic from '../assets/SVG FOR Ad/Graphics1.png'
-import lo_seo from '../assets/SVG FOR Ad/Local Seo1.png'
-import email from '../assets/SVG FOR Ad/Email&SMS.png'
-import seo from '../assets/SVG FOR Ad/SEO1.png'
-import social from '../assets/SVG FOR Ad/Social media1.png'
-import v_prod from '../assets/SVG FOR Ad/Video Prod.png'
-import performance from '../assets/SVG FOR Ad/Performance Marketing1.png'
-import wdev from '../assets/SVG FOR Ad/WebD.png'
-import callG from '../assets/SVG FOR Ad/Call_Girl.jpeg'
-import logo from '../assets/SVG FOR Ad/final logo.png'
-import logo_w from '../assets/SVG FOR Ad/logo_white.webp'
-import blog from '../assets/SVG FOR Ad/Blog1.png'
-import WWA from '../assets/SVG FOR Ad/Who We Are1.png'
-import call from '../assets/SVG FOR Ad/phone.png'
-import Team from '../assets/SVG FOR Ad/Team1.png'
+import casestudy from '../assets/SVG FOR Ad/General/Case Study1.png'
+import testi from '../assets/SVG FOR Ad/General/Client Testimonial1.png'
+import portfolio from '../assets/SVG FOR Ad/General/Portofolio1.png'
+import digim from '../assets/SVG FOR Ad/General/DigiMark1.png'
+import content from '../assets/SVG FOR Ad/General/Content creation1.png'
+import cro from '../assets/SVG FOR Ad/General/CRO.png'
+import ecom from '../assets/SVG FOR Ad/General/Ecom1.png'
+import graphic from '../assets/SVG FOR Ad/General/Graphics1.png'
+import lo_seo from '../assets/SVG FOR Ad/General/Local Seo1.png'
+import email from '../assets/SVG FOR Ad/General/Email&SMS.png'
+import seo from '../assets/SVG FOR Ad/General/SEO1.png'
+import social from '../assets/SVG FOR Ad/General/Social media1.png'
+import v_prod from '../assets/SVG FOR Ad/General/Video Prod.png'
+import performance from '../assets/SVG FOR Ad/General/Performance Marketing1.png'
+import wdev from '../assets/SVG FOR Ad/General/WebD.png'
+import callG from '../assets/SVG FOR Ad/General/Call_Girl.jpeg'
+import logo from '../assets/SVG FOR Ad/General/final logo.png'
+import logo_w from '../assets/SVG FOR Ad/General/logo_white1.png'
+import blog from '../assets/SVG FOR Ad/General/Blog1.png'
+import WWA from '../assets/SVG FOR Ad/General/Who We Are1.png'
+import call from '../assets/SVG FOR Ad/General/phone.png'
+import Team from '../assets/SVG FOR Ad/General/Team1.png'
 import { FaFacebook } from "react-icons/fa";
 
 
@@ -71,35 +71,35 @@ export default function Header() {
   // --- CONTENT MAPPING FOR MOBILE ---
 
   const servicesData = [
-    { title: "Digital Marketing", icon: digim, to: "/digital-marketing" },
-    { title: "SEO", icon: seo, to: "/digital-marketing/seo" },
-    { title: "Local SEO", icon: lo_seo, to: "/digital-marketing/local-seo" },
-    { title: "Performance Marketing", icon: performance, to: "/digital-marketing/performance" },
-    { title: "CRO Services", icon: cro, to: "/digital-marketing/cro" },
-    { title: "Content Creation", icon: content, to: "/digital-marketing/content" },
-    { title: "Web Development", icon: wdev, to: "/digital-marketing/webd" },
-    { title: "E-commerce", icon: ecom, to: "/digital-marketing/e-com" },
-    { title: "E-mail & SMS Marketing", icon: email, to: "/digital-marketing/email-sms" },
-    { title: "Social Media", icon: social, to: "/digital-marketing/social-media" }
+    { title: "Digital Marketing", icon: digim, to: "/digital-marketing-services" },
+    { title: "Search Engine Optimization", icon: seo, to: "/digital-marketing-services/seo" },
+    { title: "Local SEO", icon: lo_seo, to: "/digital-marketing-services/local-seo" },
+    { title: "Performance Marketing", icon: performance, to: "/digital-marketing-services/performance" },
+    { title: "Conversion Rate Optimization", icon: cro, to: "/digital-marketing-services/cro" },
+    { title: "Content Creation", icon: content, to: "/digital-marketing-services/content" },
+    { title: "Web Development", icon: wdev, to: "/digital-marketing-services/webd" },
+    { title: "E-commerce", icon: ecom, to: "/digital-marketing-services/e-commerce" },
+    { title: "E-mail & SMS Marketing", icon: email, to: "/digital-marketing-services/email-sms" },
+    { title: "Social Media Management", icon: social, to: "/digital-marketing-services/social-media" }
   ];
 
 
 
   const creativeServicesData = [
-    { title: "Video Production", icon: v_prod, to: "services/video-prod" },
-    { title: "Graphic Design", icon: graphic, to: "services/graphic" }
+    { title: "Video Production", icon: v_prod, to: "digital-marketing-services/video-prod" },
+    { title: "Graphic Design", icon: graphic, to: "digital-marketing-services/graphic" }
   ];
 
   const aboutData = [
     { title: "Who We Are", icon: WWA, to: "/who-we-are", desc: "A results-focused team delivering high-impact digital solutions." },
     { title: "Our Blog", icon: blog, to: "/blog", desc: "Insights, trends, and strategies that drive smarter marketing." },
-    { title: "Our Team", icon: Team, to: "/Team", desc: "Experienced professionals powering your brand’s success." },
+    { title: "Career", icon: Team, to: "/career", desc: "Experienced professionals powering your brand’s success." },
   ];
 
   return (
     <header className="w-full border-b bg-white sticky top-0 z-[100]">
       {/* Top Bar (Desktop) - Unchanged */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
         <Link to="/" className="font-black cursor-pointer">
           <img src={logo} alt="Maxetra" className="w-[42vw] sm:w-[13vw] h-auto " />
         </Link>
@@ -111,7 +111,7 @@ export default function Header() {
             onMouseEnter={() => setActiveSection("service")}
             onMouseLeave={() => setActiveSection(null)}
           >
-            <Link to="/digital-marketing" className="text-[20px] font-bold flex items-center gap-1 text-[#001e37] hover:text-blue-600 focus:outline-none cursor-pointer h-full">
+            <Link to="/digital-marketing-services" className="text-[20px] font-bold flex items-center gap-1 text-[#001e37] hover:text-blue-600 focus:outline-none cursor-pointer h-full">
               Services
               <FaChevronDown
                 className={`text-lg transition-transform ${activeSection === "service" ? "rotate-180" : ""
@@ -129,18 +129,18 @@ export default function Header() {
                         icon={digim}
                         title="Digital Marketing"
                         desc="Data-driven strategies to grow traffic, leads, and revenue."
-                        to="/digital-marketing"
+                        to="/digital-marketing-services"
                       />
                       <ServiceItem
                         icon={social}
-                        title="Social Media Management"
+                        title="Social Media"
                         desc="Build brand presence, engagement, and trust across platforms."
-                        to="/digital-marketing/Social-Media" />
+                        to="/digital-marketing-services/social-media" />
                       <ServiceItem
                         icon={ecom}
                         title="E-commerce"
                         desc="End-to-end solutions to scale online sales effectively."
-                        to="/digital-marketing/e-commerce"
+                        to="/digital-marketing-services/e-commerce"
                       />
                     </div>
                     <div className="space-y-6">
@@ -148,59 +148,59 @@ export default function Header() {
                         icon={seo}
                         title="SEO"
                         desc="Improve rankings, visibility, and long-term organic growth."
-                        to="/digital-marketing/seo"
+                        to="/digital-marketing-services/seo"
                       />
                       <ServiceItem
                         icon={cro}
-                        title="Conversion Rate Optimization"
+                        title="CRO Services"
                         desc="Turn more visitors into customers with data-backed optimization.
                         "
-                        to="/digital-marketing/cro" />
+                        to="/digital-marketing-services/cro" />
                       <ServiceItem
                         icon={graphic}
                         title="Graphic Design"
                         desc="Creative visuals that strengthen brand identity."
-                        to="/digital-marketing/graphic" />
+                        to="/digital-marketing-services/graphic" />
                     </div>
                     <div className="space-y-6">
                       <ServiceItem
                         icon={lo_seo}
                         title="Local SEO"
                         desc="Get found by nearby customers and dominate local search results."
-                        to="/digital-marketing/local-seo"
+                        to="/digital-marketing-services/local-seo"
                       />
                       <ServiceItem
                         icon={content}
                         title="Content Creation"
                         desc="High-quality content that attracts, engages, and converts."
-                        to="/digital-marketing/content"
+                        to="/digital-marketing-services/content"
                       />
                       <ServiceItem
                         icon={v_prod}
                         title="Video Production"
                         desc="Professional videos designed to boost brand trust and engagement."
-                        to="/digital-marketing/video-prod" />
+                        to="/digital-marketing-services/video-prod" />
                     </div>
                     <div className="lg:ml-auto space-y-6 ">
                       <ServiceItem
                         icon={performance}
                         title="Performance Marketing"
                         desc="ROI-focused campaigns designed for leads, sales, and growth."
-                        to="/digital-marketing/performance"
+                        to="/digital-marketing-services/performance"
                       />
                       <ServiceItem
                         icon={wdev}
                         title="Web Development"
                         desc="Fast, secure, and conversion-focused websites."
-                        to="/digital-marketing/webd"
+                        to="/digital-marketing-services/webd"
                       />
                       <ServiceItem
                         icon={email}
                         title="Email & SMS Marketing"
                         desc="Automated campaigns that nurture leads and drive repeat sales."
-                        to="services/email-sms" />
+                        to="/digital-marketing-services/email-sms" />
                     </div>
-                    <div className="bg-[#001e37] rounded-xl p-4 mx-5 lg:mx-3 text-center text-white flex flex-col items-center self-start lg:sticky lg:top-0 w-50">
+                    <div className="bg-[#001e37] rounded-xl px-4 py-6 mx-5 lg:mx-3 text-center text-white flex flex-col items-center self-start lg:sticky lg:top-0 w-50">
                       <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-3" />
                       <h4 className="font-bold text-base">Merve Candan</h4>
                       <p className="text-xs text-gray-400 mb-4">Marketing Head</p>
@@ -216,7 +216,7 @@ export default function Header() {
                           to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                          className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
                         >
                           <FaFacebookSquare />
                         </Link>
@@ -225,7 +225,7 @@ export default function Header() {
                           to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                          className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
                         >
                           <FaTiktok />
                         </Link>
@@ -234,7 +234,7 @@ export default function Header() {
                           to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                          className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
                         >
                           <FaInstagram />
                         </Link>
@@ -243,7 +243,7 @@ export default function Header() {
                           to={{ pathname: "https://www.x.com/Maxetraofficial/" }}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                          className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
                         >
                           <FaXTwitter />
                         </Link>
@@ -252,7 +252,7 @@ export default function Header() {
                           to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-5 h-5 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
+                          className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
                         >
                           <FaLinkedinIn />
                         </Link>
@@ -380,15 +380,17 @@ export default function Header() {
         <div className="fixed inset-y-0 left-0 right-10 sm:right-90 bg-white z-[200] flex flex-col overflow-y-auto overflow-x-auto animate-in slide-in-from-right duration-300">
 
 
-          <div className="bg-[#001e37] p-6 pt-12 text-white relative text-center">
-            <button onClick={() => setMobileOpen(false)} className="absolute top-4 right-4 text-2xl">
-              <FaXmark />
-            </button>
-            <Link to="/" className="font-black cursor-pointer">
-              <img src={logo_w} alt="Maxetra" className="w-[30vw] h-auto " />
-            </Link>
-            <p className="text-sm font-medium leading-snug px-2 mt-4">
-              Maxetra is a growth-focused digital marketing agency delivering real res
+          <div className="bg-[#001e37] px-6 py-4  text-white relative text-center">
+            <div className="flex top-4">
+              <button onClick={() => setMobileOpen(false)} className="absolute right-4 text-2xl">
+                <FaXmark />
+              </button>
+              <Link to="/" className="font-black cursor-pointer ">
+                <img src={logo_w} alt="Maxetra" className="w-[43vw] h-auto " />
+              </Link>
+            </div>
+            <p className="text-sm py-4">
+              Maxetra is a growth-focused digital marketing agency delivering real results.
             </p>
           </div>
 
@@ -398,7 +400,7 @@ export default function Header() {
             <div>
               <button
                 onClick={() => toggleSection("services")}
-                className="w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm"
+                className="border-t-4 border-gray-300 w-full flex items-center justify-between px-6 py-4 text-gray-700 font-semibold hover:bg-gray-50 transition text-sm"
               >
                 <span className="uppercase tracking-wide ">
                   Services
@@ -547,8 +549,6 @@ export default function Header() {
           >
             Schedule a Meeting
           </button>
-
-          <div className="w-full border-t text-[11px] border-gray-400 my-2" />
 
           {/* Social Icons */}
           <div className="flex justify-center items-center gap-4 py-6">

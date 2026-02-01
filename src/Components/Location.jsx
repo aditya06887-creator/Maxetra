@@ -1,23 +1,22 @@
 import React from 'react';
-import US from '../assets/SVG FOR Ad/US.png'
-import UK from '../assets/SVG FOR Ad/UK.png'
-import Singa from '../assets/SVG FOR Ad/Singa.png'
+import US from '../assets/SVG FOR Ad/General/US.png'
+import UK from '../assets/SVG FOR Ad/General/UK.png'
+import Singa from '../assets/SVG FOR Ad/General/Singa.png'
 import { TiLocationArrow } from "react-icons/ti";
 
 const locations = [
     {
         id: 1,
-        name: "SEA",
-        sub: "Seattle WA.",
+        name: "PIE",
+        sub: "Florida.",
         email: "Seattle@maxetra.com",
         phone: "+16646794564",
-        // Replace this URL with your actual image link
         bgImage: US
     },
     {
         id: 2,
         name: "LHR",
-        sub: "London. UK",
+        sub: "London",
         email: "London@maxetra.com",
         phone: "+446413464",
         // Replace this URL with your actual image link

@@ -6,7 +6,7 @@ const steps = [
         id: 1,
         title: "Discover",
         icon: <FaSearch />,
-        color: "bg-blue-600",
+        color: "bg-[#001e37] ",
         text:
             "As your search engine optimization company, we take the time to understand your business needs, demands and expectations. During the discovery phase, our SEO consultants set up a meeting with your key company stakeholders and conduct an initial site review."
     },
@@ -14,7 +14,7 @@ const steps = [
         id: 2,
         title: "Analyze",
         icon: <FaChartLine />,
-        color: "bg-teal-600",
+        color: "bg-[#0d496e] ",
         text:
             "Our SEO team analyzes your business data to determine the factors that affect your digital presence, including technical SEO issues, backlink strategies and competitor analysis."
     },
@@ -22,7 +22,7 @@ const steps = [
         id: 3,
         title: "Strategize",
         icon: <FaLightbulb />,
-        color: "bg-green-600",
+        color: "bg-[#146c94] ",
         text:
             "We create a 60-day strategic SEO roadmap aligned with your goals, timelines and KPIs to ensure targeted and measurable results."
     },
@@ -30,7 +30,7 @@ const steps = [
         id: 4,
         title: "Execute",
         icon: <FaPlay />,
-        color: "bg-lime-600",
+        color: "bg-blue-900",
         text:
             "We optimize your website pages, blog posts and technical structure while deploying multi-channel strategies to improve rankings and traffic."
     },
@@ -46,7 +46,7 @@ const steps = [
         id: 6,
         title: "Report",
         icon: <FaFileAlt />,
-        color: "bg-orange-600",
+        color: "bg-orange-400",
         text:
             "We provide detailed SEO reports covering rankings, traffic trends and progress so you always know how your campaign is performing."
     },
@@ -54,7 +54,7 @@ const steps = [
         id: 7,
         title: "Adjust",
         icon: <FaSync />,
-        color: "bg-yellow-500",
+        color: "bg-orange-500",
         text:
             "SEO is dynamic. We continuously refine strategies based on data insights, algorithm updates and changing market trends."
     }
@@ -78,7 +78,7 @@ export default function Agile() {
                 {/* TIMELINE */}
                 <div className="relative">
                     {/* Vertical Line */}
-                    <div className="absolute left-5 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-green-500 to-yellow-500 rounded-full" />
+                    <div className="absolute left-5 top-0 bottom-0 w-1 bg-gradient-to-b from-[#001e37] via-[#0d496e]  to-orange-500 rounded-full" />
 
                     <div className="space-y-12">
                         {steps.map((step) => (

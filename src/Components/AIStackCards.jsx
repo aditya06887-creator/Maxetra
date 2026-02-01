@@ -1,134 +1,153 @@
 import React, { useState } from 'react';
+import { RiPerplexityFill, RiGeminiFill, RiOpenaiFill } from "react-icons/ri";
+
 import {
   FaEye,
+
   FaCommentDots,
+
   FaBrain,
+
   FaRegStar,
+
   FaChevronUp,
+
   FaChevronDown
+
 } from "react-icons/fa";
 
 
+
+/* ---------------- FIXED ICONS ---------------- */
+
+const AiModeIcon = ({ className }) => (
+  <svg viewBox="0 0 512 512" className={className} fill="currentColor">
+    <path d="M211.648 89.515h-76.651A57.707 57.707 0 0077.291 147.2v242.389a57.707 57.707 0 0057.706 57.707h242.411a57.707 57.707 0 0057.707-57.707V288.128l34.624-23.744v125.227a92.35 92.35 0 01-92.331 92.33H134.997a92.349 92.349 0 01-92.33-92.33v-242.39A92.336 92.336 0 0169.702 81.92a92.33 92.33 0 0165.295-27.05h96.96l-20.309 34.645z" />
+    <path d="M380.16 0c3.093 0 5.717 2.219 6.379 5.248a149.328 149.328 0 0040.533 74.325 149.332 149.332 0 0074.347 40.555c3.029.661 5.248 3.285 5.248 6.4a6.574 6.574 0 01-5.248 6.357 149.338 149.338 0 00-74.326 40.555 149.338 149.338 0 00-40.789 75.413 6.334 6.334 0 01-6.144 5.078 6.334 6.334 0 01-6.144-5.078 149.338 149.338 0 00-40.789-75.413 149.326 149.326 0 00-75.414-40.789 6.338 6.338 0 01-5.077-6.144c0-2.987 2.133-5.547 5.077-6.144a149.336 149.336 0 0075.414-40.79 149.354 149.354 0 0040.554-74.325A6.573 6.573 0 01380.16 0z" />
+  </svg>
+);
+
+
+
+
 const data = [
+
   {
+
     id: 1,
-    title: "AI Mode Optimization",
-    desc: "Optimize your content for Google AI Mode, where answers replace traditional search results. We structure passage-level, conversational content that AI Mode understands, selects, and surfaces instantly.",
-    icon: (<svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      className="w-6 h-6 fill-current"
-    >
-      <g
-        fill="#011730"
-        fillRule="nonzero"
-        stroke="none"
-        strokeWidth="1"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeMiterlimit="10"
-      >
-        <g transform="scale(5.12,5.12)">
-          <path d="M5,5v40h40v-40zM25.399,28.028l-2.522,4.611c-0.19,0.347 -0.534,0.52 -0.877,0.52c-0.343,0 -0.688,-0.173 -0.877,-0.52l-2.522,-4.611c-0.551,-1.007 -1.378,-1.835 -2.385,-2.385l-4.611,-2.522c-0.694,-0.379 -0.694,-1.375 0,-1.755l4.611,-2.522c1.007,-0.551 1.834,-1.378 2.385,-2.385l2.522,-4.611c0.19,-0.347 0.534,-0.52 0.877,-0.52c0.343,0 0.688,0.173 0.877,0.52l2.522,4.611c0.551,1.007 1.378,1.834 2.385,2.385l4.611,2.522c0.694,0.379 0.694,1.375 0,1.755l-4.611,2.522c-1.006,0.55 -1.834,1.378 -2.385,2.385zM39.157,35.289l-2.244,1.227c-0.167,0.093 -0.305,0.23 -0.397,0.398l-1.228,2.244c-0.21,0.386 -0.613,0.625 -1.053,0.625c-0.001,0 -0.002,0 -0.003,0c-0.44,-0.001 -0.844,-0.242 -1.053,-0.631l-1.225,-2.238c-0.093,-0.169 -0.23,-0.307 -0.397,-0.397l-2.245,-1.229c-0.387,-0.212 -0.626,-0.616 -0.625,-1.056c0.002,-0.439 0.242,-0.842 0.628,-1.051l2.241,-1.227c0.169,-0.093 0.306,-0.229 0.397,-0.397l1.229,-2.246c0.207,-0.382 0.609,-0.622 1.049,-0.624c0.001,0 0.002,0 0.003,0c0.438,0 0.841,0.239 1.053,0.623v0.002l1.228,2.245c0.092,0.167 0.229,0.305 0.398,0.397l2.245,1.229c0.382,0.205 0.623,0.608 0.624,1.049c0.001,0.441 -0.237,0.846 -0.625,1.057z" />
-        </g>
-      </g>
-    </svg>
-    ),
-    color: "bg-blue-600"
+    title: "AI Mode",
+    desc: "Optimize your content for Google AI Mode, where AI answers replace traditional results. We create structured, conversational content AI understands and surfaces.",
+    icon: <AiModeIcon className='w-5 h-5' />
+
   },
   {
     id: 2,
-    title: "ChatGPT Search Optimization",
-    desc: "Optimize your content for OpenAI ChatGPT, where users ask for direct recommendations. We build strong entity signals and conversational relevance so your brand appears inside AI answers.",
-    icon: <FaCommentDots className="w-5 h-5" />,
-    color: "bg-teal-500"
+    title: "ChatGPT Search",
+    desc: "Optimize your content for ChatGPT, where users ask questions and recommendations. We create structured, conversational content AI understands and surfaces.",
+    icon: <RiOpenaiFill className="w-5 h-5" />
+
   },
   {
     id: 3,
-    title: "Gemini Search Optimization",
-    desc: "Optimize your content for Google Gemini, powering AI Mode and AI Overviews. Our semantic, natural-language content helps Gemini select your pages for zero-click AI results.",
-    icon: <FaBrain className="w-5 h-5" />,
-    color: "bg-emerald-500"
+    title: "Gemini Search",
+    desc: "Optimize your content for Google Gemini AI, powering modern AI search experiences. We create structured, conversational content AI understands and surfaces.",
+    icon: <RiGeminiFill className="w-5 h-5" />
   },
   {
     id: 4,
-    title: "Perplexity AI Optimization",
-    desc: "Optimize for Perplexity AI, an AI answer engine that cites sources. We create citation-ready, high-trust content that gets referenced in AI responses.",
-    icon: <FaRegStar className="w-5 h-5" />,
-    color: "bg-green-400"
+    title: "Perplexity AI",
+    desc: "Optimize your content for Perplexity AI, an answer engine that cites trusted sources. We create structured, conversational content AI understands and surfaces.",
+    icon: <RiPerplexityFill className="w-5 h-5" />
   }
 ];
 
+
+
 export default function AICarousel() {
+
   const [active, setActive] = useState(0);
 
+
+
   const next = () => setActive((prev) => (prev + 1) % data.length);
+
   const prev = () => setActive((prev) => (prev - 1 + data.length) % data.length);
 
-  return (
-    <section className="max-w-7xl mx-auto lg:py-12">
-      <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
 
-        
+
+  return (
+
+    <section className="max-w-7xl mx-auto lg:py-12">
+
+      <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start lg:gap-20">
         {/* Left Side: Text Content */}
-        <div className="flex-1 my-auto space-y-6 text-center lg:text-left">
+
+        <div className="flex-1 mb-5 my-auto space-y-6 text-center lg:text-left">
           <p className="text-gray-600 text-lg leading-relaxed">
-            Rapid advances in generative artificial intelligence (AI) models have reshaped how content is discovered and consumed. Traditional search engine optimization (SEO) is no longer enough to reach those looking for your products or services.
+            The rapid advancement of generative AI is fundamentally changing how information is indexed, retrieved, and surfaced across digital ecosystems. Traditional SEO frameworks are no longer sufficient for visibility within large language models and AI-driven answer engines. Maxetra enables SaaS and enterprise brands to optimize their digital assets for AI search through structured data, entity-based optimization, semantic relevance, and citation-ready content frameworks.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Thrive is one of the <span className="text-lime-600 font-semibold underline cursor-pointer">top generative engine optimization companies</span> for AI visibility. Using our internal research and development (R&D) department, we've been testing and perfecting AI SEO strategies.
+            Our AI-first SEO strategies are built on continuous experimentation, technical analysis, and data modeling to improve discoverability across platforms like ChatGPT, Gemini, and emerging AI search interfaces. We help enterprises convert AI visibility into qualified traffic, demand generation, and scalable growth.
           </p>
         </div>
 
+
+
         {/* Right Side: Stacked Carousel */}
+
         <div className="flex-1 w-full max-w-xl">
-          
+
+
           {/* Top Navigation Icons */}
-          <div className="flex justify-center gap-3 mb-8">
+
+          <div className="flex justify-center gap-5 mb-8">
+
             {data.map((item, i) => (
               <button
                 key={item.id}
                 onClick={() => setActive(i)}
-                className={`p-3 rounded-full transition-all duration-300 ${
-                  active === i 
-                  ? `${item.color} text-white shadow-lg scale-110` 
-                  : "bg-cyan-50 text-cyan-700 hover:bg-cyan-100"
-                }`}
+                className={`p-3 rounded-lg transition-all duration-300 ${active === i
+                  ? `bg-[#001e37] text-white shadow-lg scale-110`
+                  : "bg-[#37e1c6] text-[#001e37]"
+
+                  }`}
               >
                 {item.icon}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center gap-1 sm:gap-6">
+
+
+          <div className="flex items-center gap-1">
             {/* The Stack Container */}
-            <div className="relative w-full h-[320px] sm:h-[280px]">
+            <div className="relative w-full h-[300px] sm:h-[280px]">
               {data.map((item, index) => {
                 // Calculation for the stack effect
                 const isPrevious = index < active;
                 const isNext = index > active;
                 const offset = index - active;
-                
                 // Hide cards that aren't the top 3 visible ones
-                if (offset < 0 || offset > 3) return null;
 
+                if (offset < 0 || offset > 3) return null;
                 return (
                   <div
                     key={item.id}
                     className="absolute top-0 left-0 w-full transition-all duration-500 ease-in-out"
                     style={{
-                      transform: `translateY(${offset * 16}px) scale(${1 - offset * 0.03})`,
+                      transform: `translateY(${offset * 11}px) scale(${1 - offset * 0.04})`,
                       zIndex: 10 - offset,
                       opacity: 1 - offset * 0.2,
+
                     }}
+
                   >
+
                     {/* Gradient Border Card */}
+
                     <div className="rounded-[2.5rem] p-[3px] bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 shadow-xl">
                       <div className="bg-white rounded-[2.3rem] p-8 sm:p-10 h-full min-h-[220px]">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="p-2 bg-blue-50 rounded-full text-blue-600">
-                            {item.icon}
-                          </div>
                           <h3 className="text-xl sm:text-2xl font-bold text-slate-800">
                             {item.title}
                           </h3>
@@ -139,29 +158,48 @@ export default function AICarousel() {
                       </div>
                     </div>
                   </div>
+
                 );
+
               })}
+
             </div>
 
+
+
             {/* Vertical Arrow Controls */}
+
             <div className="flex flex-col gap-2">
-              <button 
+
+              <button
+
                 onClick={prev}
+
                 className="p-2 rounded-full bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors"
+
               >
+
                 <FaChevronUp className="w-6 h-6" />
+
               </button>
-              <button 
+
+              <button
+
                 onClick={next}
+
                 className="p-2 rounded-full bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors"
+
               >
+
                 <FaChevronDown className="w-6 h-6" />
+
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
+
   );
+
 }

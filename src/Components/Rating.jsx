@@ -1,7 +1,10 @@
 
-import UpC from '../assets/SVG FOR Ad/UpCity.png'
-import G2 from '../assets/SVG FOR Ad/G2.png'
-import Clutch from '../assets/SVG FOR Ad/Clutch.png'
+import UpC from '../assets/SVG FOR Ad/General/UpCity.png'
+import G2 from '../assets/SVG FOR Ad/General/G2.png'
+import Clutch from '../assets/SVG FOR Ad/General/Clutch.png'
+
+
+
 
 const stats = [
     {
@@ -43,9 +46,11 @@ const stats2 = [
 export default function (){
 
     return (
-        <section className="bg-[#001e37] py-15">
-                <div className="max-w-7xl mx-auto px-6">
-
+        <section className="bg-[#001e37] mb-10 py-3">
+                <div className="max-w-7xl mx-auto px-6 ">
+                    <h2 className='text-white text-2xl sm:text-5xl my-15'>
+                    Mexetra - Your Trusted <span className='font-medium text-white font-bold'>Digital Marketing</span> Growth Partner
+                    </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {stats.map((item, index) => (
                             <div
@@ -70,7 +75,7 @@ export default function (){
                         {stats2.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-[#37e1c6] rounded-xl p-8 min-h-48 flex flex-col justify-between transition-all duration-300 hover:shadow-lg"
+                                className="bg-[#37e1c6] rounded-xl p-8 min-h-48 flex flex-col justify-between transition-all duration-300 hover:shadow-lg mb-5"
                             >
 
                                 <div>

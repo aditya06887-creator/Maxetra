@@ -1,26 +1,22 @@
 import React from "react";
-
+import peo from '../assets/SVG FOR Ad/General/Consult_people.png'
 
 export default function Consultation() {
   return (
-    <section section className="w-full py-16 px-4 bg-white" >
+    <section section className="w-full py-7 px-4 bg-white" >
       <div className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 px-6 py-16 text-center text-white shadow-xl">
-
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8">
-          Meet the Experts Behind Your Success
-        </h2>
-
-        {/* Rating + Avatars */}
-        <div className="flex flex-wrap justify-center items-center gap-4 mb-10">
-
-          {/* Clutch Rating */}
-
-
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
           {/* Avatars */}
           <div className="flex items-center">
-
+            <img src={peo} alt="" />
           </div>
+        </div>
+        {/* Heading */}
+        <div className="my-8">
+        <h2 className="text-3xl md:text-4xl font-semibold my-4">
+          Partner With a Team Built for Growth
+        </h2>
+        <p className="">Our specialists combine strategy, data, and execution to scale your business.</p>
         </div>
 
         {/* Button */}
