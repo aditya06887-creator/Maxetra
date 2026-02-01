@@ -1,6 +1,5 @@
 import React from "react";
 import { FaRocket } from "react-icons/fa";
-import Location from "./Location";
 
 import about_1 from '../assets/SVG FOR Ad/General/About_1.jpeg'
 
@@ -99,7 +98,6 @@ const About = () => {
 
         </div>
       </div>
-      <Location />
     </section>
   );
 };

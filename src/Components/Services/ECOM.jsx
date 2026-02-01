@@ -8,15 +8,15 @@ import market from "../../assets/SVG FOR Ad/ECOM/Amazon_Marketing.png";
 import seo from "../../assets/SVG FOR Ad/ECOM/Amazon_Seo.png";
 import ppc from "../../assets/SVG FOR Ad/ECOM/eCom_PPC.png";
 import uiux from "../../assets/SVG FOR Ad/WEBD/Mobile-UXUI.png";
-import comp from "../../assets/SVG FOR Ad/WEBD/Multi-Location.png";
+// import comp from "../../assets/SVG FOR Ad/WEBD/Multi-Location.png";
 import web_seo from "../../assets/SVG FOR Ad/WEBD/Web_seo.png";
-// import wordpress from "../../assets/SVG FOR Ad/WEBD/WordPress.png";
 import shopify from "../../assets/SVG FOR Ad/seo_card/Shopify.png";
 
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
-import { FaHome, FaChevronRight } from "react-icons/fa";
+import { FaHome, FaChevronRight, FaArrowRight } from "react-icons/fa";
+import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png';
 import ServiceCards from "../ServiceCards";
 import FAQ from "../FAQ";
 import phone1 from '../../assets/SVG FOR Ad/Desk/Web_con.png';
@@ -24,76 +24,144 @@ import phone2 from '../../assets/SVG FOR Ad/Mobile/Web_conm.png'
 
 
 const services = {
-  heading: "Results-Driven Digital Marketing Services",
+  heading: "Maxetra’s eCommerce Development Services",
   subText:
-    "Maxetra provides end-to-end digital marketing solutions tailored to your business goals, combining strategy, technology, and execution to deliver measurable results across channels.",
+    "Build high-performing online stores designed to convert visitors into customers and scale revenue with speed, security, and seamless user experience.",
 
   items: [
 
     {
       title: "eCommerce SEO",
-      description: "Improve your website’s organic visibility with data-driven SEO strategies. We focus on keyword research, on-page optimization, technical SEO, and content improvements to help your brand rank higher across search engines and AI-powered discovery platforms.",
+      description: "We optimize your online store to rank higher on search engines and attract high-intent buyers.From product pages to technical SEO, we drive consistent organic sales. ",
       icon: seo,
-      iconBg: "bg-blue-100 text-blue-600",
     },
     {
       title: "eCommerce Content Marketing",
-      description: "Drive immediate traffic and qualified leads with performance-focused PPC campaigns. We manage targeting, ad creatives, bidding strategies, and landing page optimization to maximize ROI, control costs, and deliver consistent, measurable results across paid search and social platforms.",
+      description: "We create product-focused content that educates, ranks, and converts. Strategic content builds trust, improves visibility, and supports long-term growth. ",
       icon: ppc,
-      iconBg: "bg-cyan-100 text-cyan-600",
     },
     {
       title: "eCommerce Web Design",
-      description: "Strengthen your website’s technical foundation for improved search performance.We optimize site speed, crawlability, indexing, and core web vitals.Our process ensures better accessibility for search engines and users.Built to support scalability, stability, and long-term organic growth.",
+      description: "We design conversion-focused eCommerce websites that are fast, intuitive, and mobile-friendly.Better design improves user experience and checkout completion. ",
       icon: web_seo,
-      iconBg: "bg-lime-100 text-lime-600",
     },
     {
       title: "Shopify SEO",
-      description: "Increase conversions by turning more visitors into leads and customers.We analyze user behavior, funnels, and drop-off points across your website.Using A/B testing and data insights, we improve engagement and actions.Focused on maximizing ROI from your existing traffic and campaigns.",
+      description: "We optimize Shopify stores to improve rankings, traffic, and sales. From collections to product SEO, we ensure your store is search-engine ready.",
       icon: shopify,
-      iconBg: "bg-sky-100 text-sky-600",
     },
     {
       title: "Shopify Web Design",
-      description: "Build domain authority with high-quality, white-hat link building strategies focused on relevance and trust. We earn backlinks from authoritative websites within your industry to strengthen credibility. Our approach avoids shortcuts and spam tactics, ensuring long-term SEO value.",
+      description: "We design high-converting Shopify stores built for speed and usability. Clean layouts and optimized UX help turn visitors into customers. ",
       icon: uiux,
-      iconBg: "bg-green-100 text-green-600",
     },
     {
       title: "Amazon Marketing",
-      description: "Create visually compelling designs that strengthen your brand identity and communication. We design high-quality graphics for digital marketing and social media that align with your brand voice. Our focus is on clarity, consistency, and impactful visuals that support engagement and business growth.",
+      description: "We manage full-funnel Amazon marketing to increase product visibility and sales. From ads to listing optimization, we help brands grow on Amazon. ",
       icon: market,
-      iconBg: "bg-yellow-100 text-yellow-600",
     },
     {
       title: "Social Media Marketing",
-      description: "Build a strong brand presence and engage your audience. We create strategic content, manage campaigns, and optimize performance to increase reach and engagement. Our approach focuses on consistency, audience growth, and measurable results that support your overall marketing goals.",
+      description: "We promote your eCommerce brand across social platforms to drive traffic and engagement.Strategic content and ads support awareness and conversions. ",
       icon: social,
-      iconBg: "bg-indigo-100 text-indigo-600",
     },
     {
       title: "eCommerce PPC",
-      description: "Increase visibility in local search results and attract nearby customers. We optimize Google Business Profiles, local listings, and location pages to improve map rankings, generate more calls, visits, and deliver high-intent local leads for your business.",
+      description: "We run performance-driven paid campaigns focused on ROAS and conversions. Smart targeting and optimization help scale sales without wasted ad spend.",
       icon: ppc,
-      iconBg: "bg-emerald-100 text-emerald-600",
     },
     {
       title: "Amazon Seo",
-      description: "Create fast, modern, and conversion-focused websites designed for performance and scalability. We build responsive, SEO-friendly websites with clean design and strong user experience. Our development approach focuses on speed, security, and usability across all devices.",
+      description: "We optimize Amazon listings with keyword research and conversion-focused content. Better rankings lead to higher visibility, clicks, and sales. ",
       icon: seo,
-      iconBg: "bg-orange-100 text-orange-600",
     },
   ]
 }
 
+const faqs = [
+  {
+    question: "What eCommerce platforms do you work with?",
+    answer:
+      "We work with Shopify, WooCommerce, custom eCommerce platforms, and Amazon. Our solutions are tailored to your business goals, products, and target audience.",
+  }, 
+  {
+    question: "Can you help increase sales and conversions for my online store?",
+    answer:
+      "Yes. We focus on performance, UX, SEO, and paid marketing to improve traffic quality, reduce cart abandonment, and increase completed purchases.",
+  },
+  {
+    question: "Do you provide both marketing and development for eCommerce?",
+    answer:
+      "Absolutely. We offer complete eCommerce solutions including web design, development, SEO, PPC, content marketing, and social media promotion.",
+  },
+  {
+    question: "Is eCommerce SEO important for long-term growth?",
+    answer:
+      "Yes. eCommerce SEO helps your store rank higher, attract organic buyers, and generate consistent sales without relying only on ads.",
+  },
+  {
+    question: "Do you support Amazon marketing and Amazon SEO?",
+    answer:
+      "Yes. We optimize Amazon listings, manage ads, and improve rankings to help products gain more visibility and sales on Amazon.",
+  },
+];
 
 
 export default function WebDev() {
 
   return (
     <>
-      <Shoot />
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+            {/* LEFT CONTENT */}
+            <div>
+
+              {/* Heading */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+                Professional <span className="text-orange-500">eCommerce Development </span>
+                for Scalable Online Stores
+              </h1>
+
+              {/* CTA */}
+              <div className="mt-8">
+                <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
+                  Schedule a Meeting
+                  <FaArrowRight />
+                </button>
+              </div>
+
+              {/* Rating Card */}
+              <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
+                <div className="text-lg font-semibold text-gray-900">
+                  4.9<span className="text-sm">/5</span>
+                </div>
+
+                <div>
+                  <div className="flex text-yellow-400 text-sm">
+                    ★ ★ ★ ★ ★
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    20 client verified reviews
+                  </p>
+                </div>
+
+                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
+              </div>
+            </div>
+
+            {/* RIGHT ILLUSTRATION */}
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={man}
+                className="max-w-xs md:max-w-sm lg:max-w-md"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
         <ol className="flex items-center space-x-2 md:space-x-4">
@@ -121,26 +189,31 @@ export default function WebDev() {
       </div>
       <Rating />
       <section className="bg-white py-10 px-4">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
+          eCommerce Solutions Built for Performance & Conversions
+        </h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
-              Why Choose Maxetra <br />
-              for <span>Digital Marketing</span> Services
-            </h2>
-
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Maxetra is a results-driven digital marketing agency helping businesses grow through strategic and data-backed solutions. We work with startups, growing companies, and established brands to deliver marketing services aligned with real business goals.
+              Our eCommerce solutions are designed to help online businesses sell more through speed,
+              usability, and conversion-focused design. We build high-performance stores that load fast, work
+              seamlessly across devices, and provide smooth shopping experiences from product discovery
+              to checkout.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Our digital marketing approach is fully customized. We analyze your industry, audience, and competition to build strategies across SEO, AI search optimization, performance marketing, content marketing, and conversion rate optimization. Every campaign is designed to generate measurable results, not vanity metrics.
+              Every store is developed with clean architecture, secure payment integration, and
+              SEO-friendly structure to support long-term growth. We focus on optimizing product pages,
+              navigation, and checkout flows to reduce cart abandonment and increase completed purchases.
 
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-              We operate as an extension of your team, offering clear communication, transparent reporting, and continuous optimization. As search continues to evolve with AI-powered platforms, Maxetra ensures your brand stays visible, relevant, and competitive for long-term digital growth.
+              By combining smart UX, strong visuals, and performance optimization, our eCommerce
+              solutions turn visitors into customers and browsers into buyers. The result is an online store that
+              delivers higher engagement, better conversions, and scalable revenue growth.
             </p>
           </div>
 
@@ -156,7 +229,7 @@ export default function WebDev() {
         </div>
       </section>
       <ServiceCards service={services} />
-      <FAQ />
+      <FAQ faqs={faqs} />
       <Consultation />
       <Proposal2 phone1={phone1} phone2={phone2} />
     </>

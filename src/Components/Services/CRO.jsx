@@ -1,7 +1,7 @@
 import Consultation from "../Consultation";
 import Proposal2 from "../Proposal2";
 import Rating from "../Rating";
-import Shoot from "./Shoot";
+
 
 import bounce from "../../assets/SVG FOR Ad/CRO/Bounce_rate.png";
 import cta from "../../assets/SVG FOR Ad/CRO/CTA_test.png";
@@ -15,7 +15,9 @@ import lead from "../../assets/SVG FOR Ad/Content/Lead.png";
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
-import { FaHome, FaChevronRight } from "react-icons/fa";
+import { FaHome, FaChevronRight, FaArrowRight } from "react-icons/fa";
+import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png';
+
 import ServiceCards from "../ServiceCards";
 import FAQ from "../FAQ";
 import phone1 from '../../assets/SVG FOR Ad/Desk/CRO_con.png';
@@ -23,76 +25,144 @@ import phone2 from '../../assets/SVG FOR Ad/Mobile/CRO_conm.png'
 
 
 const services = {
-  heading: "Results-Driven Digital Marketing Services",
+  heading: "CRO That Maximizes Revenue",
   subText:
-    "Maxetra provides end-to-end digital marketing solutions tailored to your business goals, combining strategy, technology, and execution to deliver measurable results across channels.",
+    "Maxetra identifies conversion blockers, fixes funnel leaks, and optimizes every user touchpoint to deliver higher conversions and measurable ROI.",
 
-  items :[
+  items: [
 
     {
       title: "UX Heuristic Analysis",
-      description: "Improve your website’s organic visibility with data-driven SEO strategies. We focus on keyword research, on-page optimization, technical SEO, and content improvements to help your brand rank higher across search engines and AI-powered discovery platforms.",
+      description: "We identify critical UX flaws that silently block users from converting. By fixing usability issues, clarity gaps, and trust barriers, we make it easier for visitors to take action. This results in smoother experiences. ",
       icon: ux,
-      iconBg: "bg-blue-100 text-blue-600",
     },
     {
       title: "Funnel Drop-Off Analysis ",
-      description: "Drive immediate traffic and qualified leads with performance-focused PPC campaigns. We manage targeting, ad creatives, bidding strategies, and landing page optimization to maximize ROI, control costs, and deliver consistent, measurable results across paid search and social platforms.",
+      description: "We track every step of your funnel to uncover exactly where users drop off. These insights allow us to remove friction points and recover lost leads. The result is more completed actions and higher revenue. ",
       icon: funnel,
-      iconBg: "bg-cyan-100 text-cyan-600",
     },
     {
       title: "Landing Page Optimization",
-      description: "Increase visibility in local search results and attract nearby customers. We optimize Google Business Profiles, local listings, and location pages to improve map rankings, generate more calls, visits, and deliver high-intent local leads for your business.",
+      description: "We optimize landing pages to persuade and convert, not just attract traffic. Through improved messaging, layout, and visual hierarchy, we increase form submissions and sales. Every element is designed for performance. ",
       icon: land,
-      iconBg: "bg-emerald-100 text-emerald-600",
     },
     {
       title: "Lead magnet",
-      description: "Strengthen your website’s technical foundation for improved search performance.We optimize site speed, crawlability, indexing, and core web vitals.Our process ensures better accessibility for search engines and users.Built to support scalability, stability, and long-term organic growth.",
+      description: "We improve lead magnets to attract higher-quality prospects. Stronger value propositions and placement increase sign-ups and lead quality. This helps your sales pipeline grow faster.",
       icon: lead,
-      iconBg: "bg-lime-100 text-lime-600",
     },
     {
       title: "Page Load Time",
-      description: "Increase conversions by turning more visitors into leads and customers.We analyze user behavior, funnels, and drop-off points across your website.Using A/B testing and data insights, we improve engagement and actions.Focused on maximizing ROI from your existing traffic and campaigns.",
+      description: "Slow pages kill conversions and waste ad spend. We improve load speed to reduce bounce rates and keep users engaged. Faster experiences lead to immediate conversion gains. ",
       icon: load,
-      iconBg: "bg-sky-100 text-sky-600",
     },
     {
       title: "Bounce Rate",
-      description: "Build domain authority with high-quality, white-hat link building strategies focused on relevance and trust. We earn backlinks from authoritative websites within your industry to strengthen credibility. Our approach avoids shortcuts and spam tactics, ensuring long-term SEO value.",
+      description: "We analyze why users leave without engaging and fix the causes. Better content flow, relevance, and UX keep visitors on your site longer. This increases trust and conversion  opportunities. ",
       icon: bounce,
-      iconBg: "bg-green-100 text-green-600",
     },
     {
       title: "Pages Per Visit",
-      description: "Create fast, modern, and conversion-focused websites designed for performance and scalability. We build responsive, SEO-friendly websites with clean design and strong user experience. Our development approach focuses on speed, security, and usability across all devices.",
+      description: "We design smarter internal journeys that encourage users to explore more pages. Increased engagement builds confidence and improves conversion potential. More interaction means  better results.",
       icon: ppv,
-      iconBg: "bg-orange-100 text-orange-600",
     },
     {
       title: "Heatmaps & Session Recordings ",
-      description: "Create visually compelling designs that strengthen your brand identity and communication. We design high-quality graphics for digital marketing and social media that align with your brand voice. Our focus is on clarity, consistency, and impactful visuals that support engagement and business growth.",
+      description: "We study real user behavior using heatmaps and session recordings. This reveals exactly where users hesitate, click, or abandon pages. Decisions are made using data, not assumptions. ",
       icon: heatmap,
-      iconBg: "bg-yellow-100 text-yellow-600",
     },
     {
       title: "CTA Testing & Button Design Strategy",
-      description: "Build a strong brand presence and engage your audience. We create strategic content, manage campaigns, and optimize performance to increase reach and engagement. Our approach focuses on consistency, audience growth, and measurable results that support your overall marketing goals.",
+      description: "We test CTA copy, colors, placement, and design to drive action. Optimized buttons remove  hesitation and guide users to convert. Small changes create big revenue impact. ",
       icon: cta,
-      iconBg: "bg-indigo-100 text-indigo-600",
     },
   ]
 }
 
+const faqs = [
+  {
+    question: "What is Conversion Rate Optimization (CRO)?",
+    answer:
+      "CRO is the process of improving your website to turn more visitors into leads or customers. Maxetra focuses on data-driven testing and optimization to increase conversions without increasing traffic.",
+  },
+  {
+    question: "How does CRO help increase revenue?",
+    answer:
+      "CRO removes friction points that stop users from converting. By optimizing landing pages, user funnels, and CTAs , Maxetra helps you get more value from your existing traffic and advertising spend.",
+  },
+  {
+    question: "What tools do you use for CRO analysis?",
+    answer:
+      "We use analytics platforms, heatmaps, session recordings, A/B testing tools, and user behavior tracking to identify conversion blockers and opportunities. ",
+  },
+  {
+    question: "How long does it take to see CRO results?",
+    answer:
+      "Some improvements deliver quick wins, while larger tests take a few weeks. Continuous optimization leads to consistent and scalable conversion growth. ",
+  },
+  {
+    question: "Is CRO useful for both lead-generation and eCommerce websites? ",
+    answer:
+      "Yes. Maxetra customizes CRO strategies for lead-gen, SaaS, and eCommerce businesses to improve sign-ups, sales, and engagement. ",
+  },
+];
 
 
 export default function CRO() {
-  
+
   return (
     <>
-      <Shoot />
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+            {/* LEFT CONTENT */}
+            <div>
+
+              {/* Heading */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+                Conversion Rate Optimization Services for<span className="text-orange-500">Scalable Business</span>
+                Growth
+              </h1>
+
+              {/* CTA */}
+              <div className="mt-8">
+                <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
+                  Schedule a Meeting
+                  <FaArrowRight />
+                </button>
+              </div>
+
+              {/* Rating Card */}
+              <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
+                <div className="text-lg font-semibold text-gray-900">
+                  4.9<span className="text-sm">/5</span>
+                </div>
+
+                <div>
+                  <div className="flex text-yellow-400 text-sm">
+                    ★ ★ ★ ★ ★
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    20 client verified reviews
+                  </p>
+                </div>
+
+                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
+              </div>
+            </div>
+
+            {/* RIGHT ILLUSTRATION */}
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={man}
+                className="max-w-xs md:max-w-sm lg:max-w-md"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
         <ol className="flex items-center space-x-2 md:space-x-4">
@@ -120,26 +190,32 @@ export default function CRO() {
       </div>
       <Rating />
       <section className="bg-white py-10 px-4">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
+          Conversion Rate Optimization Solutions Built to Maximize ROI
+        </h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
-              Why Choose Maxetra <br />
-              for <span>Digital Marketing</span> Services
-            </h2>
-
             <p className="text-gray-600 mb-6 leading-relaxed">
-            Maxetra is a results-driven digital marketing agency helping businesses grow through strategic and data-backed solutions. We work with startups, growing companies, and established brands to deliver marketing services aligned with real business goals.
+              Conversion Rate Optimization is about getting more value from the traffic you already have.
+              Maxetra’s CRO solutions focus on turning visitors into leads, customers, and revenue through
+              data-driven optimization.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-            Our digital marketing approach is fully customized. We analyze your industry, audience, and competition to build strategies across SEO, AI search optimization, performance marketing, content marketing, and conversion rate optimization. Every campaign is designed to generate measurable results, not vanity metrics.
-
+              We analyze user behavior, funnel performance, and conversion
+              barriers to identify exactly where users drop off and why. Using A/B testing, UX improvements,
+              landing page optimization, and conversion-focused messaging, we continuously refine every
+              touchpoint of the user journey.
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-            We operate as an extension of your team, offering clear communication, transparent reporting, and continuous optimization. As search continues to evolve with AI-powered platforms, Maxetra ensures your brand stays visible, relevant, and competitive for long-term digital growth.
+              Our approach combines analytics, user intent, and proven
+              conversion psychology to improve form submissions, sales, and engagement without increasing
+              ad spend. With clear testing frameworks and performance tracking, Maxetra ensures every
+              optimization decision is measurable and results-driven. The outcome is higher conversion rates,
+              lower acquisition costs, and scalable growth built on smarter optimization—not guesswork.
             </p>
           </div>
 
@@ -154,10 +230,10 @@ export default function CRO() {
 
         </div>
       </section>
-      <ServiceCards service={services}/>
-      <FAQ/>
+      <ServiceCards service={services} />
+      <FAQ faqs={faqs} />
       <Consultation />
-      <Proposal2 phone1={phone1} phone2={phone2}/>
+      <Proposal2 phone1={phone1} phone2={phone2} />
     </>
   )
 }

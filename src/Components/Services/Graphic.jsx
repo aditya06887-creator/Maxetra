@@ -16,7 +16,8 @@ import shopify from "../../assets/SVG FOR Ad/seo_card/Shopify.png";
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
-import { FaHome, FaChevronRight } from "react-icons/fa";
+import { FaHome, FaChevronRight, FaArrowRight } from "react-icons/fa";
+import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png';
 import ServiceCards from "../ServiceCards";
 import FAQ from "../FAQ";
 import phone1 from '../../assets/SVG FOR Ad/Desk/graphic_con.png';
@@ -24,45 +25,40 @@ import phone2 from '../../assets/SVG FOR Ad/Mobile/graphic_conm.png'
 
 
 const services = {
-  heading: "Results-Driven Digital Marketing Services",
+  heading: "Graphic Design That Builds Strong Brands",
   subText:
-    "Maxetra provides end-to-end digital marketing solutions tailored to your business goals, combining strategy, technology, and execution to deliver measurable results across channels.",
+    "Maxetra delivers high-impact designs that improve brand recognition, engagement, and marketing performance. ",
 
-  items :[
+  items: [
 
     {
       title: "Paid Ad Creative",
-      description: "Improve your website’s organic visibility with data-driven SEO strategies. We focus on keyword research, on-page optimization, technical SEO, and content improvements to help your brand rank higher across search engines and AI-powered discovery platforms.",
+      description: "We design high-impact ad creatives optimized for clicks and conversions. Visually strong ads help improve engagement and ad performance across platforms.",
       icon: paid,
-      iconBg: "bg-blue-100 text-blue-600",
     },
     {
       title: "Social Media Graphics",
-      description: "Drive immediate traffic and qualified leads with performance-focused PPC campaigns. We manage targeting, ad creatives, bidding strategies, and landing page optimization to maximize ROI, control costs, and deliver consistent, measurable results across paid search and social platforms.",
+      description: "We create eye-catching social media graphics tailored to each platform. Consistent visuals strengthen brand identity and boost audience engagement. ",
       icon: social,
-      iconBg: "bg-cyan-100 text-cyan-600",
     },
     {
       title: "Landing Page Layouts Graphic",
-      description: "Increase visibility in local search results and attract nearby customers. We optimize Google Business Profiles, local listings, and location pages to improve map rankings, generate more calls, visits, and deliver high-intent local leads for your business.",
+      description: "We design conversion-focused landing page layouts that guide users toward action. Clear structure and visual hierarchy improve lead generation. ",
       icon: landing,
-      iconBg: "bg-emerald-100 text-emerald-600",
     },
     {
       title: "Brand Identity & Style Guide",
-      description: "Strengthen your website’s technical foundation for improved search performance.We optimize site speed, crawlability, indexing, and core web vitals.Our process ensures better accessibility for search engines and users.Built to support scalability, stability, and long-term organic growth.",
+      description: "We develop complete brand identity systems including colors, typography, and visual guidelines.Consistent branding builds trust and recognition.",
       icon: brand,
-      iconBg: "bg-lime-100 text-lime-600",
     },
     {
       title: "Email Template Design",
-      description: "Increase conversions by turning more visitors into leads and customers.We analyze user behavior, funnels, and drop-off points across your website.Using A/B testing and data insights, we improve engagement and actions.Focused on maximizing ROI from your existing traffic and campaigns.",
+      description: "We design professional email templates that improve readability and click-through rates.Branded layouts help emails look polished and effective. ",
       icon: email,
-      iconBg: "bg-sky-100 text-sky-600",
     },
     {
       title: "Infographics Creative Direction",
-      description: "Build domain authority with high-quality, white-hat link building strategies focused on relevance and trust. We earn backlinks from authoritative websites within your industry to strengthen credibility. Our approach avoids shortcuts and spam tactics, ensuring long-term SEO value.",
+      description: "We create visually engaging infographics that simplify complex information. Strong visuals make content easier to understand and more shareable. ",
       icon: info,
       iconBg: "bg-green-100 text-green-600",
     },
@@ -74,26 +70,98 @@ const services = {
     // },
     {
       title: "Editing & Production",
-      description: "Build a strong brand presence and engage your audience. We create strategic content, manage campaigns, and optimize performance to increase reach and engagement. Our approach focuses on consistency, audience growth, and measurable results that support your overall marketing goals.",
+      description: "We handle creative editing and production to refine design quality. Polished visuals ensure consistency across all marketing materials. ",
       icon: edit,
-      iconBg: "bg-indigo-100 text-indigo-600",
     },
     {
-        title: "WhatsApp Marketing Templet",
-        description: "Create fast, modern, and conversion-focused websites designed for performance and scalability. We build responsive, SEO-friendly websites with clean design and strong user experience. Our development approach focuses on speed, security, and usability across all devices.",
-        icon: whatsapp,
-        iconBg: "bg-orange-100 text-orange-600",
-      },
+      title: "WhatsApp Marketing Templet",
+      description: "We design WhatsApp-ready templates for promotions and updates. Clean, branded templates help improve message clarity and response rates.",
+      icon: whatsapp,
+    },
   ]
 }
 
 
+const faqs = [
+  {
+    question: "Can you create designs that match my brand identity?",
+    answer:
+      "Yes. All designs are created to align with your brand colors, typography, and visual style. Consistent branding helps build recognition and trust.",
+  },
+  {
+    question: "Do you design creatives for paid ads and social media?",
+    answer:
+      "Absolutely. We design conversion-focused creatives for paid ads and social media platforms that improve engagement, clicks, and campaign performance.",
+  },
+  {
+    question: "Are your designs optimized for digital platforms?",
+    answer:
+      "Yes. Our designs are optimized for websites, mobile devices, email marketing, and social media platforms to ensure clarity and performance everywhere.",
+  },
+  {
+    question: "Do you provide ongoing graphic design support?",
+    answer:
+      "Yes. We offer ongoing design support for businesses that need regular creatives, updates, and consistent branding across marketing channels.",
+  },
+];
+
 
 export default function Graphic() {
-  
+
   return (
     <>
-      <Shoot />
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+            {/* LEFT CONTENT */}
+            <div>
+
+              {/* Heading */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+                Graphic Designing Services That Build Strong <span className="text-orange-500">Brands & Visual </span>
+                Impact
+              </h1>
+
+              {/* CTA */}
+              <div className="mt-8">
+                <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
+                  Schedule a Meeting
+                  <FaArrowRight />
+                </button>
+              </div>
+
+              {/* Rating Card */}
+              <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
+                <div className="text-lg font-semibold text-gray-900">
+                  4.9<span className="text-sm">/5</span>
+                </div>
+
+                <div>
+                  <div className="flex text-yellow-400 text-sm">
+                    ★ ★ ★ ★ ★
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    20 client verified reviews
+                  </p>
+                </div>
+
+                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
+              </div>
+            </div>
+
+            {/* RIGHT ILLUSTRATION */}
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={man}
+                className="max-w-xs md:max-w-sm lg:max-w-md"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
       <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
         <ol className="flex items-center space-x-2 md:space-x-4">
@@ -121,26 +189,32 @@ export default function Graphic() {
       </div>
       <Rating />
       <section className="bg-white py-10 px-4">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
+          Graphic Design Solutions Built for Branding & Growth
+        </h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
-              Why Choose Maxetra <br />
-              for <span>Digital Marketing</span> Services
-            </h2>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-            Maxetra is a results-driven digital marketing agency helping businesses grow through strategic and data-backed solutions. We work with startups, growing companies, and established brands to deliver marketing services aligned with real business goals.
+              Our graphic design solutions are created to help brands communicate clearly, stand out visually,
+              and grow with confidence. We focus on building strong brand identity through consistent,
+              creative, and purposeful design that connects with your target audience.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-            Our digital marketing approach is fully customized. We analyze your industry, audience, and competition to build strategies across SEO, AI search optimization, performance marketing, content marketing, and conversion rate optimization. Every campaign is designed to generate measurable results, not vanity metrics.
-
+              From logos and brand
+              visuals to marketing creatives and digital assets, every design is crafted to support branding and
+              marketing goals. We combine creativity with strategy to ensure designs are not only attractive
+              but also effective across platforms.
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-            We operate as an extension of your team, offering clear communication, transparent reporting, and continuous optimization. As search continues to evolve with AI-powered platforms, Maxetra ensures your brand stays visible, relevant, and competitive for long-term digital growth.
+              By maintaining visual consistency and high-quality design
+              standards, we help businesses improve brand recognition, engagement, and trust. These
+              graphic design solutions play a key role in strengthening brand presence, enhancing marketing
+              performance, and supporting long-term business growth.
             </p>
           </div>
 
@@ -155,10 +229,10 @@ export default function Graphic() {
 
         </div>
       </section>
-      <ServiceCards service={services}/>
-      <FAQ/>
+      <ServiceCards service={services} />
+      <FAQ faqs={faqs} />
       <Consultation />
-      <Proposal2 phone1={phone1} phone2={phone2}/>
+      <Proposal2 phone1={phone1} phone2={phone2} />
     </>
   )
 }

@@ -1,17 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
 import { IoTrendingUpOutline } from "react-icons/io5";
-import {
-  FaGlobe,
-  FaUsers,
-  FaUserTie,
-  FaClock,
-  FaArrowRight,
-  FaCheckCircle,
-  FaUpload,
-  FaClipboardCheck,
-  FaGift
-} from 'react-icons/fa';
+import { FaGlobe, FaUsers, FaUserTie, FaClock, FaArrowRight, FaCheckCircle, FaUpload, FaClipboardCheck, FaGift } from 'react-icons/fa';
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import bg from "../assets/SVG FOR Ad/General/Career_bg.jpeg"
 
 
 
@@ -35,39 +26,82 @@ const steps = [
 ];
 
 const Career = () => {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    position: "",
+    resume: null,
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: files ? files[0] : value,
+    }));
+  };
+
+  const isFormValid =
+    formData.name &&
+    formData.email &&
+    formData.position &&
+    formData.resume &&
+    formData.message;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+
+    console.log("Form Submitted:", formData);
+    alert("Application Submitted Successfully!");
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-orange-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[70vh] py-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={bg}
+            alt="Career background"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay */}
+          {/* <div className="absolute inset-0 bg-white/70"></div> */}
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 ">
                 Design the Future of
-                <span className="text-orange-500 block">Digital Growth</span>
+                <span className="text-orange-500 block my-2">Digital Growth</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-300 mb-8">
                 Work with a forward-thinking team shaping tomorrow's marketing
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium">
+                <button
+                  onClick={() => {
+                    document.getElementById("apply-form")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium cursor-pointer">
                   Explore Careers
                 </button>
-                <button className="border border-orange-500 text-orange-500 hover:bg-orange-50 px-6 py-3 rounded-md font-medium">
+                <button className="border border-orange-500 text-orange-500 hover:bg-orange-50 px-6 py-3 rounded-md font-medium cursor-pointer">
                   Join Talent Network
                 </button>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="relative">
-                <div className="w-80 h-80 bg-gradient-to-br from-orange-200 to-orange-400 rounded-full opacity-20"></div>
-                <FaGlobe className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl text-orange-500" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Why Join Us */}
       <section className="py-16 bg-white">
@@ -227,61 +261,103 @@ const Career = () => {
 
 
       {/* Apply Form */}
+      {/* Apply Form */}
       <section id="apply-form" className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Apply for the Future</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Apply for the Future
+            </h2>
           </div>
-          <form className="space-y-6">
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+
+            {/* Name & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
-                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Full Name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-orange-500"
               />
+
               <input
+                name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email Address"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-orange-500"
               />
             </div>
-            <select className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
-              <option>Position Applying For</option>
-              <option>Digital Marketing Strategist</option>
-              <option>SEO Specialist</option>
-              <option>PPC Performance Manager</option>
-              <option>Web Designer & Developer</option>
+
+            {/* Position */}
+            <select
+              name="position"
+              value={formData.position}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-orange-500"
+            >
+              <option value="">Position Applying For</option>
+              <option value="Digital Marketing Strategist">
+                Digital Marketing Strategist
+              </option>
+              <option value="SEO Specialist">SEO Specialist</option>
+              <option value="PPC Performance Manager">
+                PPC Performance Manager
+              </option>
+              <option value="Web Designer & Developer">
+                Web Designer & Developer
+              </option>
             </select>
-            <div className="relative">
+
+            {/* Resume Upload */}
+            <div>
               <input
                 type="file"
-                className="hidden"
                 id="resume"
+                name="resume"
+                onChange={handleChange}
+                className="hidden"
               />
+
               <label
                 htmlFor="resume"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md cursor-pointer flex items-center justify-center bg-gray-50 hover:bg-gray-100"
+                className="w-full px-4 py-3 border rounded-md cursor-pointer flex items-center justify-center bg-gray-50 hover:bg-gray-100"
               >
                 <FaUpload className="mr-2" />
-                Upload Resume
+                {formData.resume ? formData.resume.name : "Upload Resume"}
               </label>
             </div>
+
+            {/* Message */}
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               rows={4}
               placeholder="Message"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-            ></textarea>
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md font-medium flex items-center mx-auto"
-              >
-                Apply for the Future <FaArrowRight className="ml-2" />
-              </button>
-            </div>
+              className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-orange-500"
+            />
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={!isFormValid}
+              className={`w-full py-3 rounded-md font-medium flex items-center justify-center gap-2
+          ${isFormValid
+                  ? "bg-orange-500 text-white hover:bg-orange-600"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+            >
+              Apply for the Future <FaArrowRight />
+            </button>
+
           </form>
         </div>
       </section>
+
 
 
     </div>

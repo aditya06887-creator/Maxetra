@@ -16,7 +16,8 @@ import shopify from "../../assets/SVG FOR Ad/seo_card/Shopify.png";
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
-import { FaHome, FaChevronRight } from "react-icons/fa";
+import { FaHome, FaChevronRight, FaArrowRight } from "react-icons/fa";
+import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png';
 import ServiceCards from "../ServiceCards";
 import FAQ from "../FAQ";
 import phone1 from '../../assets/SVG FOR Ad/Desk/E-com_con.png';
@@ -24,76 +25,148 @@ import phone2 from '../../assets/SVG FOR Ad/Mobile/E-com_conm.png'
 
 
 const services = {
-  heading: "Results-Driven Digital Marketing Services",
+  
+  heading: "Web Development That Powers Business Growth ",
   subText:
-    "Maxetra provides end-to-end digital marketing solutions tailored to your business goals, combining strategy, technology, and execution to deliver measurable results across channels.",
+    "Maxetra creates high-performance websites that attract users, improve engagement, and convert traffic into measurable results.",
 
-  items :[
+  items: [
 
     {
       title: "WordPress",
-      description: "Improve your website’s organic visibility with data-driven SEO strategies. We focus on keyword research, on-page optimization, technical SEO, and content improvements to help your brand rank higher across search engines and AI-powered discovery platforms.",
+      description: "We build secure, scalable WordPress websites that are easy to manage and optimized for performance. Custom themes, plugins, and clean architecture ensure flexibility, speed, and  growth. ",
       icon: wordpress,
-      iconBg: "bg-blue-100 text-blue-600",
     },
     {
       title: "Shopify",
-      description: "Drive immediate traffic and qualified leads with performance-focused PPC campaigns. We manage targeting, ad creatives, bidding strategies, and landing page optimization to maximize ROI, control costs, and deliver consistent, measurable results across paid search and social platforms.",
+      description: "We create high-converting Shopify stores designed to sell. From custom themes to app integrations and checkout optimization, our Shopify builds focus on speed, UX, and revenue.",
       icon: shopify,
-      iconBg: "bg-cyan-100 text-cyan-600",
     },
     {
       title: "Custom Coded",
-      description: "Increase visibility in local search results and attract nearby customers. We optimize Google Business Profiles, local listings, and location pages to improve map rankings, generate more calls, visits, and deliver high-intent local leads for your business.",
+      description: "For advanced requirements, we develop fully custom-coded websites with clean, efficient code. These solutions offer maximum control, performance, and scalability for complex projects. ",
       icon: code,
-      iconBg: "bg-emerald-100 text-emerald-600",
     },
     {
       title: "Website Speed Optimization",
-      description: "Strengthen your website’s technical foundation for improved search performance.We optimize site speed, crawlability, indexing, and core web vitals.Our process ensures better accessibility for search engines and users.Built to support scalability, stability, and long-term organic growth.",
+      description: "We optimize load times to improve user experience and conversions. Faster websites reduce bounce rates, rank better on search engines, and perform stronger across devices.",
       icon: web_seo,
-      iconBg: "bg-lime-100 text-lime-600",
     },
     {
       title: "ADA Compliance",
-      description: "Increase conversions by turning more visitors into leads and customers.We analyze user behavior, funnels, and drop-off points across your website.Using A/B testing and data insights, we improve engagement and actions.Focused on maximizing ROI from your existing traffic and campaigns.",
+      description: "We build and optimize websites to meet ADA accessibility standards. Accessible websites improve usability, reduce legal risk, and reach a wider audience.",
       icon: comp,
-      iconBg: "bg-sky-100 text-sky-600",
     },
     {
       title: "Mobile-First UX/UI Design",
-      description: "Build domain authority with high-quality, white-hat link building strategies focused on relevance and trust. We earn backlinks from authoritative websites within your industry to strengthen credibility. Our approach avoids shortcuts and spam tactics, ensuring long-term SEO value.",
+      description: "We design websites with a mobile-first approach to ensure seamless experiences on all devices. Intuitive UX and clean UI help increase engagement and conversions.",
       icon: uiux,
-      iconBg: "bg-green-100 text-green-600",
     },
     {
       title: "Landing Page Design",
-      description: "Create visually compelling designs that strengthen your brand identity and communication. We design high-quality graphics for digital marketing and social media that align with your brand voice. Our focus is on clarity, consistency, and impactful visuals that support engagement and business growth.",
+      description: "We design high-converting landing pages focused on lead generation and sales. Clear messaging, strong CTAs, and optimized layouts drive action.",
       icon: landing,
       iconBg: "bg-yellow-100 text-yellow-600",
     },
     {
       title: "Ecommerce Development",
-      description: "Build a strong brand presence and engage your audience. We create strategic content, manage campaigns, and optimize performance to increase reach and engagement. Our approach focuses on consistency, audience growth, and measurable results that support your overall marketing goals.",
+      description: "We build secure, scalable eCommerce platforms designed for growth. Smooth navigation, fast checkout, and performance optimization help increase sales.",
       icon: ecom,
-      iconBg: "bg-indigo-100 text-indigo-600",
     },
     {
-        title: "Multi-Location Website Systems",
-        description: "Create fast, modern, and conversion-focused websites designed for performance and scalability. We build responsive, SEO-friendly websites with clean design and strong user experience. Our development approach focuses on speed, security, and usability across all devices.",
-        icon: location,
-        iconBg: "bg-orange-100 text-orange-600",
-      },
+      title: "Multi-Location Website Systems",
+      description: "We develop websites for businesses with multiple locations. Structured location pages improve local SEO, usability, and scalable content management.",
+      icon: location,
+    },
   ]
 }
 
-
+const faqs = [ 
+  {
+    question: "What types of websites do you develop?",
+    answer:
+      "We develop WordPress, Shopify, custom-coded, eCommerce, landing pages, and multi-location websites. Each project is tailored to business goals, performance and scalability.",
+  },
+  {
+    question:
+      "Do you build SEO-friendly websites? ",
+    answer:
+      "Absolutely. Our web development process includes clean code, proper structure, and SEO best practices to support long-term organic visibility. ",
+  },
+  {
+    question:
+      "Can you redesign or optimize an existing website? ",
+    answer:
+      "Yes. We can redesign, optimize, or upgrade existing websites to improve speed, usability, conversions, and overall performance.",
+  },
+  {
+    question:
+      "Do you provide ongoing website maintenance and support? ",
+    answer:
+      "Yes. We offer website maintenance, security updates, and performance monitoring to keep your site running smoothly and securely.",
+  },
+  {
+    question:
+      "Are your websites mobile-friendly and fast?",
+    answer:
+      "Yes. All our websites follow a mobile-first design approach and are optimized for speed. This ensures better user experience, engagement, and search engine rankings.",
+  },
+];
 
 export default function ECOM() {
-  
+
   return (
     <>
-      <Shoot />
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+            {/* LEFT CONTENT */}
+            <div>
+
+              {/* Heading */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+                Services That Build <span className="text-orange-500">Fast, Secure & Scalable </span> Websites
+              </h1>
+
+              {/* CTA */}
+              <div className="mt-8">
+                <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
+                  Schedule a Meeting
+                  <FaArrowRight />
+                </button>
+              </div>
+
+              {/* Rating Card */}
+              <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
+                <div className="text-lg font-semibold text-gray-900">
+                  4.9<span className="text-sm">/5</span>
+                </div>
+
+                <div>
+                  <div className="flex text-yellow-400 text-sm">
+                    ★ ★ ★ ★ ★
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    20 client verified reviews
+                  </p>
+                </div>
+
+                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
+              </div>
+            </div>
+
+            {/* RIGHT ILLUSTRATION */}
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={man}
+                className="max-w-xs md:max-w-sm lg:max-w-md"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
         <ol className="flex items-center space-x-2 md:space-x-4">
@@ -121,26 +194,33 @@ export default function ECOM() {
       </div>
       <Rating />
       <section className="bg-white py-10 px-4">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
+          Web Development Solutions Built for Performance & Growth Services
+        </h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
-              Why Choose Maxetra <br />
-              for <span>Digital Marketing</span> Services
-            </h2>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-            Maxetra is a results-driven digital marketing agency helping businesses grow through strategic and data-backed solutions. We work with startups, growing companies, and established brands to deliver marketing services aligned with real business goals.
+              Our web development solutions are designed to help businesses build fast, secure, and
+              scalable websites that support long-term growth. We focus on performance-driven development
+              that improves user experience, engagement, and conversions.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-            Our digital marketing approach is fully customized. We analyze your industry, audience, and competition to build strategies across SEO, AI search optimization, performance marketing, content marketing, and conversion rate optimization. Every campaign is designed to generate measurable results, not vanity metrics.
+              From clean code and responsive
+              layouts to SEO-friendly structure and strong security, every website is built to perform across
+              devices and platforms. We analyze business goals, user behavior, and technical requirements
+              to deliver custom solutions that align with your brand and audience.
 
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-            We operate as an extension of your team, offering clear communication, transparent reporting, and continuous optimization. As search continues to evolve with AI-powered platforms, Maxetra ensures your brand stays visible, relevant, and competitive for long-term digital growth.
+              By optimizing speed,
+              usability, and functionality, we ensure your website loads faster, ranks better, and converts more
+              visitors. These web development solutions provide a strong digital foundation that supports
+              marketing efforts, improves credibility, and helps businesses grow with confidence.
             </p>
           </div>
 
@@ -155,10 +235,10 @@ export default function ECOM() {
 
         </div>
       </section>
-      <ServiceCards service={services}/>
-      <FAQ/>
+      <ServiceCards service={services} />
+      <FAQ faqs={faqs} />
       <Consultation />
-      <Proposal2 phone1={phone1} phone2={phone2}/>
+      <Proposal2 phone1={phone1} phone2={phone2} />
     </>
   )
 }

@@ -24,6 +24,7 @@ import WebDev from "./Components/Services/WebDev";
 import ECOM from "./Components/Services/ECOM";
 import Graphic from "./Components/Services/Graphic";
 import Email from "./Components/Services/Email";
+import Thanks from "./Components/Thanks";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/term" element={<Term/>} />
         <Route path="/career" element={<Career />} />
+        <Route path="/thanks" element={<Thanks />} />
       </Routes>
 
       <Footer />
