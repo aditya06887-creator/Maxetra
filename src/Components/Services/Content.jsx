@@ -10,7 +10,7 @@ import calender from "../../assets/SVG FOR Ad/Content/Calendar.png";
 import trust from "../../assets/SVG FOR Ad/Content/Trust.png";
 import blog from "../../assets/SVG FOR Ad/Content/blog.png";
 import ads from "../../assets/SVG FOR Ad/Content/Ad_copy.png";
-import lead from "../../assets/SVG FOR Ad/Content/lead.png";
+import lead from "../../assets/SVG FOR Ad/Content/Lead.png";
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
