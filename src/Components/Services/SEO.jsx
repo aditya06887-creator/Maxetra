@@ -20,7 +20,7 @@ import ecom from '../../assets/SVG FOR Ad/seo_card/eCommerce.png';
 import key from '../../assets/SVG FOR Ad/seo_card/Keyword Research.png';
 import lo_seo from '../../assets/SVG FOR Ad/seo_card/Local Seo.png';
 import { Link } from "react-router-dom";
-import man from '../../assets/SVG FOR Ad/General/seo.png'
+import man from '../../assets/SVG FOR Ad/General/Seo.png'
 import home2 from '../../assets/SVG FOR Ad/General/SEO_home_2.png'
 
 import Proposal2 from "../Proposal2";
