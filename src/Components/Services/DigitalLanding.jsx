@@ -126,11 +126,11 @@ export default function DigitalLanding() {
     <>
       <Shoot />
 
-      <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
-        <ol className="flex items-center space-x-2 md:space-x-4">
+      <div className="flex py-4 px-10 text-sm bg-[#001e37] max-w-7xl mx-auto w-full">
+        <ol className="flex items-center space-x-2 md:space-x-4 text-white">
 
           {/* Step 1: Home */}
-          <li className="flex items-center">
+          <li className="flex items-center ">
             <Link to="/" className="flex items-center gap-1 hover:text-orange-500 transition-colors">
               <FaHome className="text-base" />
             </Link>
@@ -143,14 +143,14 @@ export default function DigitalLanding() {
 
           {/* Step 3: Current Page (e.g., Digital Marketing) */}
           <li className="flex items-center">
-            <span className="text-[#001e37] cursor-pointer hover:text-orange-500 font-semibold">
+            <span className="cursor-pointer hover:text-orange-500 font-semibold">
               Digital Marketing
             </span>
           </li>
 
         </ol>
       </div>
-      <Rating />
+      
       <section className="bg-white py-6 px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-[#001e37] mb-6 text-center">
           Why Choose Maxetra 
@@ -186,6 +186,7 @@ export default function DigitalLanding() {
 
         </div>
       </section>
+      <Rating />
       <ServiceCards service={services} />
       <FAQ faqs={faqs}/>
       <Consultation />

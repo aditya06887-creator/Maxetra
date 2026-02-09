@@ -25,6 +25,7 @@ import ECOM from "./Components/Services/ECOM";
 import Graphic from "./Components/Services/Graphic";
 import Email from "./Components/Services/Email";
 import Thanks from "./Components/Thanks";
+import NotFoundPage from "./Components/404";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <Route path="/term" element={<Term/>} />
         <Route path="/career" element={<Career />} />
         <Route path="/thanks" element={<Thanks />} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
 
       <Footer />

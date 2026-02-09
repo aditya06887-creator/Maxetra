@@ -12,7 +12,8 @@ import twitter from "../../assets/SVG FOR Ad/Performance/Twitter_Ads.png";
 import yt from "../../assets/SVG FOR Ad/Performance/Yt.png";
 import g_ads from "../../assets/SVG FOR Ad/local/Google_ads.png";
 import { Link } from "react-router-dom";
-import man from '../../assets/SVG FOR Ad/General/Man_img.png'
+import man from '../../assets/SVG FOR Ad/General/Performance_Marketing_Home.png'
+import home2 from '../../assets/SVG FOR Ad/General/Performance_Marketing_Home_2.png'
 
 import { FaHome, FaChevronRight, FaArrowRight } from "react-icons/fa";
 import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png';
@@ -123,7 +124,7 @@ export default function Performance() {
 
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-[#001e37] text-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
@@ -131,7 +132,7 @@ export default function Performance() {
             <div>
 
               {/* Heading */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                 High-Impact <span className="text-orange-500"> Performance Marketing </span> Built for Maximum ROI
               </h1>
 
@@ -144,21 +145,38 @@ export default function Performance() {
               </div>
 
               {/* Rating Card */}
-              <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
-                <div className="text-lg font-semibold text-gray-900">
-                  4.9<span className="text-sm">/5</span>
-                </div>
+              <div className="mt-10 px-4">
+                <div className="
+    inline-flex items-center gap-3
+    bg-white shadow-md rounded-lg
+    px-3 py-2
+    sm:gap-4 sm:px-4 sm:py-3
+    hover:shadow-inner hover:shadow-gray-400
+    w-full max-w-xs sm:w-auto
+  ">
 
-                <div>
-                  <div className="flex text-yellow-400 text-sm">
-                    ★ ★ ★ ★ ★
+                  {/* Rating */}
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 whitespace-nowrap">
+                    4.9<span className="text-xs sm:text-sm">/5</span>
                   </div>
-                  <p className="text-xs text-gray-500">
-                    20 client verified reviews
-                  </p>
-                </div>
 
-                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
+                  {/* Stars + Reviews */}
+                  <div className="min-w-0">
+                    <div className="flex text-yellow-400 text-xs sm:text-sm leading-none">
+                      ★ ★ ★ ★ ★
+                    </div>
+                    <p className="text-[8px] sm:text-xs text-gray-500 truncate">
+                      20+ Client Reviews
+                    </p>
+                  </div>
+
+                  {/* Logo */}
+                  <img
+                    src={Clutch}
+                    alt="Clutch"
+                    className="w-20 sm:w-28 h-auto object-contain shrink-0"
+                  />
+                </div>
               </div>
             </div>
 
@@ -174,8 +192,8 @@ export default function Performance() {
         </div>
       </section>
 
-      <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
-        <ol className="flex items-center space-x-2 md:space-x-4">
+      <div className="flex py-4 px-10 text-sm bg-[#001e37]  max-w-7xl mx-auto w-full">
+        <ol className="flex items-center space-x-2 md:space-x-4 text-white">
 
           {/* Step 1: Home */}
           <li className="flex items-center">
@@ -189,16 +207,24 @@ export default function Performance() {
           {/* Separator */}
           <FaChevronRight className="text-[10px] text-gray-400" />
 
+          <li className="flex items-center">
+            <Link to="/digital-marketing-services" className="flex items-center gap-1 hover:text-orange-500 transition-colors">
+              Digital Marketing
+            </Link>
+          </li>
+          <FaChevronRight className="text-[10px] text-gray-400" />
+
           {/* Step 3: Current Page (e.g., Digital Marketing) */}
           <li className="flex items-center">
-            <span className="text-[#001e37] cursor-pointer hover:text-orange-500 font-semibold">
-              Digital Marketing
-            </span>
+            <Link to="/digital-marketing-services/performance" className="flex items-center gap-1 hover:text-orange-500 transition-colors">
+            Performance Marketing
+            </Link>
           </li>
 
         </ol>
       </div>
-      <Rating />
+
+      
       <section className="bg-white py-10 px-4">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#001e37] mb-6">
           Maxetra’s <span>Performance Marketing</span>Built for ROI
@@ -225,7 +251,7 @@ export default function Performance() {
           {/* RIGHT VISUAL SECTION */}
           <div className="relative flex justify-center items-center">
             <img
-              src={man}
+              src={home2}
               alt="DevOps Rocket"
               className="max-w-xs md:max-w-sm lg:max-w-md"
             />
@@ -233,6 +259,9 @@ export default function Performance() {
 
         </div>
       </section>
+
+      <Rating />
+      
       <ServiceCards service={services} />
       <FAQ faqs={faqs}/>
       <Consultation />

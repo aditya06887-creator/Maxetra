@@ -15,6 +15,7 @@ import graphic from "../../assets/SVG FOR Ad/seo_card/Graphic Designing.png";
 
 import { Link } from "react-router-dom";
 import man from '../../assets/SVG FOR Ad/General/Man_img.png'
+import home2 from '../../assets/SVG FOR Ad/General/Video_Home_2.png'
 
 import { FaHome, FaChevronRight, FaArrowRight } from "react-icons/fa";
 import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png';
@@ -85,7 +86,7 @@ const faqs = [
     question: "What types of video production services do you offer?",
     answer:
       "We offer end-to-end video production including brand videos, promotional videos, testimonials, social media videos, drone footage, and post-production services tailored to business goals.",
-  }, 
+  },
   {
     question: "Do you handle the entire video production process?",
     answer:
@@ -107,60 +108,79 @@ export default function Video() {
 
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-[#001e37] text-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* grid grid-cols-1 lg:grid-cols-2 */}
+          <div className=" gap-10 items-center">
 
             {/* LEFT CONTENT */}
             <div>
 
               {/* Heading */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-center py-12">
                 Results-Driven <span className="text-orange-500">Video Production </span>
                 Services by Maxetra
               </h1>
 
               {/* CTA */}
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition cursor-pointer">
                   Schedule a Meeting
                   <FaArrowRight />
                 </button>
-              </div>
+              </div> */}
 
               {/* Rating Card */}
-              <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
-                <div className="text-lg font-semibold text-gray-900">
-                  4.9<span className="text-sm">/5</span>
-                </div>
+              <div className="mt-10 ">
+                <div className="
+    inline-flex items-center gap-3
+    bg-white shadow-md rounded-lg
+    px-3 py-2
+    sm:gap-4 sm:px-4 sm:py-3
+    hover:shadow-inner hover:shadow-gray-400
+    w-full max-w-xs sm:w-auto
+  ">
 
-                <div>
-                  <div className="flex text-yellow-400 text-sm">
-                    ★ ★ ★ ★ ★
+                  {/* Rating */}
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 whitespace-nowrap">
+                    4.9<span className="text-xs sm:text-sm">/5</span>
                   </div>
-                  <p className="text-xs text-gray-500">
-                    20 client verified reviews
-                  </p>
-                </div>
 
-                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
+                  {/* Stars + Reviews */}
+                  <div className="min-w-0">
+                    <div className="flex text-yellow-400 text-xs sm:text-sm leading-none">
+                      ★ ★ ★ ★ ★
+                    </div>
+                    <p className="text-[8px] sm:text-xs text-gray-500 truncate">
+                      20+ Client Reviews
+                    </p>
+                  </div>
+
+                  {/* Logo */}
+                  <img
+                    src={Clutch}
+                    alt="Clutch"
+                    className="w-20 sm:w-28 h-auto object-contain shrink-0"
+                  />
+                </div>
               </div>
+
             </div>
 
             {/* RIGHT ILLUSTRATION */}
-            <div className="flex justify-center lg:justify-end">
+            {/* <div className="flex justify-center lg:justify-end">
               <img
                 src={man}
                 className="max-w-xs md:max-w-sm lg:max-w-md"
               />
-            </div>
+            </div> */}
 
           </div>
         </div>
       </section>
 
-      <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
-        <ol className="flex items-center space-x-2 md:space-x-4">
+      <div className="flex py-4 px-10 text-sm bg-[#001e37]  max-w-7xl mx-auto w-full">
+        <ol className="flex items-center space-x-2 md:space-x-4 text-white">
 
           {/* Step 1: Home */}
           <li className="flex items-center">
@@ -174,16 +194,23 @@ export default function Video() {
           {/* Separator */}
           <FaChevronRight className="text-[10px] text-gray-400" />
 
+          <li className="flex items-center">
+            <Link to="/digital-marketing-services" className="flex items-center gap-1 hover:text-orange-500 transition-colors">
+              Digital Marketing
+            </Link>
+          </li>
+          <FaChevronRight className="text-[10px] text-gray-400" />
+
           {/* Step 3: Current Page (e.g., Digital Marketing) */}
           <li className="flex items-center">
-            <span className="text-[#001e37] cursor-pointer hover:text-orange-500 font-semibold">
-              Digital Marketing
-            </span>
+            <Link to="/digital-marketing-services/video-prod" className="flex items-center gap-1 hover:text-orange-500 transition-colors">
+              Video Production
+            </Link>
           </li>
 
         </ol>
       </div>
-      <Rating />
+
       <section className="bg-white py-10 px-4">
         <h2 className="text-center text-3xl md:text-4xl font-bold text-[#001e37] mb-6">
           Video Production Solutions Built to Tell Your Brand Story
@@ -216,7 +243,7 @@ export default function Video() {
           {/* RIGHT VISUAL SECTION */}
           <div className="relative flex justify-center items-center">
             <img
-              src={man}
+              src={home2}
               alt="DevOps Rocket"
               className="max-w-xs md:max-w-sm lg:max-w-md"
             />
@@ -224,6 +251,9 @@ export default function Video() {
 
         </div>
       </section>
+
+      <Rating />
+
       <ServiceCards service={services} />
       <FAQ faqs={faqs} />
       <Consultation />

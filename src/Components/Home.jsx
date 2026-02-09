@@ -12,7 +12,7 @@ import video from '../assets/SVG FOR Ad/Card/Video Production.png';
 import webd from '../assets/SVG FOR Ad/Card/Web Development.png';
 import perform from '../assets/SVG FOR Ad/General/Performance Marketing.png';
 import social from '../assets/SVG FOR Ad/Card/Social media marketing.png';
-
+import brain from '../assets/SVG FOR Ad/General/Brain IMG.png'
 
 // Use the new transparent version
 
@@ -20,14 +20,13 @@ import {
     FaEye,
     FaSearch,
     FaRobot,
-    
+
 } from 'react-icons/fa';
 import Rating from './Rating';
 import AIStackCards from './AIStackCards';
 import Consultation from './Consultation';
 import Clients from './Clients';
-import ServiceCards from './ServiceCards';  
-import Effects from './Effects';
+import ServiceCards from './ServiceCards';
 
 const data = [
     {
@@ -101,19 +100,6 @@ const stats = [
 
 export default function Home() {
 
-    const [active, setActive] = useState(0);
-    const cardRefs = useRef([]);
-    const [cardHeight, setCardHeight] = useState(0);
-
-    React.useEffect(() => {
-        if (cardRefs.current[active]) {
-            setCardHeight(cardRefs.current[active].offsetHeight);
-        }
-    }, [active]);
-
-
-    const next = () => setActive((prev) => (prev + 1) % data.length);
-    const prev = () => setActive((prev) => (prev - 1 + data.length) % data.length);
 
 
     const openNewTab = (url) => {
@@ -124,7 +110,7 @@ export default function Home() {
     const services = {
         heading: "Solutions Designed to Drive Digital Growth",
         subText:
-        "Maxetra delivers data-driven digital marketing solutions designed to generate real, measurable business growth. From startups to enterprise brands, we combine strategy, technology, and execution to help businesses increase visibility, attract qualified leads, and improve conversions across digital channels.",
+            "Maxetra delivers data-driven digital marketing solutions designed to generate real, measurable business growth. From startups to enterprise brands, we combine strategy, technology, and execution to help businesses increase visibility, attract qualified leads, and improve conversions across digital channels.",
         items: [
             {
                 title: "Search Engine Optimization",
@@ -174,53 +160,34 @@ export default function Home() {
         ],
     };
 
-    const containerRef = useRef(null);
-
-    // Track scroll progress relative to THIS section only
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end start"]
-    });
-
-
-    // Text moves up (-150px) as you scroll down the section
-    const textY = useTransform(scrollYProgress, [0, 1], [0, -150]);
-    // Text fades out towards the end of the section
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
     return (
         <div className="bg-[#00162d] overflow-hidden"> {/* Ensures no white gaps between sections */}
-        
-            <section
-                ref={containerRef}
-                className="relative w-screen h-[80vh] md:h-screen overflow-hidden flex items-center justify-center px-6"
-            >
-                {/* STATIONARY BACKGROUND 
-                  The background image stays fixed in place because it is not a motion element.
-                */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <Effects/>
+
+            <section className="relative w-full min-h-[70vh] md:min-h-screen overflow-hidden flex items-center px-4">
+                <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 items-center gap-8">
+
+
+                    {/* Left Text */}
+                    <motion.div className="z-10 text-center md:text-left">
+                        <h1 className="text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-snug md:leading-tight drop-shadow-2xl">
+                            Helping Businesses Get More Leads, Sales & Visibility Online
+                        </h1>
+                    </motion.div>
+
+
+                    {/* Right Image */}
+                    <div className="relative w-full flex justify-center md:justify-end">
+                        <img
+                            src={brain}
+                            alt="illustration"
+                            className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto object-contain opacity-80"
+                        />
+                    </div>
                 </div>
 
-                {/* ONLY TEXT HAS MOTION
-                  This div moves independently of the background based on scroll progress.
-                */}
-                <motion.div
-                    style={{ y: textY, opacity }}
-                    className="relative z-10 text-center max-w-5xl"
-                >
-                    <h1 className="text-white font-bold text-3xl md:text-4xl lg:text-6xl leading-tight drop-shadow-2xl">
-                    Maxetra — A Results-Driven Digital Marketing Agency
-                    </h1>
-                </motion.div>
 
-                {/* Subtle Background Particles - Stationary */}
-                <div className="absolute inset-0 pointer-events-none opacity-20">
-                    <div className="absolute top-1/4 left-10 w-2 h-2 bg-yellow-500 rounded-full blur-sm"></div>
-                    <div className="absolute bottom-1/3 right-20 w-2 h-2 bg-orange-400 rounded-full blur-sm"></div>
-                    <div className="absolute top-1/2 left-1/4 w-3 h-3 bg-blue-400 rounded-full blur-sm"></div>
-                </div>
-
+                {/* Optional subtle background gradient */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0f172a] via-[#020617] to-black" />
             </section>
 
             <section className="w-full  bg-white py-12">

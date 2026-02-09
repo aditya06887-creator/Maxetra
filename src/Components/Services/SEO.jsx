@@ -20,7 +20,9 @@ import ecom from '../../assets/SVG FOR Ad/seo_card/eCommerce.png';
 import key from '../../assets/SVG FOR Ad/seo_card/Keyword Research.png';
 import lo_seo from '../../assets/SVG FOR Ad/seo_card/Local Seo.png';
 import { Link } from "react-router-dom";
-import man from '../../assets/SVG FOR Ad/General/Man_img.png'
+import man from '../../assets/SVG FOR Ad/General/seo.png'
+import home2 from '../../assets/SVG FOR Ad/General/SEO_home_2.png'
+
 import Proposal2 from "../Proposal2";
 import phone1 from '../../assets/SVG FOR Ad/Desk/Seo_con.png';
 import phone2 from '../../assets/SVG FOR Ad/Mobile/Seo_conm.png'
@@ -102,7 +104,7 @@ const services = {
 export default function SEO() {
     return (
         <div>
-            <section className="bg-white">
+            <section className="bg-[#001e37] text-white">
                 <div className="max-w-7xl mx-auto px-4 py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
@@ -110,7 +112,7 @@ export default function SEO() {
                         <div>
 
                             {/* Heading */}
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold  leading-tight">
                                 SEO Strategies Built for Search Engines and   <span className="text-orange-500">AI-Driven Discovery</span>
                             </h1>
 
@@ -123,22 +125,39 @@ export default function SEO() {
                             </div>
 
                             {/* Rating Card */}
-                            <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
-                                <div className="text-lg font-semibold text-gray-900">
-                                    4.9<span className="text-sm">/5</span>
-                                </div>
+                            <div className="mt-10 ">
+                <div className="
+    inline-flex items-center gap-3
+    bg-white shadow-md rounded-lg
+    px-3 py-2
+    sm:gap-4 sm:px-4 sm:py-3
+    hover:shadow-inner hover:shadow-gray-400
+    w-full max-w-xs sm:w-auto
+  ">
 
-                                <div>
-                                    <div className="flex text-yellow-400 text-sm">
-                                        ★ ★ ★ ★ ★
-                                    </div>
-                                    <p className="text-xs text-gray-500">
-                                        20 client verified reviews
-                                    </p>
-                                </div>
+                  {/* Rating */}
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 whitespace-nowrap">
+                    4.9<span className="text-xs sm:text-sm">/5</span>
+                  </div>
 
-                                <img src={Clutch} alt="" className="text-gray-700 font-semibold text-sm w-30 h-10" />
-                            </div>
+                  {/* Stars + Reviews */}
+                  <div className="min-w-0">
+                    <div className="flex text-yellow-400 text-xs sm:text-sm leading-none">
+                      ★ ★ ★ ★ ★
+                    </div>
+                    <p className="text-[8px] sm:text-xs text-gray-500 truncate">
+                      20+ Client Reviews
+                    </p>
+                  </div>
+
+                  {/* Logo */}
+                  <img
+                    src={Clutch}
+                    alt="Clutch"
+                    className="w-20 sm:w-28 h-auto object-contain shrink-0"
+                  />
+                </div>
+              </div>
                         </div>
 
                         {/* RIGHT ILLUSTRATION */}
@@ -152,7 +171,7 @@ export default function SEO() {
                     </div>
                 </div>
             </section>
-            <div className="flex py-4 px-10 text-sm bg-gray-100 mb-4 max-w-7xl mx-auto w-full">
+            <div className="flex py-4 px-10 text-sm bg-[#001e37] text-white mb-4 max-w-7xl mx-auto w-full">
                 <ol className="flex items-center space-x-2 md:space-x-4">
 
                     {/* Step 1: Home */}
@@ -178,7 +197,7 @@ export default function SEO() {
 
                     {/* Step 3: Current Page  */}
                     <li className="flex items-center">
-                        <span className="text-[#001e37] cursor-pointer hover:text-orange-500 font-semibold">
+                        <span className=" cursor-pointer hover:text-orange-500 font-semibold">
                             SEO
                         </span>
                     </li>
@@ -212,7 +231,7 @@ export default function SEO() {
                     <div className="relative flex justify-center lg:justify-end">
                         {/* Main Image */}
                         <img
-                            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                            src={home2}
                             alt="SEO Expert"
                             className="rounded-xl w-full max-w-md object-cover h-[90vh]"
                         />

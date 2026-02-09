@@ -96,6 +96,12 @@ export default function Header() {
     { title: "Career", icon: Team, to: "/career", desc: "Experienced professionals powering your brand’s success." },
   ];
 
+  const handleLinkClick = () => {
+    setActiveSection(null);   // close desktop dropdown
+    setMobileOpen(false);     // close mobile menu (safe for both)
+  };
+  
+
   return (
     <header className="w-full border-b bg-white sticky top-0 z-[100]">
       {/* Top Bar (Desktop) - Unchanged */}
@@ -130,17 +136,20 @@ export default function Header() {
                         title="Digital Marketing"
                         desc="Data-driven strategies to grow traffic, leads, and revenue."
                         to="/digital-marketing-services"
+                        onClick={handleLinkClick}
                       />
                       <ServiceItem
                         icon={social}
                         title="Social Media"
                         desc="Build brand presence, engagement, and trust across platforms."
-                        to="/digital-marketing-services/social-media" />
+                        to="/digital-marketing-services/social-media" 
+                        onClick={handleLinkClick}/>
                       <ServiceItem
                         icon={ecom}
                         title="E-commerce"
                         desc="End-to-end solutions to scale online sales effectively."
                         to="/digital-marketing-services/e-commerce"
+                        onClick={handleLinkClick}
                       />
                     </div>
                     <div className="space-y-6">
@@ -149,13 +158,14 @@ export default function Header() {
                         title="SEO"
                         desc="Improve rankings, visibility, and long-term organic growth."
                         to="/digital-marketing-services/seo"
+                        onClick={handleLinkClick}
                       />
                       <ServiceItem
                         icon={cro}
                         title="CRO Services"
-                        desc="Turn more visitors into customers with data-backed optimization.
-                        "
-                        to="/digital-marketing-services/cro" />
+                        desc="Turn more visitors into customers with data-backed optimization."
+                        to="/digital-marketing-services/cro"
+                        onClick={handleLinkClick}/>
                       <ServiceItem
                         icon={graphic}
                         title="Graphic Design"
@@ -168,18 +178,21 @@ export default function Header() {
                         title="Local SEO"
                         desc="Get found by nearby customers and dominate local search results."
                         to="/digital-marketing-services/local-seo"
+                        onClick={handleLinkClick}
                       />
                       <ServiceItem
                         icon={content}
                         title="Content Creation"
                         desc="High-quality content that attracts, engages, and converts."
                         to="/digital-marketing-services/content"
+                        onClick={handleLinkClick}
                       />
                       <ServiceItem
                         icon={v_prod}
                         title="Video Production"
                         desc="Professional videos designed to boost brand trust and engagement."
-                        to="/digital-marketing-services/video-prod" />
+                        to="/digital-marketing-services/video-prod" 
+                        onClick={handleLinkClick}/>
                     </div>
                     <div className="lg:ml-auto space-y-6 ">
                       <ServiceItem
@@ -187,18 +200,22 @@ export default function Header() {
                         title="Performance Marketing"
                         desc="ROI-focused campaigns designed for leads, sales, and growth."
                         to="/digital-marketing-services/performance"
+                        onClick={handleLinkClick}
                       />
                       <ServiceItem
                         icon={wdev}
                         title="Web Development"
                         desc="Fast, secure, and conversion-focused websites."
                         to="/digital-marketing-services/webd"
+                        onClick={handleLinkClick}
                       />
                       <ServiceItem
                         icon={email}
                         title="Email & SMS Marketing"
                         desc="Automated campaigns that nurture leads and drive repeat sales."
-                        to="/digital-marketing-services/email-sms" />
+                        to="/digital-marketing-services/email-sms" 
+                        onClick={handleLinkClick}
+                        />
                     </div>
                     <div className="bg-[#001e37] rounded-xl px-4 py-6 mx-5 lg:mx-3 text-center text-white flex flex-col items-center self-start lg:sticky lg:top-0 w-50">
                       <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-3" />
@@ -380,13 +397,13 @@ export default function Header() {
         <div className="fixed inset-y-0 left-0 right-10 sm:right-90 bg-white z-[200] flex flex-col overflow-y-auto overflow-x-auto animate-in slide-in-from-right duration-300">
 
 
-          <div className="bg-[#001e37] px-6 py-4  text-white relative text-center">
+          <div className="bg-[#001e37] px-4 py-4  text-white relative text-center">
             <div className="flex top-4">
               <button onClick={() => setMobileOpen(false)} className="absolute right-4 text-2xl">
                 <FaXmark />
               </button>
               <Link to="/" className="font-black cursor-pointer ">
-                <img src={logo_w} alt="Maxetra" className="w-[43vw] h-auto " />
+                <img src={logo_w} alt="Maxetra" className="w-[47vw] h-auto " />
               </Link>
             </div>
             <p className="text-sm py-4">
@@ -545,7 +562,7 @@ export default function Header() {
           {/* 5.  Schedule a Meeting */}
           <button
             onClick={() => openNewTab('https://calendly.com/growixa/30min')}
-            className="w-6/12 flex items-center justify-center bg-[#fd4f4e] py-4 rounded-lg my-8 mx-auto  text-white shadow-md transition active:scale-95 "
+            className="w-6/12 flex items-center justify-center bg-orange-500 py-4 rounded-lg my-8 mx-auto  text-white shadow-md transition active:scale-95 "
           >
             Schedule a Meeting
           </button>
@@ -621,10 +638,11 @@ export default function Header() {
   );
 }
 
-const ServiceItem = ({ icon, title, desc, to }) => (
+const ServiceItem = ({ icon, title, desc, to,onClick }) => (
   <Link
     to={to}
     className="w-full text-left group m-5 transition-all duration-200 block p-2 hover:rounded-lg hover:bg-gray-100 my-5"
+    onClick={onClick}
   >
     <div className="flex items-center gap-2 mb-1 cursor-pointer">
       <img

@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/* Define global font tokens */
+@theme {
+  --font-heading: "Playfair Display", sans-serif;
+  --font-body: "Times New Roman", sans-serif;
+}
+
+/* Apply globally */
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}

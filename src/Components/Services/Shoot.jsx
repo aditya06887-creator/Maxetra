@@ -1,7 +1,7 @@
 import React from "react"
 import Clutch from '../../assets/SVG FOR Ad/General/Clutch.png'
 
-import man from '../../assets/SVG FOR Ad/General/Man_img.png'
+import man from '../../assets/SVG FOR Ad/General/Digital_Marketing_Home.png'
 
 
 
@@ -9,7 +9,7 @@ import man from '../../assets/SVG FOR Ad/General/Man_img.png'
 
 export default function Shoot({img1 }){
     return(
-        <section className="bg-white">
+        <section className="bg-[#001e37]">
                 <div className="max-w-7xl mx-auto px-4 py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
 
@@ -17,28 +17,45 @@ export default function Shoot({img1 }){
                         <div className="">
 
                             {/* Heading */}
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#001e37] leading-tight lg:mb-10">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight lg:mb-10">
                             Performance-Focused Digital Marketing for  <span className="text-orange-500">Growing Businesses</span>
                             </h1>
 
 
                             {/* Rating Card */}
-                            <div className="mt-10 inline-flex items-center gap-4 bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-inner hover:shadow-gray-400">
-                                <div className="text-lg font-semibold text-[#001e37]">
-                                    4.9<span className="text-sm">/5</span>
-                                </div>
+                            <div className="mt-10 ">
+                <div className="
+    inline-flex items-center gap-3
+    bg-white shadow-md rounded-lg
+    px-3 py-2
+    sm:gap-4 sm:px-4 sm:py-3
+    hover:shadow-inner hover:shadow-gray-400
+    w-full max-w-xs sm:w-auto
+  ">
 
-                                <div>
-                                    <div className="flex text-yellow-400 text-sm">
-                                        ★ ★ ★ ★ ★
-                                    </div>
-                                    <p className="text-xs text-gray-500">
-                                        20 client verified reviews
-                                    </p>
-                                </div>
+                  {/* Rating */}
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 whitespace-nowrap">
+                    4.9<span className="text-xs sm:text-sm">/5</span>
+                  </div>
 
-                                <img src={Clutch} alt="" className="text-[#001e37] font-semibold text-sm w-30 h-10" />
-                            </div>
+                  {/* Stars + Reviews */}
+                  <div className="min-w-0">
+                    <div className="flex text-yellow-400 text-xs sm:text-sm leading-none">
+                      ★ ★ ★ ★ ★
+                    </div>
+                    <p className="text-[8px] sm:text-xs text-gray-500 truncate">
+                      20+ Client Reviews
+                    </p>
+                  </div>
+
+                  {/* Logo */}
+                  <img
+                    src={Clutch}
+                    alt="Clutch"
+                    className="w-20 sm:w-28 h-auto object-contain shrink-0"
+                  />
+                </div>
+              </div>
                         </div>
 
                         {/* RIGHT ILLUSTRATION */}
