@@ -230,7 +230,7 @@ export default function Header() {
                       {/* Social */}
                       <div className="flex justify-center items-center gap-2 ">
                         <Link
-                          to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
+                          to={{ pathname: "https://www.facebook.com/maxetra.agency" }}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
@@ -239,7 +239,7 @@ export default function Header() {
                         </Link>
 
                         <Link
-                          to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
+                          to={{ pathname: "https://www.tiktok.com/@maxetra.agency" }}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
@@ -248,7 +248,7 @@ export default function Header() {
                         </Link>
 
                         <Link
-                          to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
+                          to={{ pathname: "https://www.instagram.com/maxetra.agency" }}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
@@ -257,7 +257,7 @@ export default function Header() {
                         </Link>
 
                         <Link
-                          to={{ pathname: "https://www.x.com/Maxetraofficial/" }}
+                          to={{ pathname: "https://x.com/maxetra_agency" }}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
@@ -266,7 +266,7 @@ export default function Header() {
                         </Link>
 
                         <Link
-                          to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
+                          to={{ pathname: "https://www.linkedin.com/company/maxetra-agency" }}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-6 h-6 rounded-sm flex items-center justify-center bg-white text-[#001e37] cursor-pointer"
@@ -570,7 +570,7 @@ export default function Header() {
           {/* Social Icons */}
           <div className="flex justify-center items-center gap-4 py-6">
             <Link
-              to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
+              to={{ pathname: "https://www.instagram.com/maxetra.agency" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
@@ -588,7 +588,7 @@ export default function Header() {
             </Link>
 
             <Link
-              to={{ pathname: "https://x.com/Maxetraofficial" }}
+              to={{ pathname: "https://x.com/maxetra_agency" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
@@ -597,7 +597,7 @@ export default function Header() {
             </Link>
 
             <Link
-              to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
+              to={{ pathname: "https://www.linkedin.com/company/maxetra-agency" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
@@ -606,7 +606,7 @@ export default function Header() {
             </Link>
 
             <Link
-              to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
+              to={{ pathname: "https://www.facebook.com/maxetra.agency" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
@@ -615,7 +615,7 @@ export default function Header() {
             </Link>
 
             <Link
-              to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
+              to={{ pathname: "https://www.tiktok.com/@maxetra.agency" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"

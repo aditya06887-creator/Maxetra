@@ -3,7 +3,7 @@ import IntlTelInput from "intl-tel-input/react";
 import { FiArrowLeft, FiCheckCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-import { FaEuroSign, FaDollarSign, FaPoundSign,FaChevronDown } from "react-icons/fa";
+import { FaEuroSign, FaDollarSign, FaPoundSign, FaChevronDown } from "react-icons/fa";
 
 const currencies = [
   { code: "USD", icon: <FaDollarSign />, label: "$" },
@@ -29,6 +29,8 @@ export default function Proposal() {
 
   const [currency, setCurrency] = useState(currencies[0]);
   const [budget, setBudget] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
 
   return (
     <section className="">
@@ -133,7 +135,12 @@ export default function Proposal() {
                   <span className={budget ? "text-gray-900" : "text-gray-400"}>
                     {budget || "Projected budget ?"}
                   </span>
-                  <FaChevronDown className="text-gray-400 text-sm" />
+                  <FaChevronDown
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={`text-gray-400 text-sm transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                      }`}
+                  />
+
                 </button>
 
                 {budgetOpen && (
@@ -188,7 +195,7 @@ export default function Proposal() {
           <label className="flex items-center gap-2 text-xs cursor-pointer">
             <input type="checkbox" />
             <div>
-            I agree to the <Link to="/term" className="underline">Term of Service </Link> and <Link to="/privacy" className="underline">Privacy Policy</Link>
+              I agree to the <Link to="/term" className="underline">Term of Service </Link> and <Link to="/privacy" className="underline">Privacy Policy</Link>
             </div>
           </label>
 

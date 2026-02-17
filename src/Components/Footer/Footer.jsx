@@ -118,7 +118,7 @@ export default function Footer() {
               {/* Social Icons */}
               <div className="flex justify-center items-center gap-4 py-6">
                 <Link
-                  to={{ pathname: "https://www.instagram.com/maxetraofficial/" }}
+                  to={{ pathname: "https://www.instagram.com/maxetra.agency" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white w-10 h-10 rounded-lg flex items-center justify-center  text-xl"
@@ -136,7 +136,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  to={{ pathname: "https://x.com/Maxetraofficial" }}
+                  to={{ pathname: "https://x.com/maxetra_agency" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white w-10 h-10 rounded-lg flex items-center justify-center  text-xl"
@@ -145,7 +145,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  to={{ pathname: "https://www.linkedin.com/maxetraofficial/" }}
+                  to={{ pathname: "https://www.linkedin.com/company/maxetra-agency" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white w-10 h-10 rounded-lg flex items-center justify-center text-[#001e37] text-xl"
@@ -154,7 +154,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  to={{ pathname: "https://www.facebook.com/maxetraofficial/" }}
+                  to={{ pathname: "https://www.facebook.com/maxetra.agency" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white w-10 h-10 rounded-lg flex items-center justify-center text-[#001e37] text-xl"
@@ -163,7 +163,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  to={{ pathname: "https://www.tiktok.com/@maxetraofficial" }}
+                  to={{ pathname: "https://www.tiktok.com/@maxetra.agency" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white w-10 h-10 rounded-lg flex items-center justify-center text-[#001e37] text-xl"
