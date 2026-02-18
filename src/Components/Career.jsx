@@ -51,7 +51,8 @@ const Career = () => {
     if (!isFormValid) return;
 
     const submitData = new FormData();
-    submitData.append("access_key", "718dce8e-c8b6-4800-a63c-f88fd09e58da");
+    submitData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
     submitData.append("name", formData.name);
     submitData.append("email", formData.email);
     submitData.append("position", formData.position);
