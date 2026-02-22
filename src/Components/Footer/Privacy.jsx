@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GoDotFill } from "react-icons/go";
 import {
     FiShield,
     FiUser,
@@ -11,7 +10,9 @@ import {
     FiLock,
     FiExternalLink,
     FiAlertCircle,
+    FiPhoneCall
 } from "react-icons/fi";
+import { FaChild } from "react-icons/fa";
 
 const Section = ({ icon: Icon, title, children }) => (
     <section className="mb-12">
@@ -27,145 +28,174 @@ const Section = ({ icon: Icon, title, children }) => (
 
 export default function Privacy() {
     return (
-        <div className=" bg-white">
-            <div className="w-full flex flex-col items-center justify-center py-16 bg-gray-50 border-b border-gray-200">
-                <h1 className="text-4xl md:text-5xl font-bold text-center px-6">
+        <div className="bg-white">
+            <div className="w-full flex flex-col items-start justify-center px-4 py-16 bg-gray-50 border-b border-gray-200">
+                <h1 className="text-4xl md:text-7xl font-bold px-4 py-4">
                     Privacy Policy
                 </h1>
-                <p className="mt-4 text-gray-500 text-sm uppercase tracking-widest">
-                    <strong>Last Updated:</strong> 14-Oct-2024
-                </p>
-                <p className="mt-4 text-gray-500 text-sm uppercase tracking-widest">
-                    <strong>Effective Date:</strong> 14-Oct-2024
+                <p className="mt-4 text-gray-500 text-md uppercase tracking-widest px-4 ">
+                    <strong>Last Updated:</strong> 11-Jan-2026
                 </p>
             </div>
+
             <div className="max-w-5xl mx-auto px-4 py-16">
 
-
-
-                {/* Intro */}
-                <div className="gap-3 mb-6">
-                    <p className="text-gray-700 text-sm leading-relaxed mb-10">
-                        This Privacy Policy describes the policies of <strong>Maxetra</strong>, 4604 Park Springs Blvd., #140, Arlington, Texas, 76017, United States of America (the), email: privacy@maxetra.com, phone: (877) 959-9892 on the collection, use and disclosure of your information that we collect when you use our website (https://Maxetra.com). (the “Service”). By accessing or using the Service, you are consenting to the collection, use and disclosure of your information in accordance with this Privacy Policy. If you do not consent to the same, please do not access or use the Service.
-                    </p>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-10">
-                        We may modify this Privacy Policy at any time without prior notice and will post the revised Privacy Policy on the Service. The revised Policy will be effective 180 days from the date it is posted in the Service, and your continued access to or use of the Service after such time will constitute your acceptance of the revised Privacy Policy. We therefore recommend that you periodically review this page.
+                {/* Introduction */}
+                <div className="mb-12 text-gray-700 text-sm leading-relaxed space-y-6">
+                    <p>
+                        This Privacy Policy describes the policies of <strong>Maxetra LLC</strong>,
+                        7901 4th St N STE 300, St. Petersburg, FL 33702, USA,
+                        email: Hello@maxetra.com regarding the collection, use,
+                        and disclosure of information when you use our services.
                     </p>
                 </div>
 
-                {/* Information We Collect */}
-                <Section icon={FiUser} title="Information We Collect">
-                    <ul className="list-disc list-inside space-y-1 m-2">
-                        <p>
-                            We will collect and process the following personal information about you:
-                        </p>
-                        <li>Name</li>
-                        <li>Email</li>
-                        <li>Mobile</li>
-                        <li>Work Address</li>
+                {/* 1. Information We Collect */}
+                <Section icon={FiUser} title="1. Information We Collect">
+
+                    <h3 className="font-semibold">A. Personal Information</h3>
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Full name</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Business name</li>
+                        <li>Website URL</li>
+                        <li>Billing and payment details</li>
+                        <li>Marketing account access (if provided for service purposes)</li>
+                    </ul>
+
+                    <h3 className="font-semibold mt-6">B. Marketing & Client Data</h3>
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Google Ads accounts</li>
+                        <li>Facebook / Instagram Ads accounts</li>
+                        <li>LinkedIn Ads accounts</li>
+                        <li>Website analytics (Google Analytics, Meta Pixel, etc.)</li>
+                        <li>CRM and email marketing tools</li>
+                    </ul>
+                    <p>
+                        This data is used strictly for campaign management and performance optimization.
+                    </p>
+
+                    <h3 className="font-semibold mt-6">C. Automatically Collected Information</h3>
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>IP address</li>
+                        <li>Browser type</li>
+                        <li>Device type</li>
+                        <li>Cookies and tracking data</li>
+                        <li>Website interaction data</li>
                     </ul>
                 </Section>
 
-                {/* How We Use Information */}
-                <Section icon={FiInfo} title="How We Use Your Information">
-                    <div className="m-2">
-                        <p>We will use the information that we collect about you for the following purposes:</p>
-                        <ul className="gap-6 list-disc list-inside space-y-1 m-5">
-                            <li>Marketing / Promotional purposes</li>
-                            <li>Customer support</li>
-                        </ul>
-                        <p>
-                            If we want to use your information for any other purpose, we will ask you for consent. We will use your information only after receiving your consent and only for the purpose(s) for which you granted consent unless we are required to do otherwise by law.
-                        </p>
-                    </div>
+                {/* 2. How We Use Information */}
+                <Section icon={FiInfo} title="2. How We Use Your Information">
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Provide digital marketing services</li>
+                        <li>Manage ad campaigns and analytics</li>
+                        <li>Improve website performance and conversion rates</li>
+                        <li>Process invoices and payments</li>
+                        <li>Communicate service updates</li>
+                        <li>Send promotional emails (you may opt out anytime)</li>
+                        <li>Comply with legal obligations</li>
+                    </ul>
                 </Section>
 
-                {/* Sharing */}
-                <Section icon={FiShare2} title="How We Share Your Information">
-                    <div className="ml-3">
-                        We will not transfer your personal information to any third party without seeking your consent, except in limited circumstances as described below:
-                        <ul className="list-disc list-inside space-y-1 m-5">
-                            <li>Ad services</li>
-                            <li>Sponsors</li>
-                            <li>Marketing agencies</li>
-                            <li>Analytics</li>
-                            <li>Data collection & process</li>
-                        </ul>
-                        <p className="mt-3">
-                            We require such third parties to use the personal information we transfer to them only for the purpose for which it was transferred and not to retain it for longer than is required to fulfill the said purpose.
-
-                        </p>
-                        <p className="mt-3">
-                            We may also disclose your personal information for the following: (1) to comply with applicable law, regulation, court order or other legal process; (2) to enforce your agreements with us, including this Privacy Policy; or (3) to respond to claims that your use of the Service violates any third-party rights. If the Service or our Company is merged or acquired with another company, your information will be one of the assets transferred to the new owner.
-                        </p>
-                    </div>
-                </Section>
-
-                {/* Retention */}
-                <Section icon={FiClock} title="Retention of Your Information">
+                {/* 3. Sharing */}
+                <Section icon={FiShare2} title="3. Sharing of Information">
+                    <p>We do not sell or rent your personal information.</p>
+                    <p>We may share information with trusted third parties such as:</p>
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Payment processors (e.g., Stripe, PayPal)</li>
+                        <li>Advertising platforms (Google, Meta, LinkedIn)</li>
+                        <li>CRM and email marketing software</li>
+                        <li>Hosting providers</li>
+                        <li>Legal authorities if required by law</li>
+                    </ul>
                     <p>
-                        We will retain your personal information with us for 90 days to 2 years after users terminate their accounts or as long as we need it to fulfill the purposes for which it was collected, as detailed in this Privacy Policy. We may need to retain certain information for longer periods, such as record-keeping/reporting in accordance with applicable law or for other legitimate reasons like enforcement of legal rights, fraud prevention, etc. Residual anonymous information and aggregate information, neither of which identifies you (directly or indirectly), may be stored indefinitely.
+                        All third-party providers are required to maintain confidentiality and data protection standards.
                     </p>
                 </Section>
 
-                {/* Text Messages */}
-                <Section icon={FiMessageSquare} title="Text Message Communications">
+                {/* 4. Data Security */}
+                <Section icon={FiLock} title="4. Data Security">
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Secure servers</li>
+                        <li>Encrypted data transmission (SSL)</li>
+                        <li>Restricted access controls</li>
+                        <li>Secure third-party integrations</li>
+                    </ul>
                     <p>
-                        We use text messaging to communicate with you about your Service. Standard messaging rates apply and the frequency of messages may vary. Mobile Carriers are not liable for delayed or undelivered messages.
-                    </p>
-                    <p>
-                        No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with third parties.
-                    </p>
-                    <p>
-                        <section className="mb-3">
-                            <div className="flex items-center gap-3 mb-1">
-                                <GoDotFill />
-                                <h2 className="text-lg font-semibold text-gray-900">Opt-Out of Text Message Communications</h2>
-                            </div>
-                        </section>
-                        <p className="ml-3">
-                            You may opt out of text messaging at any time by replying to any message with <strong>STOP</strong> or emailing <strong>abuse@maxetra.com</strong>. This will end the communications from that particular phone number.
-                        </p>
-                        <p className="ml-3">
-                            You may continue to receive service-related and other non-marketing text messages from other phone numbers managed by the Company, and you may opt out of those in a similar fashion.
-                        </p>
-
+                        However, no method of transmission over the internet is 100% secure.
                     </p>
                 </Section>
 
-                {/* Rights */}
-                <Section icon={FiShield} title="Your Rights">
-                    <p>
-                        Depending on the law that applies, you may have a right to access and rectify or erase your personal data or receive a copy of your personal data, restrict or object to the active processing of your data, ask us to share (port) your personal information to another entity, withdraw any consent you provided to us to process your data, a right to lodge a complaint with statutory authority and such other rights as may be relevant under applicable laws. To exercise these rights, you can write to us at privacy@maxetra.com. We will respond to your request in accordance with applicable law.
+                {/* 5. Cookies */}
+                <Section icon={FiAlertCircle} title="5. Cookies & Tracking Technologies">
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Analyze traffic and user behavior</li>
+                        <li>Improve campaign performance</li>
+                        <li>Run remarketing ads</li>
+                        <li>Enhance user experience</li>
+                    </ul>
+                    <p>You can disable cookies through your browser settings.</p>
+                </Section>
 
-                        You may opt out of direct marketing communications or the profiling we carry out for marketing purposes by writing to us at{" "}
-                        <span className="text-orange-500 font-medium">
-                            privacy@maxetra.com.
-                        </span>
-                        Opens Email Do note that if you do not allow us to collect or process the required personal information or withdraw the consent to process the same for the required purposes, you may not be able to access or use the services for which your information was sought.
+                {/* 6. Privacy Rights */}
+                <Section icon={FiShield} title="6. Your Privacy Rights">
+                    <p>
+                        Depending on your location (including U.S. and international users), you may have the right to:
+                    </p>
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>Access your personal data</li>
+                        <li>Request correction</li>
+                        <li>Request deletion</li>
+                        <li>Withdraw consent</li>
+                        <li>Opt-out of marketing communications</li>
+                    </ul>
+                    <p>
+                        To exercise these rights, contact us at: <strong>Hello@maxetra.com</strong>
                     </p>
                 </Section>
 
-                {/* Cookies */}
-                <Section icon={FiAlertCircle} title="Cookies and How We Use Them:">
+                {/* 7. Data Retention */}
+                <Section icon={FiClock} title="7. Data Retention">
                     <p>
-                        To learn more about how we use these and your choices in relation to these tracking technologies, please refer to our <Link to='/cookie' className="text-orange-500 font-medium">Cookie Policy</Link>.
+                        We retain client and marketing data only as long as necessary
+                        to provide services and comply with legal requirements.
                     </p>
                 </Section>
 
-                {/* Security */}
-                <Section icon={FiLock} title="Security">
+                {/* 8. Third Party Links */}
+                <Section icon={FiExternalLink} title="8. Third-Party Links">
                     <p>
-                        The security of your information is important to us and we will use reasonable security measures to prevent the loss, misuse or unauthorized alteration of your information under our control. However, given the inherent risks, we cannot guarantee absolute security. Consequently, we cannot ensure or warrant the security of any information you transmit to us and you do so at your own risk.
+                        Our website may contain links to third-party websites.
+                        We are not responsible for their privacy policies or content.
                     </p>
                 </Section>
 
-                {/* Third Party Links */}
-                <Section icon={FiExternalLink} title="Third-Party Links">
+                {/* 9. Children’s Privacy */}
+                <Section icon={FaChild} title="9. Children’s Privacy">
                     <p>
-                        Our Service may contain links to other websites that we do not operate. This Privacy Policy does not address the privacy policy and other practices of any third parties, including any third party operating any website or service that may be accessible via a link on the Service. We strongly advise you to review the privacy policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+                        Our services are not directed to individuals under the age of 13.
+                        We do not knowingly collect personal information from children.
                     </p>
                 </Section>
+
+                {/* 10. Changes */}
+                <Section icon={FiInfo} title="10. Changes to This Policy">
+                    <p>
+                        We may update this Privacy Policy from time to time.
+                        Changes will be posted on this page with an updated effective date.
+                    </p>
+                </Section>
+
+                {/* 11. Contact */}
+                <Section icon={FiPhoneCall} title="11. Contact Information">
+                    <p><strong>Maxetra LLC</strong></p>
+                    <p>7901 4th St N STE 300</p>
+                    <p>St. Petersburg, FL 33702, USA</p>
+                    <p>Email: Hello@maxetra.com</p>
+                </Section>
+
             </div>
         </div>
     );

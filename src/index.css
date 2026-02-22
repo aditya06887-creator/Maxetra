@@ -2,8 +2,8 @@
 
 /* Define global font tokens */
 @theme {
-  --font-heading: "Playfair Display", sans-serif;
-  --font-body: "Times New Roman", sans-serif;
+  --font-heading: sans-serif,"Playfair Display";
+  --font-body:sans-serif,"Times New Roman";
 }
 
 /* Apply globally */

@@ -68,10 +68,10 @@ const Career = () => {
       const result = await response.json();
 
       if (result.success) {
-        window.scrollTo({ top: 0, behavior: "smooth" }); 
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
         setIsSubmitted(true);
-        
+
         setFormData({ name: "", email: "", position: "", phone: "", message: "" });
       } else {
         alert("Something went wrong. Please try again.");
@@ -117,6 +117,15 @@ const Career = () => {
           </div>
         </div>
       </section>
+      {/* Why Join Us */} 
+      <section className="py-16 bg-white"> 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+      <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Why Join Maxetra</h2> 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> <div className="text-center p-6"> 
+      <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"> 
+      <IoTrendingUpOutline className="text-[#001e37] text-2xl" /> 
+      </div> <h3 className="text-lg font-semibold text-gray-900 mb-2">Growth-Driven Work</h3> 
+      <p className="text-gray-600 text-sm">Work on global projects that challenge your skills and accelerate your career.</p> </div> <div className="text-center p-6"> <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"> <FaGlobe className="text-[#001e37] text-2xl" /> </div> <h3 className="text-lg font-semibold text-gray-900 mb-2">Remote & Flexible Culture</h3> <p className="text-gray-600 text-sm">We focus on performance, flexibility, and work-life balance.</p> </div> <div className="text-center p-6"> <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"> <FaUsers className="text-[#001e37] text-2xl" /> </div> <h3 className="text-lg font-semibold text-gray-900 mb-2"> Continuous Learning</h3> <p className="text-gray-600 text-sm">Gain hands-on experience and grow with real-world marketing and tech exposure.</p> </div> <div className="text-center p-6"> <div className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"> <FaUserTie className="text-[#001e37] text-2xl" /> </div> <h3 className="text-lg font-semibold text-gray-900 mb-2">Ownership & Impact</h3> <p className="text-gray-600 text-sm">Take responsibility, share ideas, and make a real impact on client success.</p> </div> </div> </div> </section> {/* Open Positions */} <section className="py-16 bg-gray-50"> <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Open Positions</h2> <div className="divide-y divide-gray-200"> {jobs.map((job, index) => (<div key={index} className="p-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between hover:bg-gray-50" > <div className="flex-1"> <h3 className="text-lg font-medium text-gray-900"> {job.title} </h3> </div> <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm"> <span className="text-gray-500">{job.department}</span> <div className="flex items-center text-gray-500"> <FaCheckCircle className="text-green-500 mr-1" /> {job.location} </div> <div className="flex items-center text-gray-500"> <FaClock className="mr-1" /> {job.type} </div> <button onClick={() => document.getElementById("apply-form")?.scrollIntoView({ behavior: "smooth" })} className="text-orange-500 hover:text-orange-600 font-medium flex items-center cursor-pointer" > Apply <FaArrowRight className="ml-1" /> </button> </div> </div>))} </div> </div> </section> {/* Hiring Process */} <section className="py-16 bg-gray-50"> <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center"> Hiring Process </h2> {/* Desktop View */} <div className="hidden md:flex items-center justify-center max-w-5xl mx-auto bg-white p-10 rounded-lg shadow"> {steps.map((step, index) => { const Icon = step.icon; return (<React.Fragment key={index}> <div className="flex flex-col items-center text-center"> <div className="w-14 h-14 rounded-full bg-[#001e37] text-white flex items-center justify-center"> <Icon className="text-xl" /> </div> <span className="mt-2 text-sm font-medium text-gray-700"> {step.label} </span> </div> {/* Arrow (not after last step) */} {index !== steps.length - 1 && (<div className="flex-1 flex items-center px-2 "> <div className="w-full h-[2px] bg-gray-300 relative px-10 -top-4"> <span className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-l-8 border-t-transparent border-b-transparent border-l-gray-300"> </span> </div> </div>)} </React.Fragment>); })} </div> {/* Mobile View */} <div className="md:hidden flex flex-col items-center gap-6"> {steps.map((step, index) => { const Icon = step.icon; return (<React.Fragment key={index}> <div className="flex flex-col items-center text-center"> <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center"> <Icon className="text-lg" /> </div> <span className="mt-2 text-sm font-medium text-gray-700"> {step.label} </span> </div> {index !== steps.length - 1 && (<HiOutlineArrowLongRight className="rotate-90 text-2xl text-[#001e37]" />)} </React.Fragment>); })} </div> </section>
 
       {/* Apply Form */}
       <section id="apply-form" className="py-16 bg-white">

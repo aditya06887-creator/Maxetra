@@ -468,6 +468,7 @@ export default function Header() {
                     <Link
                       key={idx}
                       to={item.to}
+                      onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
                     >
                       <img src={item.icon} alt={item.title} className="w-5 h-5 rounded" />
@@ -500,6 +501,7 @@ export default function Header() {
                     <Link
                       key={idx}
                       to={item.to}
+                      onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
                     >
                       <img src={item.icon} alt={item.title} className="w-5 h-5 rounded" />
@@ -532,6 +534,7 @@ export default function Header() {
                     <Link
                       key={idx}
                       to={item.to}
+                      onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 text-sm text-gray-600 font-medium hover:text-blue-600"
                     >
                       <img src={item.icon} alt={item.label} className="w-5 h-5 rounded" />
@@ -568,7 +571,7 @@ export default function Header() {
           </button>
 
           {/* Social Icons */}
-          <div className="flex justify-center items-center gap-4 py-6">
+          <div className="flex justify-center items-center gap-3 py-6">
             <Link
               to={{ pathname: "https://www.instagram.com/maxetra.agency" }}
               target="_blank"

@@ -1,14 +1,15 @@
 import React from 'react';
 
 export default function Term() {
-    return (
-        <div className="bg-white min-h-screen text-[#1a1a1a] font-sans selection:bg-red-100">
+  return (
+    <div className="bg-white min-h-screen text-[#1a1a1a] font-sans selection:bg-red-100">
+      
       {/* Header Section */}
-      <div className="flex flex-col items-center justify-center py-16 bg-gray-50 border-b border-gray-200">
-        <h1 className="text-4xl md:text-5xl font-bold text-center px-6">
+      <div className="flex flex-col justify-center py-16 bg-gray-50 border-b border-gray-200">
+        <h1 className="text-4xl md:text-7xl font-bold px-6">
           Terms & Conditions
         </h1>
-        <p className="mt-4 text-gray-500 text-sm uppercase tracking-widest">
+        <p className="mt-4 text-gray-500 text-sm uppercase tracking-widest px-10">
           Last Updated: January 2026
         </p>
       </div>
@@ -16,115 +17,151 @@ export default function Term() {
       {/* Content Section */}
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
         <div className="space-y-12">
-          
-          {/* 1. Terms */}
+
+          {/* 1. Services */}
           <section>
-            <h2 className="text-xl font-bold mb-4">1. Terms</h2>
-            <p className="text-gray-700 leading-relaxed">
-              By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, 
-              all applicable laws and regulations, and agree that you are responsible for compliance with any 
-              applicable local laws. If you do not agree with any of these terms, you are prohibited from using 
-              or accessing this site. The materials contained in this web site are protected by applicable 
-              copyright and trade mark law.
+            <h2 className="text-xl font-bold mb-4">1. Services</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Maxetra provides digital marketing services including but not limited to:
+            </p>
+            <ul className="list-disc pl-8 space-y-2 text-gray-700">
+              <li>Search Engine Optimization (SEO)</li>
+              <li>Google Ads Management</li>
+              <li>Social Media Marketing</li>
+              <li>Website Design & Development</li>
+              <li>Branding & Creative Services</li>
+              <li>CRM & Automation Setup</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Service details, pricing, and scope will be defined in a separate proposal or agreement.
             </p>
           </section>
 
-          {/* 2. Use License */}
+          {/* 2. No Guarantee of Results */}
           <section>
-            <h2 className="text-xl font-bold mb-4">2. Use License</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                Permission is granted to temporarily download one copy of the materials (information or software) 
-                on Maxetra's web site for personal, non-commercial transitory viewing only. This is the 
-                grant of a license, not a transfer of title, and under this license you may not:
-              </p>
-              <ul className="list-disc pl-8 space-y-2 text-[15px]">
-                <li>Modify or copy the materials;</li>
-                <li>Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                <li>Attempt to decompile or reverse engineer any software contained on Maxetra's web site;</li>
-                <li>Remove any copyright or other proprietary notations from the materials; or</li>
-                <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
-              </ul>
-              <p>
-                This license shall automatically terminate if you violate any of these restrictions and may be 
-                terminated by Maxetra at any time. Upon terminating your viewing of these materials or 
-                upon the termination of this license, you must destroy any downloaded materials in your 
-                possession whether in electronic or printed format.
-              </p>
-            </div>
-          </section>
-
-          {/* 3. Disclaimer */}
-          <section>
-            <h2 className="text-xl font-bold mb-4">3. Disclaimer</h2>
+            <h2 className="text-xl font-bold mb-4">2. No Guarantee of Results</h2>
             <p className="text-gray-700 leading-relaxed">
-              The materials on Maxetra's web site are provided "as is". Maxetra makes no warranties, 
-              expressed or implied, and hereby disclaims and negates all other warranties, including without 
-              limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, 
-              or non-infringement of intellectual property or other violation of rights. Further, Maxetra 
-              does not warrant or make any representations concerning the accuracy, likely results, or 
-              reliability of the use of the materials on its Internet web site or otherwise relating to such 
-              materials or on any sites linked to this site.
+              Maxetra does not guarantee specific rankings, sales, leads, or performance results.
+              Marketing outcomes depend on various external factors including competition,
+              market conditions, platform algorithms, and client cooperation.
             </p>
           </section>
 
-          {/* 4. Limitations */}
+          {/* 3. Payment Terms */}
           <section>
-            <h2 className="text-xl font-bold mb-4">4. Limitations</h2>
-            <p className="text-gray-700 leading-relaxed">
-              In no event shall Maxetra or its suppliers be liable for any damages (including, without 
-              limitation, damages for loss of data or profit, or due to business interruption,) arising out 
-              of the use or inability to use the materials on Maxetra's Internet site, even if Maxetra 
-              Agency or a Maxetra authorized representative has been notified orally or in writing of 
-              the possibility of such damage. Because some jurisdictions do not allow limitations on implied 
-              warranties, or limitations of liability for consequential or incidental damages, these 
-              limitations may not apply to you.
+            <h2 className="text-xl font-bold mb-4">3. Payment Terms</h2>
+            <ul className="list-disc pl-8 space-y-2 text-gray-700">
+              <li>Payments must be made in advance unless otherwise agreed.</li>
+              <li>Monthly retainers are billed at the beginning of each billing cycle.</li>
+              <li>Late payments may result in service suspension.</li>
+              <li>Fees are non-refundable unless otherwise stated in writing.</li>
+            </ul>
+          </section>
+
+          {/* 4. Client Responsibilities */}
+          <section>
+            <h2 className="text-xl font-bold mb-4">4. Client Responsibilities</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              The Client agrees to:
+            </p>
+            <ul className="list-disc pl-8 space-y-2 text-gray-700">
+              <li>Provide required account access (Google Ads, Meta, website, hosting, etc.)</li>
+              <li>Provide accurate business information</li>
+              <li>Approve campaigns in a timely manner</li>
+              <li>Comply with advertising platform policies</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Delays in approvals may affect campaign performance.
             </p>
           </section>
 
-          {/* 5. Revisions and Errata */}
+          {/* 5. Intellectual Property */}
           <section>
-            <h2 className="text-xl font-bold mb-4">5. Revisions and Errata</h2>
+            <h2 className="text-xl font-bold mb-4">5. Intellectual Property</h2>
             <p className="text-gray-700 leading-relaxed">
-              The materials appearing on Maxetra's web site could include technical, typographical, or 
-              photographic errors. Maxetra does not warrant that any of the materials on its web site 
-              are accurate, complete, or current. Maxetra may make changes to the materials contained 
-              on its web site at any time without notice. Maxetra does not, however, make any 
-              commitment to update the materials.
+              Marketing materials created by Maxetra remain the property of the Client upon full payment.
+              Internal strategies, frameworks, and processes remain the property of Maxetra.
             </p>
           </section>
 
-          {/* 6. Links */}
+          {/* 6. Confidentiality */}
           <section>
-            <h2 className="text-xl font-bold mb-4">6. Links</h2>
+            <h2 className="text-xl font-bold mb-4">6. Confidentiality</h2>
             <p className="text-gray-700 leading-relaxed">
-              Maxetra has not reviewed all of the sites linked to its Internet web site and is not 
-              responsible for the contents of any such linked site. The inclusion of any link does not imply 
-              endorsement by Maxetra of the site. Use of any such linked web site is at the user's own risk.
+              Both parties agree to maintain confidentiality of business, marketing data,
+              and proprietary information.
             </p>
           </section>
 
-          {/* 7. Site Terms of Use Modifications */}
+          {/* 7. Limitation of Liability */}
           <section>
-            <h2 className="text-xl font-bold mb-4">7. Site Terms of Use Modifications</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Maxetra may revise these terms of use for its web site at any time without notice. By 
-              using this web site you are agreeing to be bound by the then current version of these Terms 
-              and Conditions of Use.
+            <h2 className="text-xl font-bold mb-4">7. Limitation of Liability</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Maxetra shall not be liable for:
+            </p>
+            <ul className="list-disc pl-8 space-y-2 text-gray-700">
+              <li>Indirect or consequential damages</li>
+              <li>Loss of profits or business</li>
+              <li>Platform account suspensions</li>
+              <li>Third-party service failures</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Total liability shall not exceed the total fees paid to Maxetra.
             </p>
           </section>
 
-          {/* 8. Governing Law */}
+          {/* 8. Third-Party Platforms */}
           <section>
-            <h2 className="text-xl font-bold mb-4">8. Governing Law</h2>
+            <h2 className="text-xl font-bold mb-4">8. Third-Party Platforms</h2>
             <p className="text-gray-700 leading-relaxed">
-              Any claim relating to Maxetra's web site shall be governed by the laws of the State of 
-              Texas without regard to its conflict of law provisions.
+              Maxetra works with third-party platforms including but not limited to
+              Google, Meta, LinkedIn, and other marketing tools.
+              We are not responsible for changes in their policies,
+              algorithms, or account suspensions.
+            </p>
+          </section>
+
+          {/* 9. Termination */}
+          <section>
+            <h2 className="text-xl font-bold mb-4">9. Termination</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Either party may terminate services with written notice
+              (minimum 15–30 days unless otherwise agreed).
+              No refunds will be issued for services already delivered.
+            </p>
+          </section>
+
+          {/* 10. Governing Law */}
+          <section>
+            <h2 className="text-xl font-bold mb-4">10. Governing Law</h2>
+            <p className="text-gray-700 leading-relaxed">
+              This Agreement shall be governed by and interpreted in accordance
+              with the laws of the State of Florida, United States.
+            </p>
+          </section>
+
+          {/* 11. Amendments */}
+          <section>
+            <h2 className="text-xl font-bold mb-4">11. Amendments</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Maxetra reserves the right to update these Terms & Conditions at any time.
+              Updates will be posted on the website.
+            </p>
+          </section>
+
+          {/* 12. Contact Information */}
+          <section>
+            <h2 className="text-xl font-bold mb-4">12. Contact Information</h2>
+            <p className="text-gray-700 leading-relaxed">
+              <strong>Maxetra LLC</strong><br />
+              7901 4th St N STE 300<br />
+              St. Petersburg, FL 33702, USA<br />
+              Email: Hello@maxetra.com
             </p>
           </section>
 
         </div>
       </div>
     </div>
-    );
-};
+  );
+}
