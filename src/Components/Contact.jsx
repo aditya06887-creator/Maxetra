@@ -3,9 +3,8 @@ import {
     FiGlobe,
     FiUsers,
     FiCpu,
-    FiArrowLeft,
-    FiCheckCircle,
-    FiAward
+    FiAward,
+    FiPhoneCall
 } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Proposal from "./Proposal";
@@ -133,8 +132,13 @@ export default function Contact() {
                                         <p>St. Petersburg</p>
                                         <p>FL, 33702, USA</p>
                                     
-                                        <h3 className="text-xl font-semibold mt-4">Main Phone:</h3>
-                                        <p className="font-semibold">(866) 908-4748</p>
+                                        <div className="flex items-center gap-2">
+                                        <FiPhoneCall className="text-xl font-semibold mt-4"/>
+                                        <h3 className="text-xl font-semibold mt-4">
+                                            
+                                            Call Us:</h3>
+                                        </div>
+                                        <p className="font-semibold">+12524108567</p>
                                     
                                 </div>
 

@@ -56,7 +56,7 @@ export default function Footer() {
 
                 <p className="flex gap-3">
                   <IoIosCall className="mt-1 text-lg shrink-0 text-gray-500" />
-                  +1 664 679 4564
+                  +12524108567
                 </p>
               </div>
             </div>

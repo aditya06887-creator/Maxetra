@@ -100,7 +100,7 @@ export default function Header() {
     setActiveSection(null);   // close desktop dropdown
     setMobileOpen(false);     // close mobile menu (safe for both)
   };
-  
+
 
   return (
     <header className="w-full border-b bg-white sticky top-0 z-[100]">
@@ -142,8 +142,8 @@ export default function Header() {
                         icon={social}
                         title="Social Media"
                         desc="Build brand presence, engagement, and trust across platforms."
-                        to="/digital-marketing-services/social-media" 
-                        onClick={handleLinkClick}/>
+                        to="/digital-marketing-services/social-media"
+                        onClick={handleLinkClick} />
                       <ServiceItem
                         icon={ecom}
                         title="E-commerce"
@@ -165,7 +165,7 @@ export default function Header() {
                         title="CRO Services"
                         desc="Turn more visitors into customers with data-backed optimization."
                         to="/digital-marketing-services/cro"
-                        onClick={handleLinkClick}/>
+                        onClick={handleLinkClick} />
                       <ServiceItem
                         icon={graphic}
                         title="Graphic Design"
@@ -191,8 +191,8 @@ export default function Header() {
                         icon={v_prod}
                         title="Video Production"
                         desc="Professional videos designed to boost brand trust and engagement."
-                        to="/digital-marketing-services/video-prod" 
-                        onClick={handleLinkClick}/>
+                        to="/digital-marketing-services/video-prod"
+                        onClick={handleLinkClick} />
                     </div>
                     <div className="lg:ml-auto space-y-6 ">
                       <ServiceItem
@@ -213,9 +213,9 @@ export default function Header() {
                         icon={email}
                         title="Email & SMS Marketing"
                         desc="Automated campaigns that nurture leads and drive repeat sales."
-                        to="/digital-marketing-services/email-sms" 
+                        to="/digital-marketing-services/email-sms"
                         onClick={handleLinkClick}
-                        />
+                      />
                     </div>
                     <div className="bg-[#001e37] rounded-xl px-4 py-6 mx-5 lg:mx-3 text-center text-white flex flex-col items-center self-start lg:sticky lg:top-0 w-50">
                       <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-3" />
@@ -375,12 +375,15 @@ export default function Header() {
           </div>
 
           <Link to="/contact" className="text-[#001e37] hover:text-blue-600 transition text-[20px] font-bold">Contact Us</Link>
-          <Link to="/contact" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center">
+          <a
+            href="tel:+12524108567"
+            className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center"
+          >
             <img src={call} alt="phone" className="w-5 h-5" />
-            <p>
-              +918978522677
+            <p className="ml-2">
+            +12524108567
             </p>
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Toggle Button */}
@@ -582,7 +585,7 @@ export default function Header() {
             </Link>
 
             <Link
-              to={{ pathname: "https://wa.me/XXXXXXXXXX" }}
+              to={{ pathname: "https://wa.me/+12524108567" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"
@@ -641,7 +644,7 @@ export default function Header() {
   );
 }
 
-const ServiceItem = ({ icon, title, desc, to,onClick }) => (
+const ServiceItem = ({ icon, title, desc, to, onClick }) => (
   <Link
     to={to}
     className="w-full text-left group m-5 transition-all duration-200 block p-2 hover:rounded-lg hover:bg-gray-100 my-5"
