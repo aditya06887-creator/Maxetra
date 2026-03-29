@@ -221,7 +221,7 @@ export default function Header() {
                       <img src={callG} alt="Contact" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-3" />
                       <h4 className="font-bold text-base">Merve Candan</h4>
                       <p className="text-xs text-gray-400 mb-4">Marketing Head</p>
-                      <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="w-full bg-orange-500 text-white py-2.5 rounded-lg hover:bg-orange-700 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
+                      <button onClick={() => openNewTab('https://calendly.com/maxetra/30min?month=2026-03')} className="w-full bg-orange-500 text-white py-2.5 rounded-lg hover:bg-orange-700 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
                       <p className="text-[10px] text-gray-400 my-2 italic">Get a Free Consultation</p>
                       <Link
                         to={{ pathname: "https://wa.me/15513441824" }}
@@ -383,7 +383,7 @@ export default function Header() {
 
           <Link to="/contact" className="text-[#001e37] hover:text-blue-600 transition text-[20px] font-bold">Contact Us</Link>
           <a
-            href="tel:+12524108567"
+            href="tel:+15513441824"
             className="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold cursor-pointer flex items-center"
           >
             <img src={call} alt="phone" className="w-5 h-5" />
@@ -575,7 +575,7 @@ export default function Header() {
 
           {/* 5.  Schedule a Meeting */}
           <button
-            onClick={() => openNewTab('https://calendly.com/growixa/30min')}
+            onClick={() => openNewTab('https://calendly.com/maxetra/30min?month=2026-03')}
             className="w-6/12 flex items-center justify-center bg-orange-500 py-4 rounded-lg my-8 mx-auto  text-white shadow-md transition active:scale-95 "
           >
             Schedule a Meeting

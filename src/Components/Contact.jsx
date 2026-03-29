@@ -11,6 +11,7 @@ import Proposal from "./Proposal";
 import Clients from "./Clients";
 
 
+
 const trustData = [
     {
         icon: <FiGlobe />,
@@ -53,6 +54,11 @@ const testimonials = [
 ];
 
 export default function Contact() {
+
+    const openNewTab = (url) => {
+        window.open(url, '_blank', 'noopener,noreferrer')
+      }
+      
     const offices = [
         {
             city: "Seattle WA. United States",
@@ -115,6 +121,7 @@ export default function Contact() {
 
                         <div className="flex items-center">
                             <button
+                                onClick={() => openNewTab('https://calendly.com/maxetra/30min?month=2026-03')}
                                 className='flex items-center justify-center gap-4 font-semibold cursor-pointer py-3 px-10 mx-auto rounded-full transition bg-orange-500  text-white"'
                             >
                                 <FaArrowRightLong />

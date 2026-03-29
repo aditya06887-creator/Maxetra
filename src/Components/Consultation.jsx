@@ -24,7 +24,7 @@ export default function Consultation() {
         </div>
 
         {/* Button */}
-        <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer">
+        <button onClick={() => openNewTab('https://calendly.com/maxetra/30min?month=2026-03')} className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer">
           Schedule a Meeting
         </button>
       </div>
