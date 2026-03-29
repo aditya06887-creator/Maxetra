@@ -223,9 +223,16 @@ export default function Header() {
                       <p className="text-xs text-gray-400 mb-4">Marketing Head</p>
                       <button onClick={() => openNewTab('https://calendly.com/growixa/30min')} className="w-full bg-orange-500 text-white py-2.5 rounded-lg hover:bg-orange-700 transition text-sm cursor-pointer hover:opacity-80">Schedule a Meeting</button>
                       <p className="text-[10px] text-gray-400 my-2 italic">Get a Free Consultation</p>
-                      <div className="flex items-center text-green-400 text-sm font-semibold gap-2 cursor-pointer hover:opacity-80">
-                        <WhatsAppIcon /> WhatsApp
-                      </div>
+                      <Link
+                        to={{ pathname: "https://wa.me/15513441824" }}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="flex items-center text-green-400 text-sm font-semibold gap-2 cursor-pointer hover:opacity-80">
+                          <WhatsAppIcon />
+                          WhatsApp
+                        </div>
+                      </Link>
                       <div className="w-full border-t border-gray-700 my-2" />
                       {/* Social */}
                       <div className="flex justify-center items-center gap-2 ">
@@ -381,16 +388,17 @@ export default function Header() {
           >
             <img src={call} alt="phone" className="w-5 h-5" />
             <p className="ml-2">
-            +12524108567
+            +1 (551) 344-1824
             </p>
           </a>
         </nav>
 
         {/* Mobile Toggle Button */}
         <div className="md:hidden flex">
-          <Link to="/contact" className="bg-orange-500 text-white px-4 py-1 rounded-lg font-bold cursor-pointer flex items-center mx-6">
+
+          <a href="tel:+12524108567" className="bg-orange-500 text-white px-4 py-1 rounded-lg font-bold cursor-pointer flex items-center mx-6">
             <img src={call} alt="phone" className="w-5 h-5" />
-          </Link>
+          </a>
           <button onClick={() => setMobileOpen(true)} className="text-3xl p-2 font-bold">☰</button>
         </div>
       </div>
@@ -585,7 +593,7 @@ export default function Header() {
             </Link>
 
             <Link
-              to={{ pathname: "https://wa.me/+12524108567" }}
+              to={{ pathname: "https://wa.me/15513441824" }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#001e37] w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl"

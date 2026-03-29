@@ -138,7 +138,7 @@ export default function Contact() {
                                             
                                             Call Us:</h3>
                                         </div>
-                                        <p className="font-semibold">+12524108567</p>
+                                        <p className="font-semibold">+1 (551) 344-1824</p>
                                     
                                 </div>
 

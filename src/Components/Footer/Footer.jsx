@@ -56,7 +56,7 @@ export default function Footer() {
 
                 <p className="flex gap-3">
                   <IoIosCall className="mt-1 text-lg shrink-0 text-gray-500" />
-                  +12524108567
+                  +1 (551) 344-1824
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  to={{ pathname: "https://wa.me/XXXXXXXXXX" }}
+                  to={{ pathname: "https://wa.me/15513441824" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white w-10 h-10 rounded-lg flex items-center justify-center  text-xl"
